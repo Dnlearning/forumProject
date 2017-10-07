@@ -1,0 +1,41 @@
+
+<form id="registerform" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
+    <h3 class="text-center">Register Form</h3>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Name</label>
+      <input type="text" class="form-control" formControlName="name"  placeholder="Your Name...">
+      <div class="alert alert-danger" *ngIf="name.errors && name.touched">
+        <div *ngIf="name.errors.required">Name is Required.</div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Username</label>
+      <input type="text" class="form-control" formControlName="username"  placeholder="Your Password...">
+      <div class="alert alert-danger" *ngIf="username.errors && username.touched">
+        <div *ngIf="username.errors.required">Username is Required.</div>
+        <div *ngIf="username.errors.CannotContainSpace">Username cannot contain space.</div>
+        <div *ngIf="username.errors.usernameTaken">Username existed.</div>
+      </div>
+    </div>
+
+    <div class="form-group"> 
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+        <div *ngIf="email.errors.required">Email is Required.</div>
+        <div *ngIf="email.errors.CannotContainSpace">Email cannot contain space.</div>
+        <div *ngIf="email.errors.emailTaken">Username existed.</div>
+        <div *ngIf="email.errors.incorrectMailFormat">Incorrect Email Format.</div>
+      </div>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      <div class="alert alert-danger" *ngIf="password.errors && password.touched">
+        <div *ngIf="password.errors.required">Password is Required.</div>
+      </div>
+    </div>
+    <button [disabled]="registerForm.invalid || enableR" type="submit" class="btn btn-primary btn-block mt-4" >Register</button>
+</form>

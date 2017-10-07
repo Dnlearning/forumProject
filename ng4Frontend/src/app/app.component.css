@@ -1,0 +1,32 @@
+.content{
+    margin-top: 100px;
+}
+
+.msg{
+    width:45%;
+    margin: auto;
+    text-align: center;
+}
+
+@media(max-width:1025px){
+    #loginform{
+        width: 40%;
+    }
+}
+@media(max-width:992px){
+    .msg{
+        width:60%;
+    }
+}
+
+@media(max-width:768px){
+    .msg{
+        width:80%;
+    }
+}
+
+@media(max-width:375px){
+    .msg{
+        width:100%;
+    }
+}

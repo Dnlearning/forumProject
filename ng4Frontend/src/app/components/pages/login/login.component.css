@@ -1,0 +1,34 @@
+#loginform{
+    width: 35%;
+    margin:0 auto;
+    padding: 40px 30px;
+    border:2px solid gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px #888888;
+}
+.alert{
+    padding: 0.5rem 1rem;
+}
+
+@media(max-width:1025px){
+    #loginform{
+        width: 40%;
+    }
+}
+@media(max-width:992px){
+    #loginform{
+        width: 50%;
+    }
+}
+
+@media(max-width:768px){
+    #loginform{
+        width: 70%;
+    }
+}
+
+@media(max-width:375px){
+    #loginform{
+        width: 95%;
+    }
+}
