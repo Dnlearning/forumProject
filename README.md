@@ -18,7 +18,7 @@ cd ../
 
 npm start
 
-test permission
+test 
 
 Enjoy!
 
