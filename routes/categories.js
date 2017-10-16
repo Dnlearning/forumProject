@@ -21,4 +21,12 @@ router.get('/:topic_id',(req,res,next)=>{
     })
 })
 
+router.get('/specific/:category_id',(req,res,next)=>{
+    let category_id=req.params.category_id;
+    Category.getContentSpecificCategoryById(category_id,(err,category)=>{
+        if(err){return res.json({success:false,msg:'failed to get Content of Category'})}
+        res.json({success:true, category:category});
+    })
+});
+
 module.exports=router;

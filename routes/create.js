@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const Category=require('../models/category');
 const MainTopic=require('../models/maintopic');
+const Post=require('../models/post');
 
 
 router.post('/category',(req,res,next)=>{
@@ -27,5 +28,19 @@ router.post('/maintopic',(req,res,next)=>{
     });
 })
 
+router.post('/post',(req,res,next)=>{
+    let newPost=new Post({
+        title:req.body.title,
+        body:req.body.body,
+        views: 40,
+        category_id: req.body.category_id,
+        author_id:req.body.author_id
+    });
+
+    Post.addPost(newPost,(err,result)=>{
+        if(err) return res.json({success:false, msg:"failed to create Post"})
+        res.json({success:true,msg:"Create Post succesfully!"});
+    });
+})
 
 module.exports=router;

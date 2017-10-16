@@ -74,3 +74,7 @@ module.exports.comparePassword=(candidatePassword ,hash, callback)=>{
 module.exports.getAllUsers=(username,callback)=>{
     User.find({username:{$nin:[username]}},{username:true},callback);
 }
+
+module.exports.getUserInfoById=(user_id,callback)=>{
+    User.find({_id:user_id},{password:false},callback);
+}

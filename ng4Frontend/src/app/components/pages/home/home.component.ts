@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
 
   getFilterValue(value){
     this.itemsPerPage=value;
-    console.log(this.itemsPerPage);
   }
 
 

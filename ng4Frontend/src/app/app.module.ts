@@ -1,3 +1,4 @@
+import { PostsService } from './services/posts.service';
 import { PostsComponent } from './components/pages/posts/posts.component';
 import { MainTopicService } from './services/main-topic.service';
 import { CategoriesService } from './services/categories.service';
@@ -21,7 +22,11 @@ import { UserOnlineComponent } from './components/user-online/user-online.compon
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryComponent } from './components/pages/admin/category/category.component';
 import { MainTopicComponent } from './components/pages/home/main-topic/main-topic.component';
-
+import { UserCreatedCategoryComponent } from './components/pages/home/main-topic/user-created-category/user-created-category.component';
+import { UserInfoComponent } from './components/pages/users/user-info/user-info.component';
+import { PostComponent } from './components/pages/admin/post/post.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { EachPostComponent } from './components/pages/each-post/each-post.component';
 
 const Routes=[
   {
@@ -40,7 +45,16 @@ const Routes=[
     path:'create/category' , component: CategoryComponent
   },
   {
-    path:':categories_id', component : PostsComponent
+    path:'create/post/:category_id' , component: PostComponent
+  },
+  {
+    path:'categories/:category_id', component : PostsComponent
+  },
+  {
+    path:'user/info/:user_id', component : UserInfoComponent
+  },
+  {
+    path:'posts/:post_id', component : EachPostComponent
   }
 ];
 
@@ -58,7 +72,11 @@ const Routes=[
     UserOnlineComponent,
     CategoryComponent,
     MainTopicComponent,
-    PostsComponent
+    PostsComponent,
+    UserCreatedCategoryComponent,
+    UserInfoComponent,
+    PostComponent,
+    EachPostComponent
   ],
   imports: [
     BrowserModule,
@@ -67,9 +85,10 @@ const Routes=[
     ReactiveFormsModule,
     HttpModule,
     FlashMessagesModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CKEditorModule
   ],
-  providers: [UserService,UserGuard,SharedService,CategoriesService,MainTopicService],
+  providers: [UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

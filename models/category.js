@@ -33,3 +33,6 @@ module.exports.addCategory=(newCategory,callback)=>{
     newCategory.save(callback);
 }
 
+module.exports.getContentSpecificCategoryById=(category_id,callback)=>{
+    Category.findOne({_id:category_id},callback);
+}

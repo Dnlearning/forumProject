@@ -67,6 +67,8 @@ router.get('/all/:username',passport.authenticate('jwt',{session:false}),(req,re
     }
 });
 
+
+
 router.get('/:value',(req,res,next)=>{
     if(req.params.value){
         User.checkUserExist(req.params.value,(err,result)=>{
@@ -82,6 +84,14 @@ router.get('/',(req,res,next)=>{
     res.json({invalid:'true'});
 })
 
+router.get('/infos/:user_id',(req,res,next)=>{
+    let user_id=req.params.user_id;
+    User.getUserInfoById(user_id,(err,user_info)=>{
+        if(err) return res.json({success:false,msg:'Cant get your infor'});
+        if(user_info.length==0){return res.json({success:false,msg:'No match any User'});}
+        res.json({success:true,user_info:user_info})
+    });
+});
 
 
 

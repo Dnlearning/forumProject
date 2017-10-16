@@ -11,18 +11,18 @@ export class UserService {
   constructor(private http: Http) { }
 
   checkUsernameExist(username:String){
-    return this.http.get('http://localhost:3000/users/'+username)
+    return this.http.get('http://localhost:3000/api/users/'+username)
       .map(res=>res.json())
   }
   checkEmailExist(email:String){
-    return this.http.get('http://localhost:3000/users/'+email)
+    return this.http.get('http://localhost:3000/api/users/'+email)
       .map(res=>res.json())
   }
 
   registerUser(newUser){
     let headers=new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/register',newUser,{headers:headers})
+    return this.http.post('http://localhost:3000/api/users/register',newUser,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -30,7 +30,7 @@ export class UserService {
   authenticateUser(user){
     let headers=new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/authenticate',user,{headers:headers})
+    return this.http.post('http://localhost:3000/api/users/authenticate',user,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -39,7 +39,7 @@ export class UserService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/users/profile',{headers:headers})
+    return this.http.get('http://localhost:3000/api/users/profile',{headers:headers})
       .map(res=>res.json());
   }
   getAllUser(username){
@@ -47,7 +47,7 @@ export class UserService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/users/all/'+username,{headers:headers})
+    return this.http.get('http://localhost:3000/api/users/all/'+username,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -57,6 +57,13 @@ export class UserService {
     this.userToken=token;
     this.user=user;
   }
+  getUserInfor(user_id){
+    let headers=new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('http://localhost:3000/api/users/infos/'+user_id,{headers:headers})
+      .map(res=>res.json());
+  }
+
   loadToken(){
     const token=localStorage.getItem('Zero_token');
     this.userToken= token;

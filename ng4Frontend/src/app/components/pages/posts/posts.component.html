@@ -1,3 +1,8 @@
-<p>
-  posts works!
-</p>
+<p><a [routerLink]="['/create/post',categoryId]" class="btn btn-primary">Create Post</a></p>
+
+<div *ngIf="posts.length==0">Have no posts yet</div>
+<div *ngIf="posts.length!=0">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of posts"><a [routerLink]="['/posts',post._id]">{{post.title}}</a></li>
+  </ul>
+</div>

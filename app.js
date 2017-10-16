@@ -30,6 +30,7 @@ const topics=require('./routes/topics');
 const create=require('./routes/create');
 const maintopics=require('./routes/maintopics');
 const categories=require('./routes/categories');
+const posts=require('./routes/posts');
 
 
 const port=process.env.PORT||3000;
@@ -54,11 +55,12 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 
-app.use('/users',users);
-app.use('/topics',topics);
-app.use('/create',create);
-app.use('/maintopics',maintopics);
-app.use('/categories',categories);
+app.use('/api/users',users);
+app.use('/api/topics',topics);
+app.use('/api/create',create);
+app.use('/api/maintopics',maintopics);
+app.use('/api/categories',categories);
+app.use('/api/posts',posts);
 
 app.get('/',(req,res)=>{
     res.send('invalid endpoint');

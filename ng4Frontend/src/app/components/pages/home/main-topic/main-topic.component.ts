@@ -14,9 +14,10 @@ export class MainTopicComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.categoriesService.getSpecificCategory(this.topic._id).subscribe(data=>{
+    this.categoriesService.getAllCategoryWithSpecificTopicId(this.topic._id).subscribe(data=>{
       this.categories=data.categories;
-    })
+    },
+    (err)=>{console.log(err);})
   }
 
 }
