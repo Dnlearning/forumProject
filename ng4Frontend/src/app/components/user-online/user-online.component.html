@@ -1,0 +1,12 @@
+<div id="user-online">
+  <div class="card">
+    <div class="card-header" (click)="showTapChat()"><h6>User Online</h6></div>
+      <div class="card-body" [class.hide]="hide">
+        <div id="user-online">
+          <ul class="list-group">
+              <li class="list-group-item" style="cursor:pointer" *ngFor="let user of usersOnline ">{{user}} <span class="badge badge-primary">Online</span></li>            
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>

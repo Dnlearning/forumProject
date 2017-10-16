@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   enableR:boolean=false;
   nameLogin:string;
-
+  status:boolean;
   form=new FormGroup({
     username: new FormControl('',[Validators.required, CannotContainSpace]),
     password: new FormControl('',Validators.required)
@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     //check infos from local
   
     this.sharedService.currentUsername.subscribe(username=>this.nameLogin=username);
+    this.sharedService.currentStatusLogin.subscribe(status=>this.status=status);
   }
 
   onSubmit(rf){
@@ -45,15 +46,19 @@ export class LoginComponent implements OnInit {
 
         //change username on shared service
         this.sharedService.changeUsername(data.user.name);
-
+        this.sharedService.loginStatus(true);
 
         this.flashMsg.show('You are Logged In',{ cssClass: 'alert-success',timeout: 2000})
+
         let returnUrl=this.route.snapshot.queryParamMap.get('returnUrl');
         this.router.navigate([returnUrl || '/']);
+        
       }else{
-        this.flashMsg.show(data.msg,{ cssClass: 'alert-danger',timeout: 5000});
+        this.flashMsg.show(data.msg,{ cssClass: 'alert-danger',timeout: 3000});
         this.router.navigate(['/login']);
       }
+
+      
     })
   }
 

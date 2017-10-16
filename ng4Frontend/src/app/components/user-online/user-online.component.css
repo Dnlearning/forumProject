@@ -1,0 +1,23 @@
+#user-online{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.card{
+    width:170px;
+}
+.card-body{ 
+    height: 350px;
+    overflow: scroll;
+}
+
+.card-header{
+    cursor: pointer;
+    background-color: #0069D9;
+    color: white;
+    padding: 10px;
+}
+
+.hide{
+    display: none;
+}

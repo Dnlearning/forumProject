@@ -1,0 +1,56 @@
+#chat-box{
+    overflow-y: hidden;
+    position: fixed;
+    bottom: 0;
+}
+.card{
+    width:300px;
+    overflow: hidden;
+}
+.card-body{
+    height: 200px; 
+    overflow-y: auto;
+}
+.card-header{
+    cursor: pointer;
+    background-color: #0069D9;
+    color: white;
+    padding: 10px;
+}
+
+.right{
+    text-align: right;
+}
+
+.hide{
+    display: none;
+}
+
+.message{
+    float: left;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px black;
+    border-radius: 5px;
+}
+.right{
+    float: right;
+    text-align: left;
+}
+.left{
+    float: left;
+    text-align: left;
+}
+.clearBoth{
+    clear: both;
+}
+.user{
+    font-size: 16px;
+    font-weight: 600;
+}
+.userLeft{
+    float: left;
+    color: red;
+    margin-bottom: 10px;
+}

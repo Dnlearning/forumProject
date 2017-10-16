@@ -1,3 +1,21 @@
 body {
     padding-top: 3.5rem;
+    overflow-y: hidden;
+    font-size: 1rem;
+}
+
+.header{
+    background-color: rgb(128, 157, 204);
+    padding: 10px 16px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.filter{
+    float: right;
+}
+
+.news{
+    border: 1px solid black;
+    border-radius: 5px;
 }

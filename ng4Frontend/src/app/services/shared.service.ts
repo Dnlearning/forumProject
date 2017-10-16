@@ -4,8 +4,10 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 export class SharedService {
   
   private username =new BehaviorSubject<string>("");
+  private login=new BehaviorSubject<boolean>(false);
 
-  currentUsername=this.username.asObservable();
+
+  
 
   constructor() { }
 
@@ -18,6 +20,17 @@ export class SharedService {
     if(!user) return false;
     let loginName:string=user.name;
     this.changeUsername(loginName);
+    this.loginStatus(true);
   }
+
+  currentUsername=this.username.asObservable();
+
+  loginStatus(login:boolean){
+    this.login.next(login);
+  }
+
+  currentStatusLogin=this.login.asObservable();
+  
+  
 
 }

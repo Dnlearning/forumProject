@@ -1,0 +1,28 @@
+<div id="chat-box">
+  <div class="card">
+    <div class="card-header" (click)="showTapChat()"><h6>Forum <span *ngIf="newMessage && hide" class="badge badge-warning">news</span></h6></div>
+    <div class="chat" [class.hide]="hide">
+      <div class="card-body">
+        <div id="message-forum">
+          <div class="chat-content" *ngIf="messages">
+            <div *ngFor="let message of messages">
+              <div *ngIf="message.type=='msg'" class="message" [class.right]="message.username==username">
+                  <span class="badge user" [ngClass]="{'badge-primary':message.username!=username,'badge-secondary':message.username==username}">{{message.username}} : </span> {{message.msg}}
+              </div>
+              <div *ngIf="message.type=='info'" class="userLeft">
+                  <span class="badge badge-warning user">{{message.username}} : </span> {{message.msg}}
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+          <div class="input-group" >
+            <div class="input-group-addon">Type</div>
+            <input   type="text" [(ngModel)]="msg" name="msg" class="form-control" (keyup.enter)="sendMsg()" placeholder="Type Message...">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h1 class="display-3">{{topic.topic}}</h1>
+  <ul class="list-group" *ngFor="let category of categories">
+    <li class="list-group-item"><a class="btn btn-primary btn-lg" routerLink="{{category._id}}" role="button" >{{category.category}}</a></li>
+  </ul>
+</div>

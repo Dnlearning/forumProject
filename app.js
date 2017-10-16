@@ -5,6 +5,8 @@ const cors=require('cors');
 const passport=require('passport');
 const mongoose=require('mongoose');
 const config=require('./config/database');
+const socket=require('socket.io');
+const http=require('http');
 
 
 //connect to database
@@ -24,8 +26,13 @@ mongoose.connection.on('error',(err)=>{
 const app=express();
 
 const users=require('./routes/users');
+const topics=require('./routes/topics');
+const create=require('./routes/create');
+const maintopics=require('./routes/maintopics');
+const categories=require('./routes/categories');
 
-const port=3000;
+
+const port=process.env.PORT||3000;
 
 
 //set static folder
@@ -48,6 +55,10 @@ require('./config/passport')(passport);
 
 
 app.use('/users',users);
+app.use('/topics',topics);
+app.use('/create',create);
+app.use('/maintopics',maintopics);
+app.use('/categories',categories);
 
 app.get('/',(req,res)=>{
     res.send('invalid endpoint');
@@ -59,7 +70,50 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(port, (err)=>{
+//socket here
+const server=http.createServer(app);
+const io=socket(server);
+const userChat=[];
+const forumMsg=[];
+
+io.on('connection',(socket)=>{
+    socket.emit('socket_id',{socket_id:socket.id });
+    
+    
+    socket.on('disconnect',()=>{
+        console.log('disconnect');
+        let index=userChat.findIndex(x=>x.socket_id==socket.id);
+        let userDisconnect=userChat.splice(index,1);
+        console.log(userChat);
+        io.sockets.emit('showOnlineUser',{userOnline: JSON.stringify(userChat)});
+        socket.broadcast.emit('userLeft',userDisconnect);
+    })
+    
+
+    socket.on('forumSendMessage',(data)=>{
+        io.sockets.emit('forumSendMessage',data);
+    })
+
+    socket.on('addUserToChat',(data)=>{
+        userChat.push(data);
+        console.log(userChat);
+        io.sockets.emit('showOnlineUser',{userOnline: JSON.stringify(userChat)});
+        socket.broadcast.emit('userIn',data);
+    });
+
+    socket.on('removeUser',(data)=>{
+        console.log('removed');
+        let index=userChat.findIndex((x)=>{x.username==data.username;});
+        let userLogout=userChat.splice(index,1);
+        console.log(userChat);
+        io.sockets.emit('showOnlineUser',{userOnline: JSON.stringify(userChat)});
+        socket.broadcast.emit('userLeft',userLogout);
+    });
+})
+
+
+
+server.listen(port, (err)=>{
     if(err) throw err;
     console.log('server started on port '+port);
 })

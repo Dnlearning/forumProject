@@ -11,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarTopComponent implements OnInit {
   openmenu:boolean=false;
-  username:String ='';
-
+  username:string ='';
+  status:boolean=false;
 
 
   constructor(
@@ -25,6 +25,7 @@ export class NavbarTopComponent implements OnInit {
   ngOnInit() {
     this.sharedService.checkUserOnLocal();
     this.sharedService.currentUsername.subscribe(username=>this.username=username);
+    this.sharedService.currentStatusLogin.subscribe(status=>this.status=status);
   }
 
 
@@ -35,8 +36,9 @@ export class NavbarTopComponent implements OnInit {
 
   onLogoutClick(){
     this.userService.logout();
-    this.flashMsg.show('You are logged out',{cssClass:'alert-success',timeout:3000});
     this.route.navigate(['/login']);
+    this.flashMsg.show('You are logged out',{cssClass:'alert-success',timeout:3000});
+    this.sharedService.loginStatus(false);
     return false;
   }
 }

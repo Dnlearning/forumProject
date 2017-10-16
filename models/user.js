@@ -5,7 +5,7 @@ const config=require('../config/database');
 const UserSchema=mongoose.Schema({
     name:{
         type:String,
-        required:true
+        required:true,
     },
     email:{
         type:String,
@@ -15,9 +15,17 @@ const UserSchema=mongoose.Schema({
         type:String,
         required:true,
     },
+    address:{
+        type:String,
+    },
     password:{
         type:String,
         required:true,
+    },
+    
+    roles:{
+        type:Array,
+        default:["user"]
     },
     created_date:{
         type:Date,
@@ -60,4 +68,9 @@ module.exports.comparePassword=(candidatePassword ,hash, callback)=>{
         if(err) throw err;
         callback(null, isMatch);
     });
+}
+
+
+module.exports.getAllUsers=(username,callback)=>{
+    User.find({username:{$nin:[username]}},{username:true},callback);
 }

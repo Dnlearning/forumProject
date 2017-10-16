@@ -1,3 +1,6 @@
+import { PostsComponent } from './components/pages/posts/posts.component';
+import { MainTopicService } from './services/main-topic.service';
+import { CategoriesService } from './services/categories.service';
 import { SharedService } from './services/shared.service';
 import { UserGuard } from './guards/user.guard';
 import { UserService } from './services/user.service';
@@ -13,6 +16,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'; 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProfileComponent } from './components/users/profile/profile.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { UserOnlineComponent } from './components/user-online/user-online.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CategoryComponent } from './components/pages/admin/category/category.component';
+import { MainTopicComponent } from './components/pages/home/main-topic/main-topic.component';
+
+
 const Routes=[
   {
     path:'',component: HomeComponent
@@ -25,6 +35,12 @@ const Routes=[
   },
   {
     path:'profile',component: ProfileComponent, canActivate: [UserGuard]
+  },
+  {
+    path:'create/category' , component: CategoryComponent
+  },
+  {
+    path:':categories_id', component : PostsComponent
   }
 ];
 
@@ -37,7 +53,12 @@ const Routes=[
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent,
+    UserOnlineComponent,
+    CategoryComponent,
+    MainTopicComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +66,10 @@ const Routes=[
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgxPaginationModule
   ],
-  providers: [UserService,UserGuard,SharedService],
+  providers: [UserService,UserGuard,SharedService,CategoriesService,MainTopicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

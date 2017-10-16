@@ -42,6 +42,14 @@ export class UserService {
     return this.http.get('http://localhost:3000/users/profile',{headers:headers})
       .map(res=>res.json());
   }
+  getAllUser(username){
+    let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
+    headers.append('Content-Type','application/json');
+    return this.http.get('http://localhost:3000/users/all/'+username,{headers:headers})
+      .map(res=>res.json());
+  }
 
   storeUserDate(token,user){
     localStorage.setItem('Zero_token',token);
