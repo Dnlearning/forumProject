@@ -1,0 +1,38 @@
+.category{
+    height: 80vh;
+}
+.col-md-6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(61, 68, 81);
+    border-right: 1px solid gray;  
+    color: white;
+    text-align: center;
+}
+.content h1{
+    width: 80%;
+    margin: 0 auto;
+}
+.content h5{
+    width: 70%;
+    font-size: 15px;
+    margin: 15px auto 0;
+}
+.content a{
+    margin-top: 15px;
+}
+.form{
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px  gray;
+}
+.select{
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.25rem;
+    width:100%;
+}

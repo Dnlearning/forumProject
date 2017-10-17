@@ -31,7 +31,7 @@ const create=require('./routes/create');
 const maintopics=require('./routes/maintopics');
 const categories=require('./routes/categories');
 const posts=require('./routes/posts');
-
+const comments=require('./routes/comments');
 
 const port=process.env.PORT||3000;
 
@@ -61,6 +61,7 @@ app.use('/api/create',create);
 app.use('/api/maintopics',maintopics);
 app.use('/api/categories',categories);
 app.use('/api/posts',posts);
+app.use('/api/comments',comments);
 
 app.get('/',(req,res)=>{
     res.send('invalid endpoint');

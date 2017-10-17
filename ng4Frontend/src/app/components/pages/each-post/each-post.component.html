@@ -1,3 +1,7 @@
+<div class="btn-group btn-lg" role="group" aria-label="First group">
+  <button *ngIf="userService.isUserCreatedPost(post['author_id'])" type="button" class="btn btn-primary" (click)="editPost(post._id)" >Edit</button>
+  <button *ngIf="userService.isAdmin()" type="button" class="btn btn-danger" (click)="deletePost(post._id)">Delete</button>
+</div>
 <div class="container">
   <h2 class="page-header">{{post.title}}</h2>
   <div id="body-post">
@@ -7,3 +11,5 @@
     <strong>Time Created: </strong>{{post.created_date}}
   </div>
 </div>
+
+<comments></comments>

@@ -1,0 +1,20 @@
+
+<div class="form-group">
+    <label for="exampleInputPassword1">Title Post</label>
+    <input type="text" class="form-control" [(ngModel)]="titlePost" placeholder="Your Name...">
+</div>
+
+
+
+<ckeditor
+[(ngModel)]="ckeditorContent">
+  <ckbutton [name]="'saveButton'"
+    [command]="'saveCmd'"
+    (click)="save($event)"
+    [icon]="'save.png'"
+    [label]="'Save Document'"
+    [toolbar]="'clipboard,1'">
+  </ckbutton>
+</ckeditor>
+
+<button class="btn btn-primary mt-4" (click)="updatePost()">Save</button>

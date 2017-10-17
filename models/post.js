@@ -32,7 +32,7 @@ const PostSchema=mongoose.Schema({
 const Post=module.exports=mongoose.model('posts',PostSchema);
 
 module.exports.getAllPosts=(callback)=>{
-    Post.find({},callback);
+    Post.find({},{body:false},callback).sort({_id:-1}).limit(30);
 }
 
 module.exports.addPost=(newPost,callback)=>{
@@ -40,9 +40,21 @@ module.exports.addPost=(newPost,callback)=>{
 }
 
 module.exports.getAllPostWithSpecificCategory=(category_id,callback)=>{
-    Post.find({category_id:category_id},callback);
+    Post.find({category_id:category_id},callback).sort({_id:-1});
 }
 
 module.exports.getContentPost=(post_id,callback)=>{
     Post.find({_id:post_id},callback);
+}
+
+module.exports.getHighestViewsPost=(callback)=>{
+    Post.find({},{body:false},callback).sort({views:-1}).limit(30);
+}
+
+module.exports.deletePost=(id,callback)=>{
+    Post.remove({_id:id},callback);
+}
+
+module.exports.updatePost=(id,newPost,callback)=>{
+    Post.findOneAndUpdate({_id:id},{$set:{title:newPost.title,body:newPost.body}},callback);
 }

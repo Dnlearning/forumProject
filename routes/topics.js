@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const Topic=require('../models/topic');
-
+const passport=require('passport');
 
 router.get('/all',(req,res,next)=>{
     Topic.getAllTopics((err,results)=>{

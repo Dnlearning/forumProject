@@ -24,7 +24,7 @@ const CategorySchema=mongoose.Schema({
 const Category=module.exports=mongoose.model('categories',CategorySchema);
 
 module.exports.getAllCategories=(callback)=>{
-    Category.find({},callback);
+    Category.find({},callback).sort({_id:-1}).limit(30);
 }
 module.exports.getAllSpecificCategories=(topic_id,callback)=>{
     Category.find({topic_id:topic_id},callback);

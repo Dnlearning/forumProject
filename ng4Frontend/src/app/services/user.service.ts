@@ -75,6 +75,31 @@ export class UserService {
     localStorage.removeItem('Zero_user');
   }
 
+  isAdmin(){
+    if(this.isLoggedIn()){
+      let user=JSON.parse(localStorage.getItem('Zero_user'));
+      if(user.roles.includes('admin')){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
+  isUserCreatedPost(user_id){
+    if(this.isLoggedIn()){
+      let user=JSON.parse(localStorage.getItem('Zero_user'));
+      // console.log("author_id: "+ user_id);
+      // console.log("local user id: "+ user.id);
+
+      if(user.id==user_id){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
+
+
   isLoggedIn(){
     let jwtHelper=new JwtHelper();
     let token=localStorage.getItem('Zero_token');

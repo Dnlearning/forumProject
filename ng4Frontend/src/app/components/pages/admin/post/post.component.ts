@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
     private postsService:PostsService,
     private route:ActivatedRoute,
     private router:Router,
-    private categoryService:CategoriesService
+    private categoryService:CategoriesService,
   ) {
     this.ckeditorContent = `<p>My HTML</p>`;
    }
@@ -33,7 +33,6 @@ export class PostComponent implements OnInit {
     this.categoryService.getContentCategory(this.categoryId).subscribe(data=>{
       if(data.success){
         this.category=data.category;
-        console.log(this.category);
       }
     })
   }
@@ -58,6 +57,7 @@ export class PostComponent implements OnInit {
         this.flashMessage.show('Created Post Successfully!',{cssClass:'alert-success',timeout:3000});
         this.titlePost='';
         this.ckeditorContent='';
+        this.router.navigate(['/categories/'+this.categoryId]);
         return false;
       }else{
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:3000});        

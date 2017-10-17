@@ -1,3 +1,4 @@
+import { PostsService } from './../../../services/posts.service';
 import { CategoriesService } from './../../../services/categories.service';
 import { MainTopicService } from './../../../services/main-topic.service';
 import { UserService } from './../../../services/user.service';
@@ -13,10 +14,15 @@ export class HomeComponent implements OnInit {
   p:number=1;
   itemsPerPage:number=5;
   maintopics;
+  mode:string="posts";
+  categories=[];
+  posts=[];
+  highestViewsPost=[];
   constructor(
     private userService:UserService, 
     private mainTopicService:MainTopicService,
-    private categoryService:CategoriesService
+    private categoryService:CategoriesService,
+    private postsService :PostsService
   ) { 
   }
 
@@ -36,6 +42,18 @@ export class HomeComponent implements OnInit {
       this.maintopics=data.topics;
     });
     
+    this.postsService.getAllPosts().subscribe(data=>{
+      this.posts=data.posts;
+    });
+
+   this.categoryService.getAllCategories().subscribe(data=>{
+     this.categories=data.topics;
+     
+   })
+   this.postsService.getHighestViews().subscribe(data=>{
+    this.highestViewsPost=data.posts;
+    
+  })
   }
 
   getFilterValue(value){

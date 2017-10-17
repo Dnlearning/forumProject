@@ -1,6 +1,8 @@
 const express=require('express');
 const router=express.Router();
 const Category=require('../models/category');
+const passport=require('passport');
+
 
 
 router.get('/all',(req,res,next)=>{

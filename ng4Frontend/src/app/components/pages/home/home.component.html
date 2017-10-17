@@ -1,5 +1,5 @@
-<div class="container" *ngIf="allUsers">
-  <div class="news">
+<div class="container news" *ngIf="allUsers">
+  <div class="">
     <div class="row">
       <div class="col-sm-2">
         <div class="header">
@@ -7,13 +7,13 @@
         </div>
         <div class="users">
           <ul class="list-group">
-            <li class="list-group-item" *ngFor="let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}">{{user.username}}</li>
+            <li class="list-group-item" *ngFor="let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}"><a [routerLink]="['/user/info',user._id]">{{user.username}}</a></li>
           </ul>
         </div>
       </div>
       <div class="col-sm-10">
         <div class="header">
-          News Today!
+          News
           <span class="filter">
             <select #selected (change)="getFilterValue(selected.value)">
               <option>5</option>
@@ -22,8 +22,40 @@
             </select>
           </span>
         </div>
-        <div class="newpost">
-
+        <div class="newpost mt-1">
+          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <button class="btn btn-primary" (click)="mode='posts'">New Post</button>
+            <button class="btn btn-secondary" (click)="mode='category'">New Category</button>
+            <button class="btn btn-success" (click)="mode='views'">Highest Views Post</button>
+          </div>
+            <div *ngIf="mode=='posts'">
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index">
+                  <a [routerLink]="['/posts',post._id]">{{i+1}}. {{post.title}}</a>
+                  <user-created-category style="float:right" [createUser]="post.author_id"></user-created-category>
+                </li>
+                
+              </ul>
+            </div>
+            <div *ngIf="mode=='category'">
+              <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index">
+                      <a [routerLink]="['/categories',category._id]">{{i+1}}. {{category.category}}</a>
+                      <user-created-category style="float:right" [createUser]="category.create_user"></user-created-category>
+                    </li>
+              </ul>
+            </div>
+            <div *ngIf="mode=='views'">
+              <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index">
+                    <div class="post" style="float:left">
+                        <a [routerLink]="['/posts',highestView._id]">{{i+1}}. {{highestView.title}}</a>
+                        <p>Views: {{highestView.views}}</p>
+                    </div>  
+                    <user-created-category style="float:right" [createUser]="highestView.author_id"></user-created-category>
+                    </li>
+              </ul>
+            </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+import { CommentsService } from './services/comments.service';
+import { UserCreatedPostGuard } from './guards/user-created-post.guard';
+import { ProtectRoutersComponent } from './components/pages/admin/protect-routers/protect-routers.component';
+import { AdminGuard } from './guards/admin.guard';
 import { PostsService } from './services/posts.service';
 import { PostsComponent } from './components/pages/posts/posts.component';
 import { MainTopicService } from './services/main-topic.service';
@@ -27,6 +31,9 @@ import { UserInfoComponent } from './components/pages/users/user-info/user-info.
 import { PostComponent } from './components/pages/admin/post/post.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { EachPostComponent } from './components/pages/each-post/each-post.component';
+import { EditPostComponent } from './components/pages/admin/edit-post/edit-post.component';
+import { CommentsComponent } from './components/pages/each-post/comments/comments.component';
+import { ShopComponent } from './components/pages/shop/shop.component';
 
 const Routes=[
   {
@@ -42,10 +49,13 @@ const Routes=[
     path:'profile',component: ProfileComponent, canActivate: [UserGuard]
   },
   {
-    path:'create/category' , component: CategoryComponent
+    path:'create/category' , component: CategoryComponent, canActivate:[AdminGuard]
   },
   {
-    path:'create/post/:category_id' , component: PostComponent
+    path:'create/post/:category_id' , component: PostComponent , canActivate: [UserGuard]
+  },
+  {
+    path:'update/post/:post_id' , component: EditPostComponent,canActivate:[UserCreatedPostGuard]
   },
   {
     path:'categories/:category_id', component : PostsComponent
@@ -55,9 +65,11 @@ const Routes=[
   },
   {
     path:'posts/:post_id', component : EachPostComponent
+  },
+  {
+    path:'shop',component: ShopComponent
   }
 ];
-
 
 
 @NgModule({
@@ -76,7 +88,11 @@ const Routes=[
     UserCreatedCategoryComponent,
     UserInfoComponent,
     PostComponent,
-    EachPostComponent
+    EachPostComponent,
+    EditPostComponent,
+    ProtectRoutersComponent,
+    CommentsComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +104,7 @@ const Routes=[
     NgxPaginationModule,
     CKEditorModule
   ],
-  providers: [UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService],
+  providers: [CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

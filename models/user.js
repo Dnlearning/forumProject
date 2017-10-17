@@ -72,7 +72,7 @@ module.exports.comparePassword=(candidatePassword ,hash, callback)=>{
 
 
 module.exports.getAllUsers=(username,callback)=>{
-    User.find({username:{$nin:[username]}},{username:true},callback);
+    User.find({username:{$nin:[username]}},{username:true},callback).sort({_id:-1}).limit(30);
 }
 
 module.exports.getUserInfoById=(user_id,callback)=>{
