@@ -44,7 +44,7 @@ module.exports.getAllPostWithSpecificCategory=(category_id,callback)=>{
 }
 
 module.exports.getContentPost=(post_id,callback)=>{
-    Post.find({_id:post_id},callback);
+    Post.findOne({_id:post_id},callback);
 }
 
 module.exports.getHighestViewsPost=(callback)=>{

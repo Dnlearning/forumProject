@@ -22,12 +22,11 @@ export class EachPostComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.postService.getPostContent(params.get('post_id')))
+    .switchMap((params: ParamMap) => this.postService.getPostContent(this.post_id=params.get('post_id')))
     .subscribe(data=>{
       if(data.success) {
-        this.post=data.post[0];
-        this.post_id=data.post[0]._id;
-        document.getElementById('body-post').innerHTML=data.post[0].body;
+        this.post=data.post;
+        document.getElementById('body-post').innerHTML=data.post.body;
       }else{
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:3000});
         return false;
@@ -37,7 +36,6 @@ export class EachPostComponent implements OnInit {
 
 
   deletePost(id){
-    console.log(this.post['category_id']);
     this.postService.deletePost(id).subscribe(data=>{
       if(data.success){
         this.flashMessage.show(data.msg +" "+ this.post['title'],{cssClass:'alert-success',timeout:3000});

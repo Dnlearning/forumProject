@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostsService {
-
+  userToken;
   constructor(
     private http:Http
   ) { }
@@ -47,14 +47,27 @@ export class PostsService {
 
   deletePost(id){
     let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
     headers.append('Content-type','application/json');
     return this.http.delete('http://localhost:3000/api/posts/delete/'+id,{headers:headers})
       .map(res=>res.json());
   }
   updatePost(id,newPost){
     let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
+    
     headers.append('Content-type','application/json');
     return this.http.put('http://localhost:3000/api/posts/update/'+id,newPost,{headers:headers})
       .map(res=>res.json());
   }
+
+
+
+  loadToken(){
+    const token=localStorage.getItem('Zero_token');
+    this.userToken= token;
+  }
+  
 }

@@ -34,21 +34,37 @@ router.get('/highest/views',(req,res,next)=>{
     });
 });
 
-router.delete('/delete/:id',(req,res,next)=>{
-    Post.deletePost(req.params.id,(err)=>{
-        if(err) {return res.json({success:false,msg:'failed to delete'})}
-        res.json({success:true,msg:"Deleted post!"});
-    });
+router.delete('/delete/:id',passport.authenticate('jwt',{session:false}),(req,res,next)=>{
+    let user=req.user;
+    console.log(req.params.id);
+    if(user.roles.includes('admin')){
+        Post.deletePost(req.params.id,(err)=>{
+            if(err) {return res.json({success:false,msg:'failed to delete'})}
+            res.json({success:true,msg:"Deleted post!"});
+        });
+    }else{
+        res.redirect('/');
+    }
+    
 });
 
-router.put('/update/:id',(req,res,next)=>{
+router.put('/update/:id',passport.authenticate('jwt',{session:false}),(req,res,next)=>{
+    let post_id=req.params.id;
+    let user=req.user;
     let newPost={
         title:req.body.title,
         body:req.body.body,
     }
-    Post.updatePost(req.params.id,newPost,(err,updatedPost)=>{
-        if(err) {return res.json({success:false,msg :'Failed to edit post'})}
-        res.json({success:true,post:updatedPost});
-    });
+    Post.getContentPost(post_id,(err,post)=>{
+        if(err){return res.json({success:false, msg:'Failed to get Content of post'})};
+        if(post.author_id==user._id){
+            Post.updatePost(post_id,newPost,(err,updatedPost)=>{
+                if(err) {return res.json({success:false,msg :'Failed to edit post'})}
+                res.json({success:true,post:updatedPost});
+            });
+        }else{
+            res.redirect('/');
+        }
+    })    
 })
 module.exports=router;

@@ -33,4 +33,12 @@ module.exports.addComment=(newComment,callback)=>{
 module.exports.getAllCommentsWithSpecificPost=(post_id,callback)=>{
     Comment.find({post_id:post_id},callback).sort({_id:-1});
 }
-
+module.exports.deleteComment=(id,callback)=>{
+    Comment.remove({_id:id},callback);
+}
+module.exports.getContentCommentByid=(id,callback)=>{
+    Comment.findOne({_id:id},callback);
+}
+module.exports.updateComment=(id,newComment, callback)=>{
+    Comment.findOneAndUpdate({_id:id},{$set:{body:newComment.body}},callback);
+}

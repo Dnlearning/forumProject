@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CommentsService {
-
+  userToken;
   constructor(
     private http:Http
   ) { }
@@ -23,5 +23,29 @@ export class CommentsService {
       .map(res=>res.json());
   }
   
+  deleteComment(id){
+    let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
+    headers.append('Content-type','application/json');
+    return this.http.delete('http://localhost:3000/api/comments/delete/'+id,{headers:headers})
+      .map(res=>res.json());
+  }
+
+  updateComment(id,newComment){
+    let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
+    headers.append('Content-type','application/json');
+    return this.http.put('http://localhost:3000/api/comments/update/'+id,newComment,{headers:headers})
+      .map(res=>res.json());
+  }
+
+
+
+  loadToken(){
+    const token=localStorage.getItem('Zero_token');
+    this.userToken= token;
+  }
 
 }

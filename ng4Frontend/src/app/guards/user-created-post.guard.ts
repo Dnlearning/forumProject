@@ -20,7 +20,7 @@ export class UserCreatedPostGuard implements CanActivate {
       let author_id:string='';
       return new Promise((resolve,reject)=>{
         this.postService.getPostContent(post_id).subscribe(data=>{
-          author_id=data.post[0].author_id;
+          author_id=data.post.author_id;
           if(this.userService.isUserCreatedPost(author_id)){
             resolve(true);
           }else{

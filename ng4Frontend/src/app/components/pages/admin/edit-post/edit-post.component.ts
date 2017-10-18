@@ -30,11 +30,11 @@ export class EditPostComponent implements OnInit {
     this.route.paramMap
     .switchMap((params: ParamMap) => this.postsService.getPostContent(params.get('post_id')))
     .subscribe(data=>{
-      this.postId=data.post[0]._id;
-      this.titlePost=data.post[0].title;
-      this.ckeditorContent=data.post[0].body;
-      this.author_id=data.post[0].author_id;
-      this.category_id=data.post[0].category_id;
+      this.postId=data.post._id;
+      this.titlePost=data.post.title;
+      this.ckeditorContent=data.post.body;
+      this.author_id=data.post.author_id;
+      this.category_id=data.post.category_id;
     },(err)=>console.log(err));
     
   }

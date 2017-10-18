@@ -1,0 +1,7 @@
+<div *ngIf="editComment">
+  <div class="form-group">
+    <textarea required class="form-control" [(ngModel)]="newbody" aria-describedby="emailHelp" placeholder="leave comment.."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm" (click)="updateComment()">Save</button>
+  <button type="submit" class="btn btn-secondary btn-sm" (click)="cancel()">Cancel</button>
+</div>

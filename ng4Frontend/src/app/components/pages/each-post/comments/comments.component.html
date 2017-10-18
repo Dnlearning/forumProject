@@ -1,27 +1,33 @@
-
-<div class="container mt-5 mb-4 post">
-  <button class="btn btn-primary" (click)="showFormComment()" *ngIf="userService.isLoggedIn()" style="cursor:pointer">Leave Comment</button>
-  <p class="lead signup" *ngIf="!userService.isLoggedIn()">be the user to leave comment <a class="btn btn-sm btn-primary" routerLink="/register">Sign Up</a></p>
-  <h3 class="mt-4 mb-4" *ngIf="comments.length!=0">Comments: </h3>
-  <pagination-controls *ngIf="comments.length!=0" class="text-left mt-4 mb-4" (pageChange)="p = $event"></pagination-controls>
-  <ul class="list-unstyled" *ngIf="comments">
-    <li *ngFor="let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}" class="media">
-      <div class="media-name">
-        <div class="name">
-          {{comment.userComment}}
+<div>
+  <div class="container mt-5 mb-4 post">
+    
+    <p class="lead signup" *ngIf="!userService.isLoggedIn()">be the user to leave comment <a class="btn btn-sm btn-primary" routerLink="/register">Sign Up</a></p>
+    <h3 class="mt-4 mb-4" *ngIf="comments.length!=0">Comments: </h3>
+    <pagination-controls *ngIf="comments.length!=0" class="text-left mt-4 mb-4" (pageChange)="p = $event"></pagination-controls>
+    <ul class="list-unstyled" *ngIf="comments">
+      <li *ngFor="let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}" class="media">
+        <div class="media-name">
+          <div class="name">
+            {{comment.userComment}}
+          </div>
         </div>
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">{{comment.body}}</h5>
+          Created date: {{comment.created_date}}
+        </div>
+        <p>
+          <button class="btn btn-secondary btn-sm" *ngIf="userService.isUserCreatedComment(comment.userComment)" (click)="editComment(comment)">Edit</button>
+          <button class="btn btn-danger btn-sm" *ngIf="userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)" (click)="deleteComment(comment)">Delete</button>
+        </p>
+      </li>
+      <edit-comment *ngIf="showEdit"[index]="indexCommentEdit" (update)="updateComment($event)" [comment]="commentEdit"></edit-comment>
+    </ul>
+    <button class="btn btn-primary" (click)="showFormComment()" *ngIf="userService.isLoggedIn()" style="cursor:pointer">Leave Comment</button>
+    <div *ngIf="show" class="mt-5">
+      <div class="form-group">
+        <textarea required class="form-control" [(ngModel)]="comment" aria-describedby="emailHelp" placeholder="leave comment.."></textarea>
       </div>
-      <div class="media-body">
-        <h5 class="mt-0 mb-1">{{comment.body}}</h5>
-        Created date: {{comment.created_date}}
-      </div>
-    </li>
-  </ul>
-
-  <div *ngIf="show">
-    <div class="form-group">
-      <textarea required type="email" class="form-control" [(ngModel)]="comment" aria-describedby="emailHelp" placeholder="leave comment.."></textarea>
+      <button type="submit" class="btn btn-primary" (click)="leaveComment()">Submit</button>
     </div>
-    <button type="submit" class="btn btn-primary" (click)="leaveComment()">Submit</button>
   </div>
 </div>

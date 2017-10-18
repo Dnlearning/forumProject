@@ -18,7 +18,7 @@ export class UserCreatedCategoryComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserInfor(this.createUser).subscribe(data=>{
       if(data.success){
-        this.user_info=data.user_info[0];
+        this.user_info=data.user_info;
         this.user_info['created_date']=this.convertDateTime(this.user_info['created_date']);
       }else{
         this.flashMessage.show(data.msg,{ cssClass: 'alert-danger',timeout: 3000});

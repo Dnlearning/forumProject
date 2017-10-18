@@ -85,6 +85,17 @@ export class UserService {
       }
     }
   }
+
+  isUserCreatedComment(user_id){
+    if(this.isLoggedIn()){
+      let user=JSON.parse(localStorage.getItem('Zero_user'));
+      if(user.username==user_id){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
   isUserCreatedPost(user_id){
     if(this.isLoggedIn()){
       let user=JSON.parse(localStorage.getItem('Zero_user'));

@@ -34,6 +34,7 @@ import { EachPostComponent } from './components/pages/each-post/each-post.compon
 import { EditPostComponent } from './components/pages/admin/edit-post/edit-post.component';
 import { CommentsComponent } from './components/pages/each-post/comments/comments.component';
 import { ShopComponent } from './components/pages/shop/shop.component';
+import { EditCommentComponent } from './components/pages/each-post/comments/edit-comment/edit-comment.component';
 
 const Routes=[
   {
@@ -92,7 +93,8 @@ const Routes=[
     EditPostComponent,
     ProtectRoutersComponent,
     CommentsComponent,
-    ShopComponent
+    ShopComponent,
+    EditCommentComponent
   ],
   imports: [
     BrowserModule,

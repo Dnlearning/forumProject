@@ -1,4 +1,5 @@
-import { ActivatedRoute,ParamMap } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommentsService } from './../../../../services/comments.service';
 import { UserService } from './../../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,14 +13,18 @@ export class CommentsComponent implements OnInit {
   show:boolean=false;
   comment:string=''
   comments=[];
+  indexCommentEdit:number=0;
   postId:string='';
-
+  showEdit:boolean=false;
   p:number=1;
+  commentEdit=[];
   itemsPerPage:number=5;
   constructor(
     private userService:UserService,
     private commentService: CommentsService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private flashMessage:FlashMessagesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,7 +32,6 @@ export class CommentsComponent implements OnInit {
     this.route.paramMap
     .switchMap((params: ParamMap) => this.commentService.getAllCommentsWithSpecificPostId(this.postId=params.get('post_id')))
     .subscribe(data=>{
-      console.log(this.postId);
       if(data.success){
         this.comments=data.comments;
       }
@@ -36,11 +40,41 @@ export class CommentsComponent implements OnInit {
     console.log(err);
   })
   }
+  deleteComment(comment){
+    let index=this.comments.indexOf(comment);
+    this.comments.splice(index,1);
+    this.commentService.deleteComment(comment._id).subscribe(null,(error:Response)=>{
+      console.log(error);
+      this.comments.splice(index,0,comment);
+    })
+  }
+
+  editComment(comment){
+    this.commentEdit=comment;
+    this.indexCommentEdit=this.comments.indexOf(comment);  
+    this.showEdit=(this.showEdit)?false:true; 
+  }
 
   showFormComment(){
     this.show=(this.show)?false:true;
   }
 
+  updateComment(data){
+    if(data.cancel){
+      this.comments[data.index]=data.content;
+      this.showEdit=false;
+      return false;
+    }
+    let comment_id =data.content._id;
+    let newComment={
+      body:data.content.body
+    }
+    this.comments[data.index]=data.content;
+    this.commentService.updateComment(comment_id,newComment).subscribe(data=>{
+      console.log(data);
+    });
+    this.showEdit=false;
+  }
   leaveComment(){
     if(!this.userService.isLoggedIn()){
       return false;
@@ -56,11 +90,11 @@ export class CommentsComponent implements OnInit {
     }
 
     this.commentService.createComment(newComment).subscribe(data=>{
-      console.log(data);
       if(data.success){
         this.comments.unshift(data.comment);
       }
     });
+    this.comment='';
     this.show=false;
   }
 }

@@ -211,12 +211,14 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_pages_admin_edit_post_edit_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/edit-post/edit-post.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -314,7 +316,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */],
             __WEBPACK_IMPORTED_MODULE_2__components_pages_admin_protect_routers_protect_routers_component__["a" /* ProtectRoutersComponent */],
             __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */]
+            __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__["a" /* BrowserModule */],
@@ -806,11 +809,11 @@ var EditPostComponent = (function () {
         this.route.paramMap
             .switchMap(function (params) { return _this.postsService.getPostContent(params.get('post_id')); })
             .subscribe(function (data) {
-            _this.postId = data.post[0]._id;
-            _this.titlePost = data.post[0].title;
-            _this.ckeditorContent = data.post[0].body;
-            _this.author_id = data.post[0].author_id;
-            _this.category_id = data.post[0].category_id;
+            _this.postId = data.post._id;
+            _this.titlePost = data.post.title;
+            _this.ckeditorContent = data.post.body;
+            _this.author_id = data.post.author_id;
+            _this.category_id = data.post.category_id;
         }, function (err) { return console.log(err); });
     };
     EditPostComponent.prototype.updatePost = function () {
@@ -1043,7 +1046,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".media-name{\r\n    height: 50px;\r\n    width: 50px;\r\n    background-color: #333;\r\n    color: white;\r\n    margin: 10px;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 10px;\r\n}\r\n\r\n.post{\r\n    padding-bottom: 100px;\r\n}\r\n.signup{\r\n    border: 1px solid black;\r\n    padding: 10px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px gray;\r\n}", ""]);
+exports.push([module.i, ".media-name{\r\n    height: 50px;\r\n    width: 50px;\r\n    background-color: #333;\r\n    color: white;\r\n    margin: 10px;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 10px;\r\n}\r\n\r\n.post{\r\n    padding-bottom: 100px;\r\n}\r\n.signup{\r\n    border: 1px solid black;\r\n    padding: 10px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px gray;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1056,7 +1059,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/each-post/comments/comments.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container mt-5 mb-4 post\">\n  <button class=\"btn btn-primary\" (click)=\"showFormComment()\" *ngIf=\"userService.isLoggedIn()\" style=\"cursor:pointer\">Leave Comment</button>\n  <p class=\"lead signup\" *ngIf=\"!userService.isLoggedIn()\">be the user to leave comment <a class=\"btn btn-sm btn-primary\" routerLink=\"/register\">Sign Up</a></p>\n  <h3 class=\"mt-4 mb-4\" *ngIf=\"comments.length!=0\">Comments: </h3>\n  <pagination-controls *ngIf=\"comments.length!=0\" class=\"text-left mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n  <ul class=\"list-unstyled\" *ngIf=\"comments\">\n    <li *ngFor=\"let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\" class=\"media\">\n      <div class=\"media-name\">\n        <div class=\"name\">\n          {{comment.userComment}}\n        </div>\n      </div>\n      <div class=\"media-body\">\n        <h5 class=\"mt-0 mb-1\">{{comment.body}}</h5>\n        Created date: {{comment.created_date}}\n      </div>\n    </li>\n  </ul>\n\n  <div *ngIf=\"show\">\n    <div class=\"form-group\">\n      <textarea required type=\"email\" class=\"form-control\" [(ngModel)]=\"comment\" aria-describedby=\"emailHelp\" placeholder=\"leave comment..\"></textarea>\n    </div>\n    <button type=\"submit\" class=\"btn btn-primary\" (click)=\"leaveComment()\">Submit</button>\n  </div>\n</div>\n"
+module.exports = "<div>\n  <div class=\"container mt-5 mb-4 post\">\n    \n    <p class=\"lead signup\" *ngIf=\"!userService.isLoggedIn()\">be the user to leave comment <a class=\"btn btn-sm btn-primary\" routerLink=\"/register\">Sign Up</a></p>\n    <h3 class=\"mt-4 mb-4\" *ngIf=\"comments.length!=0\">Comments: </h3>\n    <pagination-controls *ngIf=\"comments.length!=0\" class=\"text-left mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <ul class=\"list-unstyled\" *ngIf=\"comments\">\n      <li *ngFor=\"let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\" class=\"media\">\n        <div class=\"media-name\">\n          <div class=\"name\">\n            {{comment.userComment}}\n          </div>\n        </div>\n        <div class=\"media-body\">\n          <h5 class=\"mt-0 mb-1\">{{comment.body}}</h5>\n          Created date: {{comment.created_date}}\n        </div>\n        <p>\n          <button class=\"btn btn-secondary btn-sm\" *ngIf=\"userService.isUserCreatedComment(comment.userComment)\" (click)=\"editComment(comment)\">Edit</button>\n          <button class=\"btn btn-danger btn-sm\" *ngIf=\"userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)\" (click)=\"deleteComment(comment)\">Delete</button>\n        </p>\n      </li>\n      <edit-comment *ngIf=\"showEdit\"[index]=\"indexCommentEdit\" (update)=\"updateComment($event)\" [comment]=\"commentEdit\"></edit-comment>\n    </ul>\n    <button class=\"btn btn-primary\" (click)=\"showFormComment()\" *ngIf=\"userService.isLoggedIn()\" style=\"cursor:pointer\">Leave Comment</button>\n    <div *ngIf=\"show\" class=\"mt-5\">\n      <div class=\"form-group\">\n        <textarea required class=\"form-control\" [(ngModel)]=\"comment\" aria-describedby=\"emailHelp\" placeholder=\"leave comment..\"></textarea>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\" (click)=\"leaveComment()\">Submit</button>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1065,12 +1068,14 @@ module.exports = "\n<div class=\"container mt-5 mb-4 post\">\n  <button class=\"
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommentsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1085,16 +1090,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CommentsComponent = (function () {
-    function CommentsComponent(userService, commentService, route) {
+    function CommentsComponent(userService, commentService, route, flashMessage, router) {
         this.userService = userService;
         this.commentService = commentService;
         this.route = route;
+        this.flashMessage = flashMessage;
+        this.router = router;
         this.show = false;
         this.comment = '';
         this.comments = [];
+        this.indexCommentEdit = 0;
         this.postId = '';
+        this.showEdit = false;
         this.p = 1;
+        this.commentEdit = [];
         this.itemsPerPage = 5;
     }
     CommentsComponent.prototype.ngOnInit = function () {
@@ -1103,7 +1114,6 @@ var CommentsComponent = (function () {
         this.route.paramMap
             .switchMap(function (params) { return _this.commentService.getAllCommentsWithSpecificPostId(_this.postId = params.get('post_id')); })
             .subscribe(function (data) {
-            console.log(_this.postId);
             if (data.success) {
                 _this.comments = data.comments;
             }
@@ -1111,8 +1121,38 @@ var CommentsComponent = (function () {
             console.log(err);
         });
     };
+    CommentsComponent.prototype.deleteComment = function (comment) {
+        var _this = this;
+        var index = this.comments.indexOf(comment);
+        this.comments.splice(index, 1);
+        this.commentService.deleteComment(comment._id).subscribe(null, function (error) {
+            console.log(error);
+            _this.comments.splice(index, 0, comment);
+        });
+    };
+    CommentsComponent.prototype.editComment = function (comment) {
+        this.commentEdit = comment;
+        this.indexCommentEdit = this.comments.indexOf(comment);
+        this.showEdit = (this.showEdit) ? false : true;
+    };
     CommentsComponent.prototype.showFormComment = function () {
         this.show = (this.show) ? false : true;
+    };
+    CommentsComponent.prototype.updateComment = function (data) {
+        if (data.cancel) {
+            this.comments[data.index] = data.content;
+            this.showEdit = false;
+            return false;
+        }
+        var comment_id = data.content._id;
+        var newComment = {
+            body: data.content.body
+        };
+        this.comments[data.index] = data.content;
+        this.commentService.updateComment(comment_id, newComment).subscribe(function (data) {
+            console.log(data);
+        });
+        this.showEdit = false;
     };
     CommentsComponent.prototype.leaveComment = function () {
         var _this = this;
@@ -1129,26 +1169,112 @@ var CommentsComponent = (function () {
             userComment: username
         };
         this.commentService.createComment(newComment).subscribe(function (data) {
-            console.log(data);
             if (data.success) {
                 _this.comments.unshift(data.comment);
             }
         });
+        this.comment = '';
         this.show = false;
     };
     return CommentsComponent;
 }());
 CommentsComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
         selector: 'comments',
         template: __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_comments_service__["a" /* CommentsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_comments_service__["a" /* CommentsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_comments_service__["a" /* CommentsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_comments_service__["a" /* CommentsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _e || Object])
 ], CommentsComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=comments.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"editComment\">\n  <div class=\"form-group\">\n    <textarea required class=\"form-control\" [(ngModel)]=\"newbody\" aria-describedby=\"emailHelp\" placeholder=\"leave comment..\"></textarea>\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary btn-sm\" (click)=\"updateComment()\">Save</button>\n  <button type=\"submit\" class=\"btn btn-secondary btn-sm\" (click)=\"cancel()\">Cancel</button>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditCommentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EditCommentComponent = (function () {
+    function EditCommentComponent() {
+        this.editComment = [];
+        this.indexCommentEdit = 0;
+        this.changeComment = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.newbody = '';
+    }
+    EditCommentComponent.prototype.ngOnInit = function () {
+        this.newbody = this.editComment['body'];
+    };
+    EditCommentComponent.prototype.updateComment = function () {
+        this.editComment['body'] = this.newbody;
+        this.changeComment.emit({ cancel: false, index: this.indexCommentEdit, content: this.editComment });
+        this.editComment = [];
+    };
+    EditCommentComponent.prototype.cancel = function () {
+        this.changeComment.emit({ cancel: true, index: this.indexCommentEdit, content: this.editComment });
+    };
+    return EditCommentComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('comment'),
+    __metadata("design:type", Object)
+], EditCommentComponent.prototype, "editComment", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('index'),
+    __metadata("design:type", Number)
+], EditCommentComponent.prototype, "indexCommentEdit", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])('update'),
+    __metadata("design:type", Object)
+], EditCommentComponent.prototype, "changeComment", void 0);
+EditCommentComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'edit-comment',
+        template: __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], EditCommentComponent);
+
+//# sourceMappingURL=edit-comment.component.js.map
 
 /***/ }),
 
@@ -1218,12 +1344,11 @@ var EachPostComponent = (function () {
     EachPostComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap
-            .switchMap(function (params) { return _this.postService.getPostContent(params.get('post_id')); })
+            .switchMap(function (params) { return _this.postService.getPostContent(_this.post_id = params.get('post_id')); })
             .subscribe(function (data) {
             if (data.success) {
-                _this.post = data.post[0];
-                _this.post_id = data.post[0]._id;
-                document.getElementById('body-post').innerHTML = data.post[0].body;
+                _this.post = data.post;
+                document.getElementById('body-post').innerHTML = data.post.body;
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
@@ -1233,7 +1358,6 @@ var EachPostComponent = (function () {
     };
     EachPostComponent.prototype.deletePost = function (id) {
         var _this = this;
-        console.log(this.post['category_id']);
         this.postService.deletePost(id).subscribe(function (data) {
             if (data.success) {
                 _this.flashMessage.show(data.msg + " " + _this.post['title'], { cssClass: 'alert-success', timeout: 3000 });
@@ -1498,7 +1622,7 @@ var UserCreatedCategoryComponent = (function () {
         var _this = this;
         this.userService.getUserInfor(this.createUser).subscribe(function (data) {
             if (data.success) {
-                _this.user_info = data.user_info[0];
+                _this.user_info = data.user_info;
                 _this.user_info['created_date'] = _this.convertDateTime(_this.user_info['created_date']);
             }
             else {
@@ -1924,7 +2048,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/shop.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n  <section class=\"jumbotron text-center\">\n    <div class=\"container\">\n      <h1 class=\"jumbotron-heading\">ZeroToZ Shopping</h1>\n      <p class=\"lead text-muted\">I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\n      <p>\n        <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\n        <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\n      </p>\n    </div>\n  </section>\n\n  <div class=\"album text-muted\">\n    <div class=\"container\">\n\n      <div class=\"row\">\n        <div class=\"card\">\n          <img src=\"assets/images/pro1.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro2.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro3.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro4.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro5.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro6.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro7.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro8.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro9.png\" alt=\"Card image cap\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n      </div>\n\n    </div>\n  </div>\n"
+module.exports = "\n\n  <section class=\"jumbotron text-center\">\n    <div class=\"container\">\n      <h1 class=\"jumbotron-heading\">ZeroToZ Shopping</h1>\n      <p class=\"lead text-muted\">I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\n      <p>\n        <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\n        <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\n      </p>\n    </div>\n  </section>\n\n  <div class=\"album text-muted\">\n    <div class=\"container\">\n\n      <div class=\"row\">\n        <div class=\"card\">\n          <img src=\"assets/images/pro1.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro2.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro3.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro4.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro5.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro6.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro7.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro8.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro9.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n      </div>\n\n    </div>\n  </div>\n"
 
 /***/ }),
 
@@ -2024,7 +2148,6 @@ var UserInfoComponent = (function () {
             .switchMap(function (params) { return _this.userService.getUserInfor(params.get('user_id')); })
             .subscribe(function (data) {
             _this.user_info = data.user_info;
-            _this.user_info = _this.user_info[0];
         });
     };
     return UserInfoComponent;
@@ -2278,7 +2401,7 @@ var UserCreatedPostGuard = (function () {
         var author_id = '';
         return new Promise(function (resolve, reject) {
             _this.postService.getPostContent(post_id).subscribe(function (data) {
-                author_id = data.post[0].author_id;
+                author_id = data.post.author_id;
                 if (_this.userService.isUserCreatedPost(author_id)) {
                     resolve(true);
                 }
@@ -2445,6 +2568,26 @@ var CommentsService = (function () {
         return this.http.get('http://localhost:3000/api/comments/specific/' + post_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    CommentsService.prototype.deleteComment = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.delete('http://localhost:3000/api/comments/delete/' + id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CommentsService.prototype.updateComment = function (id, newComment) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.put('http://localhost:3000/api/comments/update/' + id, newComment, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CommentsService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
+    };
     return CommentsService;
 }());
 CommentsService = __decorate([
@@ -2557,15 +2700,23 @@ var PostsService = (function () {
     };
     PostsService.prototype.deletePost = function (id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.delete('http://localhost:3000/api/posts/delete/' + id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.updatePost = function (id, newPost) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.put('http://localhost:3000/api/posts/update/' + id, newPost, { headers: headers })
             .map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
     };
     return PostsService;
 }());
@@ -2720,6 +2871,17 @@ var UserService = (function () {
         if (this.isLoggedIn()) {
             var user = JSON.parse(localStorage.getItem('Zero_user'));
             if (user.roles.includes('admin')) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    };
+    UserService.prototype.isUserCreatedComment = function (user_id) {
+        if (this.isLoggedIn()) {
+            var user = JSON.parse(localStorage.getItem('Zero_user'));
+            if (user.username == user_id) {
                 return true;
             }
             else {

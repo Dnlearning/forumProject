@@ -76,5 +76,5 @@ module.exports.getAllUsers=(username,callback)=>{
 }
 
 module.exports.getUserInfoById=(user_id,callback)=>{
-    User.find({_id:user_id},{password:false},callback);
+    User.findOne({_id:user_id},{password:false},callback);
 }

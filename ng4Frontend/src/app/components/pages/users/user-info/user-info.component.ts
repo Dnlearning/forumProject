@@ -19,7 +19,6 @@ export class UserInfoComponent implements OnInit {
     .switchMap((params: ParamMap) => this.userService.getUserInfor(params.get('user_id')))
     .subscribe(data => {
       this.user_info=data.user_info;
-      this.user_info=this.user_info[0];
     });
   }
 
