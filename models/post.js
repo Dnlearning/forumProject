@@ -58,3 +58,7 @@ module.exports.deletePost=(id,callback)=>{
 module.exports.updatePost=(id,newPost,callback)=>{
     Post.findOneAndUpdate({_id:id},{$set:{title:newPost.title,body:newPost.body}},callback);
 }
+
+module.exports.howManyPosts=(user_id,callback)=>{
+    Post.find({author_id:user_id},{_id:true},callback);
+}

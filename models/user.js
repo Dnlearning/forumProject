@@ -30,6 +30,9 @@ const UserSchema=mongoose.Schema({
     created_date:{
         type:Date,
         default:Date.now()
+    },
+    imageUrl:{
+        type:String
     }
 });
 

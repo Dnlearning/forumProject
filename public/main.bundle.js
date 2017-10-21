@@ -212,12 +212,14 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__ = __webpack_require__("../../../../../src/app/components/not-found/not-found.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -288,7 +290,10 @@ var Routes = [
     },
     {
         path: 'shop', component: __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */]
-    }
+    },
+    {
+        path: "**", component: __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__["a" /* NotFoundComponent */]
+    },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -317,7 +322,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__components_pages_admin_protect_routers_protect_routers_component__["a" /* ProtectRoutersComponent */],
             __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
             __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */]
+            __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__["a" /* NotFoundComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__["a" /* BrowserModule */],
@@ -427,7 +433,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#chat-box{\r\n    overflow-y: hidden;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n.card{\r\n    width:300px;\r\n    overflow: hidden;\r\n}\r\n.card-body{\r\n    height: 200px; \r\n    overflow-y: auto;\r\n}\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.right{\r\n    text-align: right;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}\r\n\r\n.message{\r\n    float: left;\r\n    padding: 6px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid gray;\r\n    box-shadow: 1px 1px black;\r\n    border-radius: 5px;\r\n}\r\n.right{\r\n    float: right;\r\n    text-align: left;\r\n}\r\n.left{\r\n    float: left;\r\n    text-align: left;\r\n}\r\n.clearBoth{\r\n    clear: both;\r\n}\r\n.user{\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n}\r\n.userLeft{\r\n    float: left;\r\n    color: red;\r\n    margin-bottom: 10px;\r\n}", ""]);
+exports.push([module.i, "#chat-box{\r\n    overflow-y: hidden;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n.card{\r\n    width:300px;\r\n    overflow: hidden;\r\n}\r\n.card-body{\r\n    height: 200px; \r\n    overflow-y: auto;\r\n}\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.right{\r\n    text-align: right;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}\r\n\r\n.message{\r\n    float: left;\r\n    padding: 6px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid gray;\r\n    box-shadow: 1px 1px black;\r\n    border-radius: 5px;\r\n}\r\n.right{\r\n    float: right;\r\n    text-align: left;\r\n}\r\n.left{\r\n    float: left;\r\n    text-align: left;\r\n}\r\n.clearBoth{\r\n    clear: both;\r\n}\r\n.user{\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n}\r\n.userLeft{\r\n    float: left;\r\n    color: red;\r\n    margin-bottom: 10px;\r\n}\r\n.card{\r\n    margin: 0;\r\n}", ""]);
 
 // exports
 
@@ -613,6 +619,67 @@ NavbarTopComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=navbar-top.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/not-found/not-found.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/not-found/not-found.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" style=\"margin-top:80px;\">\n    <div class=\"card-panel red-text black darken-2 center\" style=\"border-radius:10px;box-shadow:0 0 20px white\">\n      <h1>Dont try to access something private!</h1>\n      <h4>I try to prevent some access!</h4>\n      <p>\n        <a routerLink=\"/\" class=\"btn large white black-text\">Go Back</a>\n      </p>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/not-found/not-found.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotFoundComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
+    }
+    NotFoundComponent.prototype.ngOnInit = function () {
+    };
+    return NotFoundComponent;
+}());
+NotFoundComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-not-found',
+        template: __webpack_require__("../../../../../src/app/components/not-found/not-found.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/not-found/not-found.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], NotFoundComponent);
+
+//# sourceMappingURL=not-found.component.js.map
 
 /***/ }),
 
@@ -1372,7 +1439,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "img{\r\n    width: 100%;\r\n}", ""]);
+exports.push([module.i, "img{\r\n    width: 100%;\r\n}\r\n.breadcrumb:before{\r\n    font-size: 1.25rem;\r\n}", ""]);
 
 // exports
 
@@ -1385,7 +1452,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/each-post/each-post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\" style=\"margin-top:80px\">\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn teal darken-3\" (click)=\"editPost(post._id)\" >Edit</button>\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn red darken-1\" (click)=\"deletePost(post._id)\">Delete</button>\n  <h2 class=\"page-header\">{{post.title}}</h2>\n  <div id=\"body-post\">\n    \n  </div>\n  <div class=\"time-created\">\n    <p><strong><i><u>Time Created:</u></i> </strong>{{post.created_date}}</p>\n    <p><strong><i><u>Author:</u></i> </strong>{{author}}</p>\n  </div>\n</div>\n\n<comments></comments>"
+module.exports = "\n\n<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"nav-wrapper center\">\n    <div class=\"col s12\">\n      <a routerLink='/' class=\"breadcrumb\">Forum</a>\n      <a [routerLink]=\"['/categories',post.category_id]\" class=\"breadcrumb\">{{categoryName}}</a>\n      <a routerLink='/' class=\"breadcrumb\">{{post.title}}</a>\n    </div>\n  </div>\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn teal darken-3\" (click)=\"editPost(post._id)\" >Edit</button>\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn red darken-1\" (click)=\"deletePost(post._id)\">Delete</button>\n  <h2 class=\"page-header\">{{post.title}}</h2>\n  <div id=\"body-post\">\n    \n  </div>\n  <div class=\"time-created\">\n    <p><strong><i><u>Time Created:</u></i> </strong>{{post.created_date}}</p>\n    <p><strong><i><u>Author:</u></i> </strong>{{author}}</p>\n  </div>\n</div>\n\n<comments></comments>"
 
 /***/ }),
 
@@ -1394,14 +1461,15 @@ module.exports = "\n<div class=\"container\" style=\"margin-top:80px\">\n  <butt
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EachPostComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1417,16 +1485,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EachPostComponent = (function () {
-    function EachPostComponent(route, postService, flashMessage, userService, router) {
+    function EachPostComponent(route, postService, flashMessage, userService, router, categoryService) {
         this.route = route;
         this.postService = postService;
         this.flashMessage = flashMessage;
         this.userService = userService;
         this.router = router;
+        this.categoryService = categoryService;
         this.post = {};
         this.post_id = '';
         this.author = '';
+        this.categoryName = '';
     }
     EachPostComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1438,9 +1509,14 @@ var EachPostComponent = (function () {
             .subscribe(function (data) {
             if (data.success) {
                 _this.post = data.post;
+                // console.log(this.post);
                 document.getElementById('body-post').innerHTML = data.post.body;
                 _this.userService.getUserInfor(_this.post['author_id']).subscribe(function (data) {
                     _this.author = data.user_info.username;
+                });
+                _this.categoryService.getContentCategory(_this.post['category_id']).subscribe(function (data) {
+                    _this.categoryName = data.category.category;
+                    // console.log(data);
                 });
             }
             else {
@@ -1466,15 +1542,15 @@ var EachPostComponent = (function () {
     return EachPostComponent;
 }());
 EachPostComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
         selector: 'app-each-post',
         template: __webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_posts_service__["a" /* PostsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_posts_service__["a" /* PostsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_categories_service__["a" /* CategoriesService */]) === "function" && _f || Object])
 ], EachPostComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=each-post.component.js.map
 
 /***/ }),
@@ -2230,7 +2306,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/users/user-info/user-info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:80px;\">\n    <div class=\"row\">\n      <div class=\"col s6\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <img src=\"https://lorempixel.com/400/200/\">\n  \n            <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n          </div>\n          <div class=\"card-action black\" style=\"font-size:20px;\">\n            <p>{{user_info.name}}</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col s4 offset-s2\">\n        <div *ngIf=\"user_info\">\n          <h2 class=\"page-header\">{{user_info.name}}</h2>\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\">Username: {{user_info.username}}</li>\n            <li class=\"list-group-item\">Email: {{user_info.email}}</li>\n            <li class=\"list-group-item\">Post: More</li>\n            <li class=\"list-group-item\">Comments: More</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  \n  <!-- <div *ngIf=\"user\">\n    <h2 class=\"page-header\">{{user.name}}</h2>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\">Username: {{user.username}}</li>\n      <li class=\"list-group-item\">email: {{user.email}}</li>\n    </ul>\n  </div> -->"
+module.exports = "<div class=\"container\" style=\"margin-top:80px;\">\n    <div class=\"row\">\n      <div class=\"col s6\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <img src=\"https://lorempixel.com/400/200/\">\n  \n            <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n          </div>\n          <div class=\"card-action black\" style=\"font-size:20px;\">\n            <p>{{user_info.name}}</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col s4 offset-s2\">\n        <div *ngIf=\"user_info\">\n          <h2 class=\"page-header\">{{user_info.name}}</h2>\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\">Username: {{user_info.username}}</li>\n            <li class=\"list-group-item\">Email: {{user_info.email}}</li>\n            <li class=\"list-group-item\">Post: {{howManyPosts}}</li>\n            <li class=\"list-group-item\">Comments: {{howManyComments}}</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  \n  <!-- <div *ngIf=\"user\">\n    <h2 class=\"page-header\">{{user.name}}</h2>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\">Username: {{user.username}}</li>\n      <li class=\"list-group-item\">email: {{user.email}}</li>\n    </ul>\n  </div> -->"
 
 /***/ }),
 
@@ -2239,11 +2315,13 @@ module.exports = "<div class=\"container\" style=\"margin-top:80px;\">\n    <div
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserInfoComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2257,32 +2335,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var UserInfoComponent = (function () {
-    function UserInfoComponent(route, userService) {
+    function UserInfoComponent(route, userService, postsService, commentsService) {
         this.route = route;
         this.userService = userService;
+        this.postsService = postsService;
+        this.commentsService = commentsService;
         this.user_info = [];
+        this.howManyPosts = 0;
+        this.howManyComments = 0;
+        this.user_id = '';
     }
     UserInfoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap
-            .switchMap(function (params) { return _this.userService.getUserInfor(params.get('user_id')); })
+            .switchMap(function (params) {
+            _this.user_id = params.get('user_id');
+            return _this.userService.getUserInfor(_this.user_id);
+        })
             .subscribe(function (data) {
             _this.user_info = data.user_info;
+            _this.postsService.getPostsUserCreated(_this.user_id).subscribe(function (data) {
+                _this.howManyPosts = data.length;
+            });
+            _this.commentsService.getCommentsUserCreated(_this.user_id).subscribe(function (data) {
+                _this.howManyComments = data.length;
+            });
         });
     };
     return UserInfoComponent;
 }());
 UserInfoComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
         selector: 'user-info',
         template: __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_posts_service__["a" /* PostsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_comments_service__["a" /* CommentsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_comments_service__["a" /* CommentsService */]) === "function" && _d || Object])
 ], UserInfoComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=user-info.component.js.map
 
 /***/ }),
@@ -2387,7 +2481,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/users/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s6\">\n      <div class=\"card\">\n        <div class=\"card-image\">\n          <img src=\"https://lorempixel.com/400/200/\">\n\n          <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n        </div>\n        <div class=\"card-action black\" style=\"font-size:20px;\">\n          <p>{{user.name}}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col s4 offset-s2\">\n      <div *ngIf=\"user\">\n        <h2 class=\"page-header\">{{user.name}}</h2>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\">Username: {{user.username}}</li>\n          <li class=\"list-group-item\">Email: {{user.email}}</li>\n          <li class=\"list-group-item\">Post: More</li>\n          <li class=\"list-group-item\">Comments: More</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- <div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">email: {{user.email}}</li>\n  </ul>\n</div> -->"
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s6\">\n      <div class=\"card\">\n        <div class=\"card-image\">\n          <img src=\"https://lorempixel.com/400/200/\">\n\n          <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n        </div>\n        <div class=\"card-action black\" style=\"font-size:20px;\">\n          <p>{{user.name}}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col s4 offset-s2\">\n      <div *ngIf=\"user\">\n        <h2 class=\"page-header\">{{user.name}}</h2>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\">Username: {{user.username}}</li>\n          <li class=\"list-group-item\">Email: {{user.email}}</li>\n          <li class=\"list-group-item\">Post: {{howmanyPosts}}</li>\n          <li class=\"list-group-item\">Comments: {{howmanyComments}}</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- <div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">email: {{user.email}}</li>\n  </ul>\n</div> -->"
 
 /***/ }),
 
@@ -2396,9 +2490,15 @@ module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <div cl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_combineLatest__ = __webpack_require__("../../../../rxjs/add/observable/combineLatest.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_combineLatest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_combineLatest__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2411,33 +2511,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 var ProfileComponent = (function () {
-    function ProfileComponent(userService, route) {
+    function ProfileComponent(userService, postService, commentService, route) {
         this.userService = userService;
+        this.postService = postService;
+        this.commentService = commentService;
         this.route = route;
+        this.user = {};
+        this.howmanyPosts = 0;
+        this.howmanyComments = 0;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getProfile()
-            .subscribe(function (profile) {
-            _this.user = profile.user;
+        var user_id = JSON.parse(localStorage.getItem('Zero_user')).id;
+        console.log(user_id);
+        __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].combineLatest([
+            this.userService.getProfile(),
+            this.postService.getPostsUserCreated(user_id),
+            this.commentService.getCommentsUserCreated(user_id)
+        ])
+            .subscribe(function (data) {
+            _this.user = data[0].user;
+            _this.howmanyPosts = data[1].length;
+            _this.howmanyComments = data[2].length;
         }, function (err) {
             console.log(err);
-            return false;
         });
     };
     return ProfileComponent;
 }());
 ProfileComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
         selector: 'app-profile',
         template: __webpack_require__("../../../../../src/app/components/users/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/users/profile/profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_posts_service__["a" /* PostsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_comments_service__["a" /* CommentsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_comments_service__["a" /* CommentsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], ProfileComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=profile.component.js.map
 
 /***/ }),
@@ -2713,6 +2829,12 @@ var CommentsService = (function () {
         return this.http.put('http://localhost:3000/api/comments/update/' + id, newComment, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    CommentsService.prototype.getCommentsUserCreated = function (user_id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.get('http://localhost:3000/api/comments/howmany/' + user_id, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     CommentsService.prototype.loadToken = function () {
         var token = localStorage.getItem('Zero_token');
         this.userToken = token;
@@ -2855,6 +2977,12 @@ var PostsService = (function () {
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.put('http://localhost:3000/api/posts/update/' + id, newPost, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.getPostsUserCreated = function (user_id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.get('http://localhost:3000/api/posts/howmany/' + user_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.loadToken = function () {

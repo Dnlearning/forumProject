@@ -35,6 +35,7 @@ import { EditPostComponent } from './components/pages/admin/edit-post/edit-post.
 import { CommentsComponent } from './components/pages/each-post/comments/comments.component';
 import { ShopComponent } from './components/pages/shop/shop.component';
 import { EditCommentComponent } from './components/pages/each-post/comments/edit-comment/edit-comment.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const Routes=[
   {
@@ -69,7 +70,11 @@ const Routes=[
   },
   {
     path:'shop',component: ShopComponent
-  }
+  },
+  {
+    path:"**", component:NotFoundComponent
+  },
+  
 ];
 
 
@@ -94,7 +99,8 @@ const Routes=[
     ProtectRoutersComponent,
     CommentsComponent,
     ShopComponent,
-    EditCommentComponent
+    EditCommentComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

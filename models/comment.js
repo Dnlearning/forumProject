@@ -42,3 +42,7 @@ module.exports.getContentCommentByid=(id,callback)=>{
 module.exports.updateComment=(id,newComment, callback)=>{
     Comment.findOneAndUpdate({_id:id},{$set:{body:newComment.body}},callback);
 }
+
+module.exports.howManyComments=(user_id,callback)=>{
+    Comment.find({author_id:user_id},{_id:true},callback);
+}

@@ -1,5 +1,13 @@
 
+
 <div class="container" style="margin-top:80px">
+  <div class="nav-wrapper center">
+    <div class="col s12">
+      <a routerLink='/' class="breadcrumb">Forum</a>
+      <a [routerLink]="['/categories',post.category_id]" class="breadcrumb">{{categoryName}}</a>
+      <a routerLink='/' class="breadcrumb">{{post.title}}</a>
+    </div>
+  </div>
   <button *ngIf="userService.isUserCreatedPost(post['author_id'])" type="button" class="btn teal darken-3" (click)="editPost(post._id)" >Edit</button>
   <button *ngIf="userService.isAdmin()" type="button" class="btn red darken-1" (click)="deletePost(post._id)">Delete</button>
   <h2 class="page-header">{{post.title}}</h2>

@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n     font-family: 'Roboto', sans-serif;\n     font-size: 100%;\n     background-color: #362929;\n     color: white;\n     cursor: default;\n}\n.ngx-pagination{\n    font-size: 30px;\n    font-weight: 700;\n}\n\n.alert{\n    width: 100%;\n    margin: 0 auto;\n    padding: 1px;\n    border-radius: 5px;\n    text-align: center;\n    font-size: 1em;\n}\n\n.alert-success{\n    color: green;\n    background-color: #00e676;\n    margin-bottom: 20px;\n}\n.alert-danger{\n    color: white;\n    background-color: #f50057;\n    margin-bottom: 20px;\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n     font-family: 'Roboto', sans-serif;\n     font-size: 100%;\n     background-color: #362929;\n     color: white;\n     cursor: default;\n}\n.ngx-pagination{\n    font-size: 30px;\n    font-weight: 700;\n}\n\n.alert{\n    width: 100%;\n    margin: 0 auto;\n    padding: 1px;\n    border-radius: 5px;\n    text-align: center;\n    font-size: 1em;\n}\n\n.alert-success{\n    color: green;\n    background-color: #00e676;\n    margin-bottom: 20px;\n}\n.alert-danger{\n    color: white;\n    background-color: #f50057;\n    margin-bottom: 20px;\n}\n.card{\n    margin: 0;\n}", ""]);
 
 // exports
 

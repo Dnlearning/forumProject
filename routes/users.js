@@ -5,13 +5,20 @@ const passport=require('passport');
 const jwt=require('jsonwebtoken');
 const config=require('../config/database');
 
+
+router.get('/',(req,res,next)=>{
+    res.json({invalid:'true'});
+})
+
+
 router.post('/register',(req,res,next)=>{
     let newUser=new User({
         name:req.body.name,
         email:req.body.email,
         username:req.body.username,
         password:req.body.password,
-        address:req.body.address
+        address:req.body.address,
+        imageUrl:""
     })
     User.getUserByUsernameOrEmail(newUser,(err,result)=>{
         if(result) return res.json({success:false, msg:'username or email has already existed!'});
@@ -81,9 +88,6 @@ router.get('/:value',(req,res,next)=>{
 
 
 
-router.get('/',(req,res,next)=>{
-    res.json({invalid:'true'});
-})
 
 router.get('/infos/:user_id',(req,res,next)=>{
     let user_id=req.params.user_id;

@@ -49,5 +49,13 @@ router.put('/update/:id',passport.authenticate('jwt',{session:false}),(req,res,n
     })    
 })
 
+router.get('/howmany/:user_id',(req,res,next)=>{
+    let user_id=req.params.user_id;
+    Comment.howManyComments(user_id,(err,result)=>{
+        if(err) {return res.json({success:false, msg:'failed to get howmany comment of that user'})};
+        res.json({success:true, length:result.length});
+    })
+});
+
 
 module.exports=router;

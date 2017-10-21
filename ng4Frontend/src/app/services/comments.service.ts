@@ -43,7 +43,12 @@ export class CommentsService {
       .map(res=>res.json());
   }
 
-
+  getCommentsUserCreated(user_id){
+    let headers=new Headers();
+    headers.append('Content-type','application/json');
+    return this.http.get('http://localhost:3000/api/comments/howmany/'+user_id,{headers:headers})
+      .map(res=>res.json());
+  }
 
   loadToken(){
     const token=localStorage.getItem('Zero_token');

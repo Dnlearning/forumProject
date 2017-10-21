@@ -59,13 +59,17 @@ export class PostsService {
     let headers=new Headers();
     this.loadToken();
     headers.append('Authorization',this.userToken);
-    
     headers.append('Content-type','application/json');
     return this.http.put('http://localhost:3000/api/posts/update/'+id,newPost,{headers:headers})
       .map(res=>res.json());
   }
 
-
+  getPostsUserCreated(user_id){
+    let headers=new Headers();
+    headers.append('Content-type','application/json');
+    return this.http.get('http://localhost:3000/api/posts/howmany/'+user_id,{headers:headers})
+      .map(res=>res.json());
+  }
 
   loadToken(){
     const token=localStorage.getItem('Zero_token');
