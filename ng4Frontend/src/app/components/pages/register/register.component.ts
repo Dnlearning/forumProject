@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs/Subscription';
 import { UserService } from './../../../services/user.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { CannotContainSpace } from '../../../common/nospace.validators';
 import { usernameTaken } from '../../../common/usernameRegister.validators';
@@ -17,9 +18,10 @@ import {Router} from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,OnDestroy {
   registerForm;
   enableR:boolean=false;
+  registerSubscription:Subscription;
   constructor(
     fb:FormBuilder,
     private userService:UserService,
@@ -43,7 +45,7 @@ export class RegisterComponent implements OnInit {
   onRegister(rf){
     if(!rf.valid){return false};
     this.enableR=true;
-    this.userService.registerUser(rf.value)
+    this.registerSubscription=this.userService.registerUser(rf.value)
       .subscribe(data=>{
         if(data.success){
           this.flashMsg.show('Register successfully! You are now can login',{ cssClass: 'alert-success',timeout: 3000})
@@ -54,7 +56,11 @@ export class RegisterComponent implements OnInit {
         }
       })
   }
-
+  ngOnDestroy(){
+    if(this.registerSubscription){
+      this.registerSubscription.unsubscribe()      
+    }
+  }
 
   get name(){
     return this.registerForm.get('name');

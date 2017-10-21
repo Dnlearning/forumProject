@@ -1,6 +1,6 @@
+import { UploadImageService } from './services/upload-image.service';
 import { CommentsService } from './services/comments.service';
 import { UserCreatedPostGuard } from './guards/user-created-post.guard';
-import { ProtectRoutersComponent } from './components/pages/admin/protect-routers/protect-routers.component';
 import { AdminGuard } from './guards/admin.guard';
 import { PostsService } from './services/posts.service';
 import { PostsComponent } from './components/pages/posts/posts.component';
@@ -36,6 +36,7 @@ import { CommentsComponent } from './components/pages/each-post/comments/comment
 import { ShopComponent } from './components/pages/shop/shop.component';
 import { EditCommentComponent } from './components/pages/each-post/comments/edit-comment/edit-comment.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 const Routes=[
   {
@@ -96,7 +97,6 @@ const Routes=[
     PostComponent,
     EachPostComponent,
     EditPostComponent,
-    ProtectRoutersComponent,
     CommentsComponent,
     ShopComponent,
     EditCommentComponent,
@@ -110,9 +110,10 @@ const Routes=[
     HttpModule,
     FlashMessagesModule,
     NgxPaginationModule,
-    CKEditorModule
+    CKEditorModule,
+    
   ],
-  providers: [CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
+  providers: [UploadImageService,CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

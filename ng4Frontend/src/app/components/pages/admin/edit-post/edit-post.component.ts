@@ -1,9 +1,10 @@
+import { Subscription } from 'rxjs/Subscription';
 
 import { CategoriesService } from './../../../../services/categories.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PostsService } from './../../../../services/posts.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -11,12 +12,13 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: './edit-post.component.html',
   styleUrls: ['./edit-post.component.css']
 })
-export class EditPostComponent implements OnInit {
+export class EditPostComponent implements OnInit,OnDestroy {
   ckeditorContent:string='';
   titlePost:string='';
   postId:string='';
   author_id:string='';
   category_id:string='';
+  postSubscription:Subscription;
   constructor(
     private flashMessage:FlashMessagesService,
     private postsService:PostsService,
@@ -38,6 +40,11 @@ export class EditPostComponent implements OnInit {
     },(err)=>console.log(err));
     
   }
+  ngOnDestroy(){
+    if(this.postSubscription){
+      this.postSubscription.unsubscribe();      
+    }
+  }
 
   updatePost(){
     if(!this.titlePost|| !this.ckeditorContent){
@@ -51,7 +58,7 @@ export class EditPostComponent implements OnInit {
       category_id:this.category_id
     }
     // console.log(this.postId);
-    this.postsService.updatePost(this.postId,newPost).subscribe(data=>{
+    this.postSubscription=this.postsService.updatePost(this.postId,newPost).subscribe(data=>{
       if(data.success){
         this.flashMessage.show('updated Post ' + this.titlePost, {cssClass:'alert alert-success',timeout:2000});
         this.router.navigate(['/categories/'+this.category_id]);

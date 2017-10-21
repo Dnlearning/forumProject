@@ -32,7 +32,10 @@ export class CommentsComponent implements OnInit {
   ngOnInit() {
     this.itemsPerPage=5;
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.commentService.getAllCommentsWithSpecificPostId(this.postId=params.get('post_id')))
+    .switchMap((params: ParamMap) =>{ 
+      this.postId=params.get('post_id');
+      return this.commentService.getAllCommentsWithSpecificPostId(this.postId);
+    })
     .subscribe(data=>{
       if(data.success){
         this.comments=data.comments;

@@ -1,19 +1,23 @@
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 import { CommentsService } from './../../../../services/comments.service';
 import { PostsService } from './../../../../services/posts.service';
 import { UserService } from './../../../../services/user.service';
 import { ActivatedRoute ,ParamMap } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/combineLatest';
 @Component({
   selector: 'user-info',
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.css']
 })
-export class UserInfoComponent implements OnInit {
+export class UserInfoComponent implements OnInit,OnDestroy {
   user_info=[];
   howManyPosts:number=0;
   howManyComments:number=0;
   user_id:string='';
+  infoSubscription:Subscription;
   constructor(
     private route:ActivatedRoute,
     private userService:UserService,
@@ -29,13 +33,18 @@ export class UserInfoComponent implements OnInit {
     })
     .subscribe(data => {
       this.user_info=data.user_info;
-      this.postsService.getPostsUserCreated(this.user_id).subscribe(data=>{
-        this.howManyPosts=data.length;
-      });
-      this.commentsService.getCommentsUserCreated(this.user_id).subscribe(data=>{
-        this.howManyComments=data.length;
+      console.log(this.user_info);
+      this.infoSubscription=Observable.combineLatest([
+        this.postsService.getPostsUserCreated(this.user_id),
+        this.commentsService.getCommentsUserCreated(this.user_id)
+      ])
+      .subscribe(data=>{
+        this.howManyPosts=data[0].length;
+        this.howManyComments=data[1].length;
       })
     });
   }
-
+  ngOnDestroy(){
+    this.infoSubscription.unsubscribe();
+  }
 }

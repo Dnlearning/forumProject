@@ -1,22 +1,27 @@
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 import { SharedService } from './../../../services/shared.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { UserService } from './../../../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { CannotContainSpace } from '../../../common/nospace.validators';
 import { incorrectMailFormat } from '../../../common/formatemail.validators';
+
+import 'rxjs/add/observable/combineLatest';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
 
   enableR:boolean=false;
   nameLogin:string;
   status:boolean;
+  shareSubscription:Subscription;
   form=new FormGroup({
     username: new FormControl('',[Validators.required, CannotContainSpace]),
     password: new FormControl('',Validators.required)
@@ -32,11 +37,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     //check infos from local
-  
-    this.sharedService.currentUsername.subscribe(username=>this.nameLogin=username);
-    this.sharedService.currentStatusLogin.subscribe(status=>this.status=status);
+    this.shareSubscription=Observable.combineLatest([
+      this.sharedService.currentUsername,
+      this.sharedService.currentStatusLogin
+    ])
+    .subscribe(data=>{
+      this.nameLogin=data[0];
+      this.status=Boolean(data[1]);
+    })
   }
-
+  ngOnDestroy(){
+    this.shareSubscription.unsubscribe();
+  }
   onSubmit(rf){
     this.enableR=true;
     this.userService.authenticateUser(rf.value)

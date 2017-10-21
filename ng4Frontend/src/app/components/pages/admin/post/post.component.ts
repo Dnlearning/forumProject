@@ -1,8 +1,9 @@
+import { Subscription } from 'rxjs/Subscription';
 import { CategoriesService } from './../../../../services/categories.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PostsService } from './../../../../services/posts.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -10,11 +11,12 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit,OnDestroy {
   ckeditorContent:string='';
   titlePost:string='';
   categoryId:string='';
   category:Object={};
+  createPostSubscription:Subscription;
   constructor(
     private flashMessage:FlashMessagesService,
     private postsService:PostsService,
@@ -27,16 +29,21 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.categoryId=params.get('category_id'))
-    .subscribe(data=>{},(err)=>console.log(err));
-    
-    this.categoryService.getContentCategory(this.categoryId).subscribe(data=>{
+    .switchMap((params: ParamMap) => {
+      this.categoryId=params.get('category_id');
+      return this.categoryService.getContentCategory(this.categoryId)
+    })
+    .subscribe(data=>{
       if(data.success){
         this.category=data.category;
       }
-    })
+    },(err)=>console.log(err));
   }
-
+  ngOnDestroy(){
+    if(this.createPostSubscription){
+      this.createPostSubscription.unsubscribe();      
+    }
+  }
   createPost(){
     if(this.titlePost==='' || this.ckeditorContent===''){
       this.flashMessage.show('Pls fill all fields',{cssClass:'alert-danger',timeout:3000});
@@ -52,7 +59,7 @@ export class PostComponent implements OnInit {
       author_id:author_id,
       category_id:this.categoryId
     }
-    this.postsService.createPost(newPost).subscribe(data=>{
+    this.createPostSubscription=this.postsService.createPost(newPost).subscribe(data=>{
       if(data.success){
         this.flashMessage.show('Created Post Successfully!',{cssClass:'alert-success',timeout:3000});
         this.titlePost='';

@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="col s4 offset-s2">
+    <div class="col s5 offset-s1">
       <div *ngIf="user">
         <h2 class="page-header">{{user.name}}</h2>
         <ul class="list-group">
@@ -21,7 +21,21 @@
           <li class="list-group-item">Post: {{howmanyPosts}}</li>
           <li class="list-group-item">Comments: {{howmanyComments}}</li>
         </ul>
+        <form enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey darken-2">
+              <span>Upload</span>
+              <input type="file" (change)="onChange($event)" >
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload your profile Image">
+            </div>
+          </div>
+          <button class="btn" (click)="upload()">Submit</button>
+        </form>
+
       </div>
+
     </div>
   </div>
 </div>
