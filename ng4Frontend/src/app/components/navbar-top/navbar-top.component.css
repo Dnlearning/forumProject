@@ -1,4 +1,32 @@
 .logo{
     width:45px;
-    margin-right: 10px;
+    position: relative;
+    top: 10px;
+}
+.nav-wrapper{
+    background-color: #212121;
+    padding: 0 20px;
+}
+nav{
+    height: 80px;
+    line-height: 80px;
+}
+nav li a{
+    font-size: 1.2rem;
+    color: gray;
+}
+nav ul li.active {
+
+    border-bottom: 2px solid white;
+}
+nav ul li.active a{
+    color: white;
+}
+
+@media only screen and (max-width: 992px){
+    nav .brand-logo {
+        left: 3%;
+        -webkit-transform: translateX(-0%);
+        transform: translateX(-0%); 
+    }
 }

@@ -1,3 +1,4 @@
+import { CategoriesService } from './../../../services/categories.service';
 import { UserService } from './../../../services/user.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { PostsService } from './../../../services/posts.service';
@@ -14,29 +15,36 @@ export class PostsComponent implements OnInit {
   posts=[];
   p:number=1;
   itemsPerPage:number=5;
+  category:string='';
   constructor(
     private route:ActivatedRoute,
     private postsService: PostsService,
     private flashMessage:FlashMessagesService,
     private userService:UserService,
-    private router:Router
+    private router:Router,
+    private categoryService:CategoriesService
   ) {
     
    }
 
   ngOnInit() {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.categoryId=params.get('category_id'))
-    .subscribe(data=>{},(err)=>console.log(err));
-
-    this.postsService.getAllPostsSpecificCategory(this.categoryId).subscribe(data=>{
+    .switchMap((params: ParamMap) => {
+      this.categoryId=params.get('category_id');
+      return this.postsService.getAllPostsSpecificCategory(this.categoryId);
+    })
+    .subscribe(data=>{
       if(data.success){
         this.posts=data.posts;
       }else{
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:3000});
         return false;
       }
-    });
+    },(err)=>console.log(err));
+
+    this.categoryService.getContentCategory(this.categoryId).subscribe(data=>{
+      this.category=data.category;
+    })
   }
 
   getFilterValue(value){

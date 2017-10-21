@@ -36,3 +36,11 @@
     border-radius: 0.25rem;
     width:100%;
 }
+
+label{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.cke_editable{
+    font-size: 20px;
+}

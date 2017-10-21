@@ -4,6 +4,8 @@ import { CommentsService } from './../../../../services/comments.service';
 import { UserService } from './../../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
+
+declare var $ :any;
 @Component({
   selector: 'comments',
   templateUrl: './comments.component.html',
@@ -41,6 +43,7 @@ export class CommentsComponent implements OnInit {
   })
   }
   deleteComment(comment){
+    this.showEdit=false;
     let index=this.comments.indexOf(comment);
     this.comments.splice(index,1);
     this.commentService.deleteComment(comment._id).subscribe(null,(error:Response)=>{
@@ -52,11 +55,12 @@ export class CommentsComponent implements OnInit {
   editComment(comment){
     this.commentEdit=comment;
     this.indexCommentEdit=this.comments.indexOf(comment);  
-    this.showEdit=(this.showEdit)?false:true; 
+    this.showEdit=(this.showEdit)?false:true;
   }
 
   showFormComment(){
     this.show=(this.show)?false:true;
+    this.showEdit=false;
   }
 
   updateComment(data){
@@ -79,6 +83,7 @@ export class CommentsComponent implements OnInit {
     if(!this.userService.isLoggedIn()){
       return false;
     }
+    this.showEdit=false;
     let user=JSON.parse(localStorage.getItem('Zero_user'));
     let author_id=user.id;
     let username=user.username;

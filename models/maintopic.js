@@ -6,6 +6,10 @@ const MainTopicSchema=mongoose.Schema({
     topic:{
         type:String,
         required:true
+    },
+    create_user:{
+        type:String,
+        required:true
     }
 });
 

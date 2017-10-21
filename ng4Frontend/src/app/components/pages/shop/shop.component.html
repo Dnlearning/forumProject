@@ -1,59 +1,41 @@
 
+<div class="container center" style="margin-top:80px;">
+  <div class="card-panel teal lighten-2">
+    <h2>ZeroToZ Shopping</h2>
+    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>
+    <p>
+      <a routerLink='/' class="btn btn-primary">About Me!</a>
+      <a routerLink='/' class="btn btn-secondary">Back Home</a>
+    </p>
+  </div>
+</div>
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">ZeroToZ Shopping</h1>
-      <p class="lead text-muted">I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>
-      <p>
-        <a routerLink='/' class="btn btn-primary">About Me!</a>
-        <a routerLink='/' class="btn btn-secondary">Back Home</a>
-      </p>
-    </div>
-  </section>
 
-  <div class="album text-muted">
-    <div class="container">
-
-      <div class="row">
-        <div class="card">
-          <img src="assets/images/pro1.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<div class="container">
+  <div class="row">
+    <div class="col s4" *ngFor="let product of products; let i=index">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{product.src}}" alt="images product">
+          <span class="card-title">{{i+1}} {{product.name}}</span>
         </div>
-        <div class="card">
-          <img src="assets/images/pro2.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card">
-          <img src="assets/images/pro3.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card">
-          <img src="assets/images/pro4.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card">
-          <img src="assets/images/pro5.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card">
-          <img src="assets/images/pro6.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-
-        <div class="card">
-          <img src="assets/images/pro7.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card">
-          <img src="assets/images/pro8.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card">
-          <img src="assets/images/pro9.png" alt="product">
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div class="card-action">
+          <a *ngIf="carts.length==0" class="btn" style="display:block" (click)="addCart(product)">Add to cart</a>
+          <div *ngIf="carts.length!=0">
+            <div class="row">
+              <div class="col s3">
+                  <a class="btn" style="float:left" (click)="takeValue(product)">-</a>
+              </div>
+              <div class="col s6 center">
+                  <a>1 in cart</a>
+              </div>
+              <div class="col s3">
+                  <a class="btn" style="float:left" (click)="takeValue(product)">+</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
+</div>

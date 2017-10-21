@@ -36,3 +36,7 @@
     border-radius: 0.25rem;
     width:100%;
 }
+
+label {
+    font-size: 1.3rem;
+}

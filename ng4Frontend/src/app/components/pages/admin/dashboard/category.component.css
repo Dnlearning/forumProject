@@ -36,3 +36,43 @@
     border-radius: 0.25rem;
     width:100%;
 }
+.dashboard{
+    width:100%;
+    height: 100%;
+    position: fixed;
+}
+.sideMenu{
+    height: 100%;
+    background-color: #433D3D; 
+}
+.sideMenu .control{
+    font-size: 25px;
+    padding-left: 10px;
+}
+.control p a{
+    color:gray;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.active{
+    color: white !important;
+}
+.filter{
+    color: black;
+    font-size: 1.25rem;
+}
+.card-action{
+    color: black;
+    font-size: 1.25rem;
+}
+select{
+    color: black;
+}
+label{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.form-group{
+    padding:10px 0;
+}

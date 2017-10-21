@@ -1,9 +1,11 @@
-<div class="jumbotron">
-  <h1 class="display-3">{{topic.topic}}</h1>
-  <ul class="list-group" *ngFor="let category of categories">
-    <li class="list-group-item">
-      <a class="btn btn-primary btn-lg" [routerLink]="['/categories',category._id]" >{{category.category}}</a>
-      <user-created-category style="float:right" [createUser]="category.create_user"></user-created-category>
-    </li>
-  </ul>
+<div class="row">
+  <div class="col s12">
+    <div class="header">{{topic.topic}}</div>            
+    <ul class="userList">
+        <li *ngFor="let category of categories" class="text-left">
+          <a style="font-size:20px;" [routerLink]="['/categories',category._id]"><strong class="pink-text" ><i>{{category.category}}</i></strong></a> 
+          <user-created-category style="float:right" [createUser]="category.create_user"></user-created-category>
+        </li>            
+      </ul>
+  </div>
 </div>

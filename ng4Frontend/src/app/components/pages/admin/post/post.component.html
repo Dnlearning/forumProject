@@ -1,21 +1,24 @@
-<h1><strong>Category Name:</strong> {{category.category}}</h1>
-
-<div class="form-group">
-    <label for="exampleInputPassword1">Title Post</label>
-    <input type="text" class="form-control" [(ngModel)]="titlePost" placeholder="Your Name...">
+<div class="container">
+  <h1><strong>Category Name:</strong> {{category.category}}</h1>
+  
+  <div class="form-group">
+      <label for="exampleInputPassword1">Title Post</label>
+      <input type="text" class="form-control" [(ngModel)]="titlePost" placeholder="Your Post Name...">
+  </div>
+  
+  
+  
+  <ckeditor
+  [(ngModel)]="ckeditorContent">
+    <ckbutton [name]="'saveButton'"
+      [command]="'saveCmd'"
+      (click)="save($event)"
+      [icon]="'save.png'"
+      [label]="'Save Document'"
+      [toolbar]="'clipboard,1'">
+    </ckbutton>
+  </ckeditor>
+  
+  <button class="btn" style="margin-top:20px;" (click)="createPost()">Submit</button>
 </div>
 
-
-
-<ckeditor
-[(ngModel)]="ckeditorContent">
-  <ckbutton [name]="'saveButton'"
-    [command]="'saveCmd'"
-    (click)="save($event)"
-    [icon]="'save.png'"
-    [label]="'Save Document'"
-    [toolbar]="'clipboard,1'">
-  </ckbutton>
-</ckeditor>
-
-<button class="btn btn-primary mt-4" (click)="createPost()">Submit</button>

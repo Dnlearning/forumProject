@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
   p:number=1;
   itemsPerPage:number=5;
   maintopics;
-  mode:string="posts";
   categories=[];
   posts=[];
+  mode:string='newpost';
   highestViewsPost=[];
   constructor(
     private userService:UserService, 
@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
   }
 
   getFilterValue(value){
+    console.log(value);
     this.itemsPerPage=value;
   }
 

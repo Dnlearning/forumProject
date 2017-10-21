@@ -40,7 +40,10 @@ export class EditPostComponent implements OnInit {
   }
 
   updatePost(){
-
+    if(!this.titlePost|| !this.ckeditorContent){
+      this.flashMessage.show('pls fill all fields!' + this.titlePost, {cssClass:'alert alert-success',timeout:2000});
+      return false;
+    }
     let newPost={
       title:this.titlePost,
       body:this.ckeditorContent,

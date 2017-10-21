@@ -1,0 +1,90 @@
+
+<div class="row dashboard">
+  <div class="col s3 sideMenu valign-wrapper">
+    <div class="control">
+      <p><a [class.active]="switch=='user'" (click)="switch='user'">Add/Change Admin User</a></p>
+      <p><a [class.active]="switch=='create'" (click)="switch='create'">Create Maintopic/Category</a></p>
+    </div>
+  </div>
+  <div class="col s9" style="padding:50px;">
+      <div *ngIf="switch=='user'">
+        <div>
+          <span class="card-panel white-text grey darken-3 center" style="width:40%; font-size:1.25rem; border-radius:10px; box-shadow:0 0 20px;">Only User Admin can access this route</span> 
+          <span class="filter" style="float:right">
+            <select class="browser-default" #selected (change)="getFilterValue(selected.value)">
+              <option value="" disabled>Choose Username</option>
+              <option *ngFor="let user of allUsers" [value]="user._id">{{user.username}}</option>
+            </select>
+          </span>
+        </div>
+        <div *ngIf="showInfo" class="content" style="clear:both; margin-top:100px">
+          <div class="col s4 offset-s2">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/images/pro1.png">
+                <span class="card-title">{{userInfo.username}}</span>
+              </div>
+              <div class="card-action">
+                <p>Name: {{userInfo.username}}</p>
+                <p>Created: {{userInfo.created_date}}</p>
+              </div>
+            </div>
+          </div> 
+          <div class="col s5 offset-s1">
+            <div class="desc">
+              <p><strong>Posts:</strong> Later</p>
+              <p><strong>Comments:</strong> Later</p>
+              <p><strong>Rate(*):</strong> Later</p>
+              <p><strong>Roles:</strong> <span class="chip blue" *ngFor="let role of userInfo.roles"> {{role}} </span> </p>
+              <button *ngIf="!userInfo.roles.includes('admin')" class="btn blue darken-3" style="margin-top:20px;" (click)="setAdmin()">Set Admin</button>
+              <button *ngIf="userInfo.roles.includes('admin')" class="btn red darken-3" style="margin-top:20px;" (click)="removeAdmin()">Remove Admin</button>
+            </div>
+          </div> 
+        </div>  
+      </div>
+      <div *ngIf="switch=='create'">
+        <div>
+          <span class="card-panel white-text grey darken-3 center" style="width:40%; font-size:1.25rem; border-radius:10px; box-shadow:0 0 20px;">Only User Admin can access this route</span> 
+        </div>
+        <div class="content" style="clear:both; margin-top:100px">
+            <div class="col s4 offset-s2">
+                <h4>Create Main Topic</h4>
+                <form [formGroup]="createMaintopicForm" (ngSubmit)="createMainTopic(createMaintopicForm)">
+                  
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Main Topic</label>
+                      <input type="text" class="form-control" formControlName="maintopic" placeholder="Maintopic Name..">
+                      <div class="alert alert-danger" *ngIf="maintopic.errors && maintopic.touched">
+                        <div *ngIf="maintopic.errors.required">Maintopic Name is Required.</div>
+                      </div>
+                    </div>
+                    <button type="submit" [disabled]="createMaintopicForm.invalid" class="btn">Submit</button>
+                  </form>
+            </div> 
+            <div class="col s4 offset-s1">
+              <h4>Create Category</h4>
+              <form [formGroup]="createCategoryForm" (ngSubmit)="createCategory(createCategoryForm)">
+                  <div class="form-group selectForm">
+                    <label for="exampleInputEmail1">Main Topic</label>
+                    <select class="browser-default" style="display:block" formControlName="topic_id" >
+                      <option value="" disabled>Choose Maintopic Name</option>
+                      <option *ngFor="let topic of mainTopics" [value]="topic._id">{{topic.topic}}</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="topic_id.errors && topic_id.touched">
+                      <div *ngIf="topic_id.errors.required">Main Topic is Required.</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Category Name</label>
+                    <input type="text" class="form-control" formControlName="category" placeholder="Category Name..">
+                    <div class="alert alert-danger" *ngIf="category.errors && category.touched">
+                      <div *ngIf="category.errors.required">Category Name is Required.</div>
+                    </div>
+                  </div>
+                  <button type="submit" [disabled]="createCategoryForm.invalid" class="btn btn-primary">Submit</button>
+                </form>
+            </div> 
+          </div>  
+      </div>
+  </div>
+</div>

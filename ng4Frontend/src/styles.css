@@ -1,6 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
+
+body{
+     font-family: 'Roboto', sans-serif;
+     font-size: 100%;
+     background-color: #362929;
+     color: white;
+     cursor: default;
+}
+.ngx-pagination{
+    font-size: 30px;
+    font-weight: 700;
+}
 
 .alert{
-    padding :10px 12px 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.alert-success{
+    color: green;
+    background-color: #00e676;
+    margin-bottom: 20px;
+}
+.alert-danger{
+    color: white;
+    background-color: #f50057;
+    margin-bottom: 20px;
 }

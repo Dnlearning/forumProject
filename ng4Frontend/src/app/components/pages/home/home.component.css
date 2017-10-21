@@ -13,6 +13,7 @@ body {
 
 .filter{
     float: right;
+    font-size: 20px;
 }
 
 
@@ -33,3 +34,49 @@ body {
     padding: 20px;
     margin-bottom: 40px;
 }
+.row .col.s6{
+    left: 25%;
+}
+.card-panel{
+    border-radius: 10px;
+    background-color: #433D3D;
+    color: #A7A7A7; 
+}
+.userInfo{
+    padding-top: 50px;
+}
+
+.userInfo .header{
+    width: 100%;
+    background-color: #433D3D;
+    color: gray;
+    font-size: 2rem;
+}
+
+.userList li{
+    border-bottom: 1px solid gray;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.tabs.tabs-fixed-width {
+    background-color: #433D3D;
+}
+.tabs.tabs-fixed-width a{
+    color: gray;
+}
+
+.tab a.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #f6b2b5;
+    color: white;
+}
+.text-left{
+    text-align: left;
+    font-size: 18px;
+}
+
+.main-topic{
+    padding-top: 50px;
+}
+

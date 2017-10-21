@@ -1,7 +1,35 @@
-<div *ngIf="user_info">
-    <h2 class="page-header">{{user_info.name}}</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Username: {{user_info.username}}</li>
-      <li class="list-group-item">email: {{user_info.email}}</li>
-    </ul>
+<div class="container" style="margin-top:80px;">
+    <div class="row">
+      <div class="col s6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://lorempixel.com/400/200/">
+  
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          </div>
+          <div class="card-action black" style="font-size:20px;">
+            <p>{{user_info.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s4 offset-s2">
+        <div *ngIf="user_info">
+          <h2 class="page-header">{{user_info.name}}</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Username: {{user_info.username}}</li>
+            <li class="list-group-item">Email: {{user_info.email}}</li>
+            <li class="list-group-item">Post: More</li>
+            <li class="list-group-item">Comments: More</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  <!-- <div *ngIf="user">
+    <h2 class="page-header">{{user.name}}</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Username: {{user.username}}</li>
+      <li class="list-group-item">email: {{user.email}}</li>
+    </ul>
+  </div> -->

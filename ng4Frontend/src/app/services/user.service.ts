@@ -110,6 +110,15 @@ export class UserService {
     }
   }
 
+  updateUserInfo(user_id,newRoles){
+    let headers=new Headers();
+    this.loadToken();
+    headers.append('Authorization',this.userToken);
+    headers.append('Content-Type','application/json');
+    return this.http.put('http://localhost:3000/api/users/infos/update/'+user_id,newRoles,{headers:headers})
+      .map(res=>res.json());
+  }
+
 
   isLoggedIn(){
     let jwtHelper=new JwtHelper();

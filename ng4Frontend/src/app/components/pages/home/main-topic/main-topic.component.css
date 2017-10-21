@@ -1,0 +1,18 @@
+.header{
+    width: 100%;
+    background-color: #433D3D;
+    color: gray;
+    padding: 10px;
+    font-size: 2rem;
+    box-shadow: 0 0 2px white;
+}
+.text-left{
+    text-align: left;
+}
+.userList li{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    margin: 10px auto;
+}

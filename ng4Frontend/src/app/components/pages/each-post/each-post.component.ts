@@ -12,6 +12,7 @@ import 'rxjs/add/operator/switchMap';
 export class EachPostComponent implements OnInit {
   post:Object={};
   post_id:string='';
+  author:string='';
   constructor(
     private route:ActivatedRoute,
     private postService:PostsService,
@@ -22,16 +23,23 @@ export class EachPostComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.postService.getPostContent(this.post_id=params.get('post_id')))
+    .switchMap((params: ParamMap) => {
+      this.post_id=params.get('post_id');
+      return this.postService.getPostContent(this.post_id);
+    })
     .subscribe(data=>{
       if(data.success) {
         this.post=data.post;
         document.getElementById('body-post').innerHTML=data.post.body;
+        this.userService.getUserInfor(this.post['author_id']).subscribe(data=>{
+          this.author=data.user_info.username;
+        })
       }else{
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:3000});
         return false;
       }
     },(err)=>console.log(err));
+    
   }
 
 

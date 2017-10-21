@@ -1,29 +1,31 @@
-<div>
-  <div class="container mt-5 mb-4 post">
-    
+<div class="container">
+  <div class="post">
     <p class="lead signup" *ngIf="!userService.isLoggedIn()">be the user to leave comment <a class="btn btn-sm btn-primary" routerLink="/register">Sign Up</a></p>
     <h3 class="mt-4 mb-4" *ngIf="comments.length!=0">Comments: </h3>
     <pagination-controls *ngIf="comments.length!=0" class="text-left mt-4 mb-4" (pageChange)="p = $event"></pagination-controls>
     <ul class="list-unstyled" *ngIf="comments">
       <li *ngFor="let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}" class="media">
-        <div class="media-name">
-          <div class="name">
-            {{comment.userComment}}
+        <div class="row valign-wrapper">
+          <div class="col s2">
+            <div class="chip">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png" alt="Contact Person">
+              {{comment.userComment}}
+            </div>
+          </div>
+          <div class="col s7">
+            <h6 class="mt-0 mb-1">{{comment.body}}</h6>
+            <strong style="font-size:12px; color:gray"><i>Created date: {{comment.created_date}} </i></strong> 
+          </div>
+          <div class="col s3">
+            <button class="btn" *ngIf="userService.isUserCreatedComment(comment.userComment)" (click)="editComment(comment)">Edit</button>
+            <button class="btn red darken-1" *ngIf="userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)" (click)="deleteComment(comment)">Delete</button>  
           </div>
         </div>
-        <div class="media-body">
-          <h5 class="mt-0 mb-1">{{comment.body}}</h5>
-          Created date: {{comment.created_date}}
-        </div>
-        <p>
-          <button class="btn btn-secondary btn-sm" *ngIf="userService.isUserCreatedComment(comment.userComment)" (click)="editComment(comment)">Edit</button>
-          <button class="btn btn-danger btn-sm" *ngIf="userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)" (click)="deleteComment(comment)">Delete</button>
-        </p>
       </li>
-      <edit-comment *ngIf="showEdit"[index]="indexCommentEdit" (update)="updateComment($event)" [comment]="commentEdit"></edit-comment>
+      <edit-comment *ngIf="showEdit" [index]="indexCommentEdit" (update)="updateComment($event)" [comment]="commentEdit"></edit-comment>              
     </ul>
     <button class="btn btn-primary" (click)="showFormComment()" *ngIf="userService.isLoggedIn()" style="cursor:pointer">Leave Comment</button>
-    <div *ngIf="show" class="mt-5">
+    <div *ngIf="show" style="margin-top:30px;">
       <div class="form-group">
         <textarea required class="form-control" [(ngModel)]="comment" aria-describedby="emailHelp" placeholder="leave comment.."></textarea>
       </div>

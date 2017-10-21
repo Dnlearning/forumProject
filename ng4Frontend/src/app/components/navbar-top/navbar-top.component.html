@@ -1,22 +1,13 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" routerLink="/">
-      <img src="assets/images/logoZeroToZ.png" class="logo" alt="">  
-    ZeroToZ</a>
-    <button style="cursor:pointer" class="navbar-toggler" (click)="toggleState()" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" [class.show]="openmenu" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" routerLinkActive='active'><a class="nav-link"  routerLink="/shop">Shop</a></li>
-          </ul>
-      <ul class="navbar-nav ml-auto">
-        <li *ngIf="userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a class="nav-link"  routerLink="/profile">{{username}}</a></li>
-        <li *ngIf="userService.isAdmin()" class="nav-item" routerLinkActive='active'><a class="nav-link"  routerLink="/create/category">createCategory</a></li>        
-        <li *ngIf="userService.isLoggedIn()" class="nav-item" style="cursor:pointer"><a class="nav-link active" (click)="onLogoutClick()" >Logout</a></li>
-        
-        <li *ngIf="!userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a class="nav-link"  routerLink="/login">Login</a></li>
-        <li *ngIf="!userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a class="nav-link disabled"  routerLink="/register">Register</a></li>
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand-logo"><img src="assets/images/logoZeroToZ.png" class="logo"  alt=""></a>
+      <ul id="nav-mobile" class="right">
+        <li  class="nav-item" routerLinkActive='active'><a routerLink="/shop">Shop</a></li>    
+        <li *ngIf="userService.isLoggedIn()" class="nav-item " routerLinkActive='active'><a routerLink="/profile">{{username}}</a></li>
+        <li *ngIf="userService.isAdmin()" class="nav-item" routerLinkActive='active'><a routerLink="/create/admin">DashBoard</a></li>
+        <li *ngIf="userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a (click)="onLogoutClick()">Logout</a></li>
+        <li *ngIf="!userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a routerLink="/login">Login</a></li>
+        <li *ngIf="!userService.isLoggedIn()" class="nav-item" routerLinkActive='active'><a routerLink="/register"s>Register</a></li>
       </ul>
-    </div>
-  </nav>
+  </div>
+</nav>

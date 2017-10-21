@@ -94,6 +94,22 @@ router.get('/infos/:user_id',(req,res,next)=>{
     });
 });
 
+router.put('/infos/update/:user_id',passport.authenticate('jwt',{session:false}),(req,res,next)=>{
+    let user=req.user;
+    let user_id=req.params.user_id;
+    let newRoles=req.body.roles;
+    if(!newRoles){
+        return res.json({success:false,msg:' Roles cannot empty!'});
+    }
+    if(user.roles.includes('admin')){
+        User.updateInfo(user_id,newRoles,(err)=>{
+            if(err) {return res.json({success:false,msg:'failed to update'})}
+            res.json({success:true,msg:"Updated UserInfo!"});
+        });
+    }else{
+        res.redirect('/');
+    }
+})
 
 
 module.exports=router;

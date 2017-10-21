@@ -1,5 +1,5 @@
 
-<form id="registerform" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
+<form id="registerform" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)" style="margin-top:80px">
     <h3 class="text-center">Register Form</h3>
     <div class="form-group">
       <label for="exampleInputPassword1">Name</label>
@@ -31,7 +31,7 @@
       <div class="alert alert-danger" *ngIf="email.errors && email.touched">
         <div *ngIf="email.errors.required">Email is Required.</div>
         <div *ngIf="email.errors.CannotContainSpace">Email cannot contain space.</div>
-        <div *ngIf="email.errors.emailTaken">Username existed.</div>
+        <div *ngIf="email.errors.emailTaken">Email existed.</div>
         <div *ngIf="email.errors.incorrectMailFormat">Incorrect Email Format.</div>
       </div>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

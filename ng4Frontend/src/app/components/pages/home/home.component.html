@@ -1,4 +1,4 @@
-<div class="container news" *ngIf="allUsers">
+<!-- <div class="container news" *ngIf="allUsers">
   <div class="">
     <div class="row">
       <div class="col-sm-2">
@@ -60,9 +60,77 @@
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="main-topic">
-    <main-topic *ngFor="let topic of maintopics" [topic]="topic"></main-topic>
-  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<div class="container center" style="margin-top:80px;">
+    <div class="card-panel welcome">
+      <h2>Welcome to My Forum Page!</h2>
+      <h5>Member can see more information!</h5>
+    </div>    
+
+    <div class="userInfo" *ngIf="userService.isLoggedIn()">
+      <div class="row">
+        <div class="col s4">
+          <div class="header">New User</div>            
+          <ul class="userList">
+            <li *ngFor="let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}"><a [routerLink]="['/user/info',user._id]"><strong class="pink-text" ><i>{{user.username}}</i></strong></a> <i style="float:right">{{user.created_date}}</i></li>
+          </ul>
+        </div>
+        <div class="col s8">
+          <div class="header">
+            Play Some Filter News!
+            
+           <span class="filter">
+             <select class="browser-default" #selected (change)="getFilterValue(selected.value)">
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="15">15</option>
+             </select>
+           </span>
+            
+          </div>
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a (click)="mode='newpost'" [class.active]="mode=='newpost'" >New Post</a></li>
+            <li class="tab"><a (click)="mode='newcategory'" [class.active]="mode=='newcategory'">New Category</a></li>
+            <li class="tab"><a (click)="mode='highestview'" [class.active]="mode=='highestview'">Highest Views</a></li>
+          </ul>
+          <div *ngIf="mode=='newpost'">
+            <ul class="userList">
+              <li *ngFor="let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index" class="text-left">
+                <a [routerLink]="['/posts',post._id]"><strong class="pink-text" ><i>{{i+1}}. {{post.title}}</i></strong></a> 
+                <user-created-category style="float:right" [createUser]="post.author_id"></user-created-category>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="mode=='newcategory'">
+            <ul class="userList">
+              <li *ngFor="let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index" class="text-left">
+                <a [routerLink]="['/categories',category._id]"><strong class="pink-text" ><i>{{i+1}}. {{category.category}}</i></strong></a> 
+                <user-created-category style="float:right" [createUser]="category.create_user"></user-created-category>
+              </li>            
+            </ul>
+          </div>
+          <div *ngIf="mode=='highestview'">
+            <ul class="userList">
+              <li *ngFor="let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index" class="text-left">
+                <a [routerLink]="['/posts',highestView._id]"><strong class="pink-text" ><i>{{i+1}}. {{highestView.title}}</i></strong> <i style="font-size:13px"> Views: <Strong>{{highestView.views}} </Strong></i></a> 
+                <user-created-category style="float:right" [createUser]="highestView.author_id"></user-created-category>
+              </li>            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-topic">
+      <main-topic *ngFor="let topic of maintopics" [topic]="topic"></main-topic>
+    </div>
 </div>

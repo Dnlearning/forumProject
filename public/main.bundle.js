@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".content{\r\n    margin-top: 100px;\r\n}\r\n\r\n.msg{\r\n    width:45%;\r\n    margin: auto;\r\n    text-align: center;\r\n}\r\n\r\n@media(max-width:1025px){\r\n    #loginform{\r\n        width: 40%;\r\n    }\r\n}\r\n@media(max-width:992px){\r\n    .msg{\r\n        width:60%;\r\n    }\r\n}\r\n\r\n@media(max-width:768px){\r\n    .msg{\r\n        width:80%;\r\n    }\r\n}\r\n\r\n@media(max-width:375px){\r\n    .msg{\r\n        width:100%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".content{\r\n    \r\n}\r\n\r\n.msg{\r\n    width:45%;\r\n    margin: 0 auto;\r\n    text-align: center;\r\n}\r\n\r\n@media(max-width:1025px){\r\n    #loginform{\r\n        width: 40%;\r\n    }\r\n}\r\n@media(max-width:992px){\r\n    .msg{\r\n        width:60%;\r\n    }\r\n}\r\n\r\n@media(max-width:768px){\r\n    .msg{\r\n        width:80%;\r\n    }\r\n}\r\n\r\n@media(max-width:375px){\r\n    .msg{\r\n        width:100%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<navbar-top></navbar-top>\n<div class=\"container\">\n  <div class=\"content\">\n    <div class=\"msg\">\n        <flash-messages></flash-messages>\n    </div>\n      <router-outlet ></router-outlet>\n  </div>\n</div>\n<chat [marginRight]=\"right\" [newMessage]=\"newMessage\" [username]=\"username\" (seen)=\"seen($event)\"  (sendMessage)=\"messageCome($event)\" [aMessage]=\"messages\" *ngIf=\"status\"></chat>\n<user-online [usersOnline]=\"usersInChat\" (renderUserOnline)=\"takeUsersOnline($event)\" *ngIf=\"status\"></user-online>"
+module.exports = "<navbar-top></navbar-top>\n<div class=\"content\">\n  <flash-messages></flash-messages>\n  <router-outlet ></router-outlet>\n</div>\n<chat [marginRight]=\"right\" [newMessage]=\"newMessage\" [username]=\"username\" (seen)=\"seen($event)\"  (sendMessage)=\"messageCome($event)\" [aMessage]=\"messages\" *ngIf=\"status\"></chat>\n<user-online [usersOnline]=\"usersInChat\" (renderUserOnline)=\"takeUsersOnline($event)\" *ngIf=\"status\"></user-online>"
 
 /***/ }),
 
@@ -200,7 +200,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_online_user_online_component__ = __webpack_require__("../../../../../src/app/components/user-online/user-online.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ngx_pagination__ = __webpack_require__("../../../../ngx-pagination/dist/ngx-pagination.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_category_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/category/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_pages_home_main_topic_main_topic_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/main-topic.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_user_created_category_user_created_category_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_pages_users_user_info_user_info_component__ = __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.ts");
@@ -269,7 +269,7 @@ var Routes = [
         path: 'profile', component: __WEBPACK_IMPORTED_MODULE_22__components_users_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_9__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: 'create/category', component: __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_category_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_3__guards_admin_guard__["a" /* AdminGuard */]]
+        path: 'create/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_3__guards_admin_guard__["a" /* AdminGuard */]]
     },
     {
         path: 'create/post/:category_id', component: __WEBPACK_IMPORTED_MODULE_30__components_pages_admin_post_post_component__["a" /* PostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_9__guards_user_guard__["a" /* UserGuard */]]
@@ -306,7 +306,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_22__components_users_profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_23__components_chat_chat_component__["a" /* ChatComponent */],
             __WEBPACK_IMPORTED_MODULE_24__components_user_online_user_online_component__["a" /* UserOnlineComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_category_category_component__["a" /* CategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */],
             __WEBPACK_IMPORTED_MODULE_27__components_pages_home_main_topic_main_topic_component__["a" /* MainTopicComponent */],
             __WEBPACK_IMPORTED_MODULE_5__components_pages_posts_posts_component__["a" /* PostsComponent */],
             __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_user_created_category_user_created_category_component__["a" /* UserCreatedCategoryComponent */],
@@ -532,7 +532,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".logo{\r\n    width:45px;\r\n    margin-right: 10px;\r\n}", ""]);
+exports.push([module.i, ".logo{\r\n    width:45px;\r\n    position: relative;\r\n    top: 10px;\r\n}\r\n.nav-wrapper{\r\n    background-color: #212121;\r\n    padding: 0 20px;\r\n}\r\nnav{\r\n    height: 80px;\r\n    line-height: 80px;\r\n}\r\nnav li a{\r\n    font-size: 1.2rem;\r\n    color: gray;\r\n}\r\nnav ul li.active {\r\n\r\n    border-bottom: 2px solid white;\r\n}\r\nnav ul li.active a{\r\n    color: white;\r\n}\r\n\r\n@media only screen and (max-width: 992px){\r\n    nav .brand-logo {\r\n        left: 3%;\r\n        -webkit-transform: translateX(-0%);\r\n        transform: translateX(-0%); \r\n    }\r\n}", ""]);
 
 // exports
 
@@ -545,7 +545,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar-top/navbar-top.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\n    <a class=\"navbar-brand\" routerLink=\"/\">\n      <img src=\"assets/images/logoZeroToZ.png\" class=\"logo\" alt=\"\">  \n    ZeroToZ</a>\n    <button style=\"cursor:pointer\" class=\"navbar-toggler\" (click)=\"toggleState()\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <div class=\"collapse navbar-collapse\" [class.show]=\"openmenu\" id=\"navbarsExampleDefault\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\" routerLinkActive='active'><a class=\"nav-link\"  routerLink=\"/shop\">Shop</a></li>\n          </ul>\n      <ul class=\"navbar-nav ml-auto\">\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a class=\"nav-link\"  routerLink=\"/profile\">{{username}}</a></li>\n        <li *ngIf=\"userService.isAdmin()\" class=\"nav-item\" routerLinkActive='active'><a class=\"nav-link\"  routerLink=\"/create/category\">createCategory</a></li>        \n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item\" style=\"cursor:pointer\"><a class=\"nav-link active\" (click)=\"onLogoutClick()\" >Logout</a></li>\n        \n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a class=\"nav-link\"  routerLink=\"/login\">Login</a></li>\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a class=\"nav-link disabled\"  routerLink=\"/register\">Register</a></li>\n      </ul>\n    </div>\n  </nav>"
+module.exports = "<nav>\n  <div class=\"nav-wrapper\">\n    <a routerLink=\"/\" class=\"brand-logo\"><img src=\"assets/images/logoZeroToZ.png\" class=\"logo\"  alt=\"\"></a>\n      <ul id=\"nav-mobile\" class=\"right\">\n        <li  class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/shop\">Shop</a></li>    \n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item \" routerLinkActive='active'><a routerLink=\"/profile\">{{username}}</a></li>\n        <li *ngIf=\"userService.isAdmin()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/create/admin\">DashBoard</a></li>\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a (click)=\"onLogoutClick()\">Logout</a></li>\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/login\">Login</a></li>\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/register\"s>Register</a></li>\n      </ul>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -616,7 +616,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/pages/admin/category/category.component.css":
+/***/ "../../../../../src/app/components/pages/admin/dashboard/category.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -624,7 +624,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}", ""]);
+exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}\r\n.dashboard{\r\n    width:100%;\r\n    height: 100%;\r\n    position: fixed;\r\n}\r\n.sideMenu{\r\n    height: 100%;\r\n    background-color: #433D3D; \r\n}\r\n.sideMenu .control{\r\n    font-size: 25px;\r\n    padding-left: 10px;\r\n}\r\n.control p a{\r\n    color:gray;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.active{\r\n    color: white !important;\r\n}\r\n.filter{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\n.card-action{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\nselect{\r\n    color: black;\r\n}\r\nlabel{\r\n    font-size: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n.form-group{\r\n    padding:10px 0;\r\n}", ""]);
 
 // exports
 
@@ -634,25 +634,30 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/pages/admin/category/category.component.html":
+/***/ "../../../../../src/app/components/pages/admin/dashboard/category.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container category\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <div class=\"content\">\n        <h1>Create Category for HomePage</h1>\n        <h5>Only Admin Users can access to this point!</h5>\n        <a routerLink=\"/\" class=\"btn btn-primary\">Wanna Back Home?</a>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <div class=\"form\">\n        <form [formGroup]=\"createCategoryForm\" (ngSubmit)=\"createCategory(createCategoryForm)\">\n          <div class=\"form-group\">\n            <label for=\"exampleInputEmail1\">Main Topic</label>\n            <select class=\"select\" style=\"display:block\" formControlName=\"topic_id\" >\n              <option *ngFor=\"let topic of mainTopics\" [value]=\"topic._id\">{{topic.topic}}</option>\n            </select>\n            <div class=\"alert alert-danger\" *ngIf=\"topic_id.errors && topic_id.touched\">\n              <div *ngIf=\"topic_id.errors.required\">Main Topic is Required.</div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"exampleInputPassword1\">Category Name</label>\n            <input type=\"text\" class=\"form-control\" formControlName=\"category\" placeholder=\"Category Name..\">\n            <div class=\"alert alert-danger\" *ngIf=\"category.errors && category.touched\">\n              <div *ngIf=\"category.errors.required\">Category Name is Required.</div>\n            </div>\n          </div>\n          <button type=\"submit\" [disabled]=\"createCategoryForm.invalid\" class=\"btn btn-primary\">Submit</button>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "\n<div class=\"row dashboard\">\n  <div class=\"col s3 sideMenu valign-wrapper\">\n    <div class=\"control\">\n      <p><a [class.active]=\"switch=='user'\" (click)=\"switch='user'\">Add/Change Admin User</a></p>\n      <p><a [class.active]=\"switch=='create'\" (click)=\"switch='create'\">Create Maintopic/Category</a></p>\n    </div>\n  </div>\n  <div class=\"col s9\" style=\"padding:50px;\">\n      <div *ngIf=\"switch=='user'\">\n        <div>\n          <span class=\"card-panel white-text grey darken-3 center\" style=\"width:40%; font-size:1.25rem; border-radius:10px; box-shadow:0 0 20px;\">Only User Admin can access this route</span> \n          <span class=\"filter\" style=\"float:right\">\n            <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\n              <option value=\"\" disabled>Choose Username</option>\n              <option *ngFor=\"let user of allUsers\" [value]=\"user._id\">{{user.username}}</option>\n            </select>\n          </span>\n        </div>\n        <div *ngIf=\"showInfo\" class=\"content\" style=\"clear:both; margin-top:100px\">\n          <div class=\"col s4 offset-s2\">\n            <div class=\"card\">\n              <div class=\"card-image\">\n                <img src=\"assets/images/pro1.png\">\n                <span class=\"card-title\">{{userInfo.username}}</span>\n              </div>\n              <div class=\"card-action\">\n                <p>Name: {{userInfo.username}}</p>\n                <p>Created: {{userInfo.created_date}}</p>\n              </div>\n            </div>\n          </div> \n          <div class=\"col s5 offset-s1\">\n            <div class=\"desc\">\n              <p><strong>Posts:</strong> Later</p>\n              <p><strong>Comments:</strong> Later</p>\n              <p><strong>Rate(*):</strong> Later</p>\n              <p><strong>Roles:</strong> <span class=\"chip blue\" *ngFor=\"let role of userInfo.roles\"> {{role}} </span> </p>\n              <button *ngIf=\"!userInfo.roles.includes('admin')\" class=\"btn blue darken-3\" style=\"margin-top:20px;\" (click)=\"setAdmin()\">Set Admin</button>\n              <button *ngIf=\"userInfo.roles.includes('admin')\" class=\"btn red darken-3\" style=\"margin-top:20px;\" (click)=\"removeAdmin()\">Remove Admin</button>\n            </div>\n          </div> \n        </div>  \n      </div>\n      <div *ngIf=\"switch=='create'\">\n        <div>\n          <span class=\"card-panel white-text grey darken-3 center\" style=\"width:40%; font-size:1.25rem; border-radius:10px; box-shadow:0 0 20px;\">Only User Admin can access this route</span> \n        </div>\n        <div class=\"content\" style=\"clear:both; margin-top:100px\">\n            <div class=\"col s4 offset-s2\">\n                <h4>Create Main Topic</h4>\n                <form [formGroup]=\"createMaintopicForm\" (ngSubmit)=\"createMainTopic(createMaintopicForm)\">\n                  \n                    <div class=\"form-group\">\n                      <label for=\"exampleInputPassword1\">Main Topic</label>\n                      <input type=\"text\" class=\"form-control\" formControlName=\"maintopic\" placeholder=\"Maintopic Name..\">\n                      <div class=\"alert alert-danger\" *ngIf=\"maintopic.errors && maintopic.touched\">\n                        <div *ngIf=\"maintopic.errors.required\">Maintopic Name is Required.</div>\n                      </div>\n                    </div>\n                    <button type=\"submit\" [disabled]=\"createMaintopicForm.invalid\" class=\"btn\">Submit</button>\n                  </form>\n            </div> \n            <div class=\"col s4 offset-s1\">\n              <h4>Create Category</h4>\n              <form [formGroup]=\"createCategoryForm\" (ngSubmit)=\"createCategory(createCategoryForm)\">\n                  <div class=\"form-group selectForm\">\n                    <label for=\"exampleInputEmail1\">Main Topic</label>\n                    <select class=\"browser-default\" style=\"display:block\" formControlName=\"topic_id\" >\n                      <option value=\"\" disabled>Choose Maintopic Name</option>\n                      <option *ngFor=\"let topic of mainTopics\" [value]=\"topic._id\">{{topic.topic}}</option>\n                    </select>\n                    <div class=\"alert alert-danger\" *ngIf=\"topic_id.errors && topic_id.touched\">\n                      <div *ngIf=\"topic_id.errors.required\">Main Topic is Required.</div>\n                    </div>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"exampleInputPassword1\">Category Name</label>\n                    <input type=\"text\" class=\"form-control\" formControlName=\"category\" placeholder=\"Category Name..\">\n                    <div class=\"alert alert-danger\" *ngIf=\"category.errors && category.touched\">\n                      <div *ngIf=\"category.errors.required\">Category Name is Required.</div>\n                    </div>\n                  </div>\n                  <button type=\"submit\" [disabled]=\"createCategoryForm.invalid\" class=\"btn btn-primary\">Submit</button>\n                </form>\n            </div> \n          </div>  \n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/pages/admin/category/category.component.ts":
+/***/ "../../../../../src/app/components/pages/admin/dashboard/category.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_observable_combineLatest__ = __webpack_require__("../../../../rxjs/add/observable/combineLatest.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_observable_combineLatest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_observable_combineLatest__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -668,18 +673,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var CategoryComponent = (function () {
-    function CategoryComponent(fb, categoryService, maintopicService, flashMsg, route) {
+    function CategoryComponent(fb, categoryService, userService, maintopicService, flashMsg, route) {
         this.categoryService = categoryService;
+        this.userService = userService;
         this.maintopicService = maintopicService;
         this.flashMsg = flashMsg;
         this.route = route;
         this.mainTopics = [];
+        this.switch = 'user';
+        this.allUsers = [];
+        this.selectedIndex = 0;
+        this.userInfo = {};
+        this.showInfo = false;
+        this.selectedUser_id = '';
         this.createCategoryForm = fb.group({
-            topic_id: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required],
-            category: ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["Validators"].required]
+            topic_id: ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["Validators"].required],
+            category: ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["Validators"].required]
+        });
+        this.createMaintopicForm = fb.group({
+            maintopic: ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["Validators"].required]
         });
     }
+    CategoryComponent.prototype.createMainTopic = function (cm) {
+        var _this = this;
+        var user_id = JSON.parse(localStorage.getItem('Zero_user')).id;
+        if (!user_id) {
+            return false;
+        }
+        var newMaintopic = {
+            topic: cm.value.maintopic,
+            create_user: user_id
+        };
+        this.maintopicService.createMaintopic(newMaintopic).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMsg.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            }
+            else {
+                _this.flashMsg.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+            _this.createCategoryForm.reset();
+        });
+    };
     CategoryComponent.prototype.createCategory = function (cC) {
         var _this = this;
         var user_id = JSON.parse(localStorage.getItem('Zero_user')).id;
@@ -704,12 +742,23 @@ var CategoryComponent = (function () {
     };
     CategoryComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.maintopicService.getAllMainTopic()
+        var username = JSON.parse(localStorage.getItem('Zero_user')).username;
+        __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineLatest([
+            this.maintopicService.getAllMainTopic(),
+            this.userService.getAllUser(username),
+        ])
             .subscribe(function (data) {
-            console.log(data);
-            _this.mainTopics = data.topics;
+            _this.mainTopics = data[0].topics;
+            _this.allUsers = data[1];
         });
     };
+    Object.defineProperty(CategoryComponent.prototype, "maintopic", {
+        get: function () {
+            return this.createMaintopicForm.get('maintopic');
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CategoryComponent.prototype, "category", {
         get: function () {
             return this.createCategoryForm.get('category');
@@ -724,18 +773,47 @@ var CategoryComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    CategoryComponent.prototype.getFilterValue = function (user_id) {
+        this.selectedUser_id = user_id;
+        var idArray = this.allUsers.map(function (user) { return user._id; });
+        this.selectedIndex = idArray.indexOf(user_id);
+        this.userInfo = this.allUsers[this.selectedIndex];
+        this.showInfo = true;
+    };
+    CategoryComponent.prototype.setAdmin = function () {
+        var _this = this;
+        this.allUsers[this.selectedIndex].roles = ["user", "admin"];
+        this.userInfo = this.allUsers[this.selectedIndex];
+        this.userService.updateUserInfo(this.selectedUser_id, { roles: ["user", "admin"] })
+            .subscribe(function (data) {
+        }, function (err) {
+            _this.allUsers[_this.selectedIndex].roles = ["user"];
+            _this.userInfo = _this.allUsers[_this.selectedIndex];
+        });
+    };
+    CategoryComponent.prototype.removeAdmin = function () {
+        var _this = this;
+        this.allUsers[this.selectedIndex].roles = ["user"];
+        this.userInfo = this.allUsers[this.selectedIndex];
+        this.userService.updateUserInfo(this.selectedUser_id, { roles: ["user"] })
+            .subscribe(function (data) {
+        }, function (err) {
+            _this.allUsers[_this.selectedIndex].roles = ["user", "admin"];
+            _this.userInfo = _this.allUsers[_this.selectedIndex];
+        });
+    };
     return CategoryComponent;
 }());
 CategoryComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_7__angular_core__["Component"])({
         selector: 'app-category',
-        template: __webpack_require__("../../../../../src/app/components/pages/admin/category/category.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/pages/admin/category/category.component.css")]
+        template: __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormBuilder"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_categories_service__["a" /* CategoriesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_main_topic_service__["a" /* MainTopicService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_main_topic_service__["a" /* MainTopicService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_categories_service__["a" /* CategoriesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_main_topic_service__["a" /* MainTopicService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_main_topic_service__["a" /* MainTopicService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _f || Object])
 ], CategoryComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=category.component.js.map
 
 /***/ }),
@@ -748,7 +826,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}", ""]);
+exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}\r\n\r\nlabel {\r\n    font-size: 1.3rem;\r\n}", ""]);
 
 // exports
 
@@ -761,7 +839,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/admin/edit-post/edit-post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">Title Post</label>\n    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"titlePost\" placeholder=\"Your Name...\">\n</div>\n\n\n\n<ckeditor\n[(ngModel)]=\"ckeditorContent\">\n  <ckbutton [name]=\"'saveButton'\"\n    [command]=\"'saveCmd'\"\n    (click)=\"save($event)\"\n    [icon]=\"'save.png'\"\n    [label]=\"'Save Document'\"\n    [toolbar]=\"'clipboard,1'\">\n  </ckbutton>\n</ckeditor>\n\n<button class=\"btn btn-primary mt-4\" (click)=\"updatePost()\">Save</button>\n"
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">Title Post</label>\n    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"titlePost\" placeholder=\"Your Name...\">\n  </div>\n\n  <ckeditor\n  [(ngModel)]=\"ckeditorContent\">\n    <ckbutton [name]=\"'saveButton'\"\n      [command]=\"'saveCmd'\"\n      (click)=\"save($event)\"\n      [icon]=\"'save.png'\"\n      [label]=\"'Save Document'\"\n      [toolbar]=\"'clipboard,1'\">\n    </ckbutton>\n  </ckeditor>\n  <button class=\"btn\" style=\"margin-top:40px;\" (click)=\"updatePost()\">Save</button>\n</div>\n\n"
 
 /***/ }),
 
@@ -818,6 +896,10 @@ var EditPostComponent = (function () {
     };
     EditPostComponent.prototype.updatePost = function () {
         var _this = this;
+        if (!this.titlePost || !this.ckeditorContent) {
+            this.flashMessage.show('pls fill all fields!' + this.titlePost, { cssClass: 'alert alert-success', timeout: 2000 });
+            return false;
+        }
         var newPost = {
             title: this.titlePost,
             body: this.ckeditorContent,
@@ -862,7 +944,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}", ""]);
+exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}\r\n\r\nlabel{\r\n    font-size: 1.3rem;\r\n    font-weight: 600;\r\n}\r\n.cke_editable{\r\n    font-size: 20px;\r\n}", ""]);
 
 // exports
 
@@ -875,7 +957,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/admin/post/post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1><strong>Category Name:</strong> {{category.category}}</h1>\n\n<div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">Title Post</label>\n    <input type=\"text\" class=\"form-control\" [(ngModel)]=\"titlePost\" placeholder=\"Your Name...\">\n</div>\n\n\n\n<ckeditor\n[(ngModel)]=\"ckeditorContent\">\n  <ckbutton [name]=\"'saveButton'\"\n    [command]=\"'saveCmd'\"\n    (click)=\"save($event)\"\n    [icon]=\"'save.png'\"\n    [label]=\"'Save Document'\"\n    [toolbar]=\"'clipboard,1'\">\n  </ckbutton>\n</ckeditor>\n\n<button class=\"btn btn-primary mt-4\" (click)=\"createPost()\">Submit</button>\n"
+module.exports = "<div class=\"container\">\n  <h1><strong>Category Name:</strong> {{category.category}}</h1>\n  \n  <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Title Post</label>\n      <input type=\"text\" class=\"form-control\" [(ngModel)]=\"titlePost\" placeholder=\"Your Post Name...\">\n  </div>\n  \n  \n  \n  <ckeditor\n  [(ngModel)]=\"ckeditorContent\">\n    <ckbutton [name]=\"'saveButton'\"\n      [command]=\"'saveCmd'\"\n      (click)=\"save($event)\"\n      [icon]=\"'save.png'\"\n      [label]=\"'Save Document'\"\n      [toolbar]=\"'clipboard,1'\">\n    </ckbutton>\n  </ckeditor>\n  \n  <button class=\"btn\" style=\"margin-top:20px;\" (click)=\"createPost()\">Submit</button>\n</div>\n\n"
 
 /***/ }),
 
@@ -1046,7 +1128,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".media-name{\r\n    height: 50px;\r\n    width: 50px;\r\n    background-color: #333;\r\n    color: white;\r\n    margin: 10px;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 10px;\r\n}\r\n\r\n.post{\r\n    padding-bottom: 100px;\r\n}\r\n.signup{\r\n    border: 1px solid black;\r\n    padding: 10px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px gray;\r\n}\r\n", ""]);
+exports.push([module.i, ".media-name{\r\n    height: 50px;\r\n    width: 50px;\r\n    background-color: #333;\r\n    color: white;\r\n    margin: 10px;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    border-radius: 10px;\r\n}\r\n\r\n.post{\r\n    padding-bottom: 100px;\r\n}\r\n.signup{\r\n    border: 1px solid black;\r\n    padding: 10px;\r\n    display: inline-block;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px gray;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -1059,7 +1141,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/each-post/comments/comments.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"container mt-5 mb-4 post\">\n    \n    <p class=\"lead signup\" *ngIf=\"!userService.isLoggedIn()\">be the user to leave comment <a class=\"btn btn-sm btn-primary\" routerLink=\"/register\">Sign Up</a></p>\n    <h3 class=\"mt-4 mb-4\" *ngIf=\"comments.length!=0\">Comments: </h3>\n    <pagination-controls *ngIf=\"comments.length!=0\" class=\"text-left mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <ul class=\"list-unstyled\" *ngIf=\"comments\">\n      <li *ngFor=\"let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\" class=\"media\">\n        <div class=\"media-name\">\n          <div class=\"name\">\n            {{comment.userComment}}\n          </div>\n        </div>\n        <div class=\"media-body\">\n          <h5 class=\"mt-0 mb-1\">{{comment.body}}</h5>\n          Created date: {{comment.created_date}}\n        </div>\n        <p>\n          <button class=\"btn btn-secondary btn-sm\" *ngIf=\"userService.isUserCreatedComment(comment.userComment)\" (click)=\"editComment(comment)\">Edit</button>\n          <button class=\"btn btn-danger btn-sm\" *ngIf=\"userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)\" (click)=\"deleteComment(comment)\">Delete</button>\n        </p>\n      </li>\n      <edit-comment *ngIf=\"showEdit\"[index]=\"indexCommentEdit\" (update)=\"updateComment($event)\" [comment]=\"commentEdit\"></edit-comment>\n    </ul>\n    <button class=\"btn btn-primary\" (click)=\"showFormComment()\" *ngIf=\"userService.isLoggedIn()\" style=\"cursor:pointer\">Leave Comment</button>\n    <div *ngIf=\"show\" class=\"mt-5\">\n      <div class=\"form-group\">\n        <textarea required class=\"form-control\" [(ngModel)]=\"comment\" aria-describedby=\"emailHelp\" placeholder=\"leave comment..\"></textarea>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\" (click)=\"leaveComment()\">Submit</button>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"post\">\n    <p class=\"lead signup\" *ngIf=\"!userService.isLoggedIn()\">be the user to leave comment <a class=\"btn btn-sm btn-primary\" routerLink=\"/register\">Sign Up</a></p>\n    <h3 class=\"mt-4 mb-4\" *ngIf=\"comments.length!=0\">Comments: </h3>\n    <pagination-controls *ngIf=\"comments.length!=0\" class=\"text-left mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <ul class=\"list-unstyled\" *ngIf=\"comments\">\n      <li *ngFor=\"let comment of comments | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\" class=\"media\">\n        <div class=\"row valign-wrapper\">\n          <div class=\"col s2\">\n            <div class=\"chip\">\n              <img src=\"https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png\" alt=\"Contact Person\">\n              {{comment.userComment}}\n            </div>\n          </div>\n          <div class=\"col s7\">\n            <h6 class=\"mt-0 mb-1\">{{comment.body}}</h6>\n            <strong style=\"font-size:12px; color:gray\"><i>Created date: {{comment.created_date}} </i></strong> \n          </div>\n          <div class=\"col s3\">\n            <button class=\"btn\" *ngIf=\"userService.isUserCreatedComment(comment.userComment)\" (click)=\"editComment(comment)\">Edit</button>\n            <button class=\"btn red darken-1\" *ngIf=\"userService.isAdmin() || userService.isUserCreatedComment(comment.userComment)\" (click)=\"deleteComment(comment)\">Delete</button>  \n          </div>\n        </div>\n      </li>\n      <edit-comment *ngIf=\"showEdit\" [index]=\"indexCommentEdit\" (update)=\"updateComment($event)\" [comment]=\"commentEdit\"></edit-comment>              \n    </ul>\n    <button class=\"btn btn-primary\" (click)=\"showFormComment()\" *ngIf=\"userService.isLoggedIn()\" style=\"cursor:pointer\">Leave Comment</button>\n    <div *ngIf=\"show\" style=\"margin-top:30px;\">\n      <div class=\"form-group\">\n        <textarea required class=\"form-control\" [(ngModel)]=\"comment\" aria-describedby=\"emailHelp\" placeholder=\"leave comment..\"></textarea>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\" (click)=\"leaveComment()\">Submit</button>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1123,6 +1205,7 @@ var CommentsComponent = (function () {
     };
     CommentsComponent.prototype.deleteComment = function (comment) {
         var _this = this;
+        this.showEdit = false;
         var index = this.comments.indexOf(comment);
         this.comments.splice(index, 1);
         this.commentService.deleteComment(comment._id).subscribe(null, function (error) {
@@ -1137,6 +1220,7 @@ var CommentsComponent = (function () {
     };
     CommentsComponent.prototype.showFormComment = function () {
         this.show = (this.show) ? false : true;
+        this.showEdit = false;
     };
     CommentsComponent.prototype.updateComment = function (data) {
         if (data.cancel) {
@@ -1159,6 +1243,7 @@ var CommentsComponent = (function () {
         if (!this.userService.isLoggedIn()) {
             return false;
         }
+        this.showEdit = false;
         var user = JSON.parse(localStorage.getItem('Zero_user'));
         var author_id = user.id;
         var username = user.username;
@@ -1241,6 +1326,7 @@ var EditCommentComponent = (function () {
         this.newbody = '';
     }
     EditCommentComponent.prototype.ngOnInit = function () {
+        console.log(this.indexCommentEdit);
         this.newbody = this.editComment['body'];
     };
     EditCommentComponent.prototype.updateComment = function () {
@@ -1299,7 +1385,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/each-post/each-post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-group btn-lg\" role=\"group\" aria-label=\"First group\">\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn btn-primary\" (click)=\"editPost(post._id)\" >Edit</button>\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn btn-danger\" (click)=\"deletePost(post._id)\">Delete</button>\n</div>\n<div class=\"container\">\n  <h2 class=\"page-header\">{{post.title}}</h2>\n  <div id=\"body-post\">\n    \n  </div>\n  <div class=\"time-created\">\n    <strong>Time Created: </strong>{{post.created_date}}\n  </div>\n</div>\n\n<comments></comments>"
+module.exports = "\n<div class=\"container\" style=\"margin-top:80px\">\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn teal darken-3\" (click)=\"editPost(post._id)\" >Edit</button>\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn red darken-1\" (click)=\"deletePost(post._id)\">Delete</button>\n  <h2 class=\"page-header\">{{post.title}}</h2>\n  <div id=\"body-post\">\n    \n  </div>\n  <div class=\"time-created\">\n    <p><strong><i><u>Time Created:</u></i> </strong>{{post.created_date}}</p>\n    <p><strong><i><u>Author:</u></i> </strong>{{author}}</p>\n  </div>\n</div>\n\n<comments></comments>"
 
 /***/ }),
 
@@ -1340,15 +1426,22 @@ var EachPostComponent = (function () {
         this.router = router;
         this.post = {};
         this.post_id = '';
+        this.author = '';
     }
     EachPostComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap
-            .switchMap(function (params) { return _this.postService.getPostContent(_this.post_id = params.get('post_id')); })
+            .switchMap(function (params) {
+            _this.post_id = params.get('post_id');
+            return _this.postService.getPostContent(_this.post_id);
+        })
             .subscribe(function (data) {
             if (data.success) {
                 _this.post = data.post;
                 document.getElementById('body-post').innerHTML = data.post.body;
+                _this.userService.getUserInfor(_this.post['author_id']).subscribe(function (data) {
+                    _this.author = data.user_info.username;
+                });
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
@@ -1394,7 +1487,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\r\n    padding-top: 3.5rem;\r\n    overflow-y: hidden;\r\n    font-size: 1rem;\r\n}\r\n\r\n.header{\r\n    background-color: rgb(128, 157, 204);\r\n    padding: 10px 16px;\r\n    color: white;\r\n    font-size: 1.25rem;\r\n}\r\n\r\n.filter{\r\n    float: right;\r\n}\r\n\r\n\r\n\r\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {\r\n    position: relative;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n.col-sm-2{\r\n    margin-top: 52px;\r\n}\r\n\r\n.news{\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px black;\r\n    padding: 20px;\r\n    margin-bottom: 40px;\r\n}", ""]);
+exports.push([module.i, "body {\r\n    padding-top: 3.5rem;\r\n    overflow-y: hidden;\r\n    font-size: 1rem;\r\n}\r\n\r\n.header{\r\n    background-color: rgb(128, 157, 204);\r\n    padding: 10px 16px;\r\n    color: white;\r\n    font-size: 1.25rem;\r\n}\r\n\r\n.filter{\r\n    float: right;\r\n    font-size: 20px;\r\n}\r\n\r\n\r\n\r\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {\r\n    position: relative;\r\n    width: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n.col-sm-2{\r\n    margin-top: 52px;\r\n}\r\n\r\n.news{\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px black;\r\n    padding: 20px;\r\n    margin-bottom: 40px;\r\n}\r\n.row .col.s6{\r\n    left: 25%;\r\n}\r\n.card-panel{\r\n    border-radius: 10px;\r\n    background-color: #433D3D;\r\n    color: #A7A7A7; \r\n}\r\n.userInfo{\r\n    padding-top: 50px;\r\n}\r\n\r\n.userInfo .header{\r\n    width: 100%;\r\n    background-color: #433D3D;\r\n    color: gray;\r\n    font-size: 2rem;\r\n}\r\n\r\n.userList li{\r\n    border-bottom: 1px solid gray;\r\n    width: 80%;\r\n    margin: 10px auto;\r\n}\r\n\r\n.tabs.tabs-fixed-width {\r\n    background-color: #433D3D;\r\n}\r\n.tabs.tabs-fixed-width a{\r\n    color: gray;\r\n}\r\n\r\n.tab a.active {\r\n    background-color: rgba(0, 0, 0, 0.3);\r\n    border-bottom: 2px solid #f6b2b5;\r\n    color: white;\r\n}\r\n.text-left{\r\n    text-align: left;\r\n    font-size: 18px;\r\n}\r\n\r\n.main-topic{\r\n    padding-top: 50px;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -1407,7 +1500,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container news\" *ngIf=\"allUsers\">\n  <div class=\"\">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <div class=\"header\">\n          New users\n        </div>\n        <div class=\"users\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\" *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\">{{user.username}}</a></li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"col-sm-10\">\n        <div class=\"header\">\n          News\n          <span class=\"filter\">\n            <select #selected (change)=\"getFilterValue(selected.value)\">\n              <option>5</option>\n              <option>10</option>\n              <option>15</option>\n            </select>\n          </span>\n        </div>\n        <div class=\"newpost mt-1\">\n          <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n            <button class=\"btn btn-primary\" (click)=\"mode='posts'\">New Post</button>\n            <button class=\"btn btn-secondary\" (click)=\"mode='category'\">New Category</button>\n            <button class=\"btn btn-success\" (click)=\"mode='views'\">Highest Views Post</button>\n          </div>\n            <div *ngIf=\"mode=='posts'\">\n              <ul class=\"list-group\">\n                <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                  <a [routerLink]=\"['/posts',post._id]\">{{i+1}}. {{post.title}}</a>\n                  <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\n                </li>\n                \n              </ul>\n            </div>\n            <div *ngIf=\"mode=='category'\">\n              <ul class=\"list-group\">\n                  <li class=\"list-group-item\" *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                      <a [routerLink]=\"['/categories',category._id]\">{{i+1}}. {{category.category}}</a>\n                      <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\n                    </li>\n              </ul>\n            </div>\n            <div *ngIf=\"mode=='views'\">\n              <ul class=\"list-group\">\n                  <li class=\"list-group-item\" *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                    <div class=\"post\" style=\"float:left\">\n                        <a [routerLink]=\"['/posts',highestView._id]\">{{i+1}}. {{highestView.title}}</a>\n                        <p>Views: {{highestView.views}}</p>\n                    </div>  \n                    <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\n                    </li>\n              </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <div class=\"main-topic\">\n    <main-topic *ngFor=\"let topic of maintopics\" [topic]=\"topic\"></main-topic>\n  </div>\n</div>"
+module.exports = "<!-- <div class=\"container news\" *ngIf=\"allUsers\">\n  <div class=\"\">\n    <div class=\"row\">\n      <div class=\"col-sm-2\">\n        <div class=\"header\">\n          New users\n        </div>\n        <div class=\"users\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\" *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\">{{user.username}}</a></li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"col-sm-10\">\n        <div class=\"header\">\n          News\n          <span class=\"filter\">\n            <select #selected (change)=\"getFilterValue(selected.value)\">\n              <option>5</option>\n              <option>10</option>\n              <option>15</option>\n            </select>\n          </span>\n        </div>\n        <div class=\"newpost mt-1\">\n          <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n            <button class=\"btn btn-primary\" (click)=\"mode='posts'\">New Post</button>\n            <button class=\"btn btn-secondary\" (click)=\"mode='category'\">New Category</button>\n            <button class=\"btn btn-success\" (click)=\"mode='views'\">Highest Views Post</button>\n          </div>\n            <div *ngIf=\"mode=='posts'\">\n              <ul class=\"list-group\">\n                <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                  <a [routerLink]=\"['/posts',post._id]\">{{i+1}}. {{post.title}}</a>\n                  <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\n                </li>\n                \n              </ul>\n            </div>\n            <div *ngIf=\"mode=='category'\">\n              <ul class=\"list-group\">\n                  <li class=\"list-group-item\" *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                      <a [routerLink]=\"['/categories',category._id]\">{{i+1}}. {{category.category}}</a>\n                      <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\n                    </li>\n              </ul>\n            </div>\n            <div *ngIf=\"mode=='views'\">\n              <ul class=\"list-group\">\n                  <li class=\"list-group-item\" *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\n                    <div class=\"post\" style=\"float:left\">\n                        <a [routerLink]=\"['/posts',highestView._id]\">{{i+1}}. {{highestView.title}}</a>\n                        <p>Views: {{highestView.views}}</p>\n                    </div>  \n                    <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\n                    </li>\n              </ul>\n            </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n\n\n\n\n\n\n\n\n\n<div class=\"container center\" style=\"margin-top:80px;\">\n    <div class=\"card-panel welcome\">\n      <h2>Welcome to My Forum Page!</h2>\n      <h5>Member can see more information!</h5>\n    </div>    \n\n    <div class=\"userInfo\" *ngIf=\"userService.isLoggedIn()\">\n      <div class=\"row\">\n        <div class=\"col s4\">\n          <div class=\"header\">New User</div>            \n          <ul class=\"userList\">\n            <li *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\"><strong class=\"pink-text\" ><i>{{user.username}}</i></strong></a> <i style=\"float:right\">{{user.created_date}}</i></li>\n          </ul>\n        </div>\n        <div class=\"col s8\">\n          <div class=\"header\">\n            Play Some Filter News!\n            \n           <span class=\"filter\">\n             <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\n               <option value=\"5\">5</option>\n               <option value=\"10\">10</option>\n               <option value=\"15\">15</option>\n             </select>\n           </span>\n            \n          </div>\n          <ul class=\"tabs tabs-fixed-width\">\n            <li class=\"tab\"><a (click)=\"mode='newpost'\" [class.active]=\"mode=='newpost'\" >New Post</a></li>\n            <li class=\"tab\"><a (click)=\"mode='newcategory'\" [class.active]=\"mode=='newcategory'\">New Category</a></li>\n            <li class=\"tab\"><a (click)=\"mode='highestview'\" [class.active]=\"mode=='highestview'\">Highest Views</a></li>\n          </ul>\n          <div *ngIf=\"mode=='newpost'\">\n            <ul class=\"userList\">\n              <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\n                <a [routerLink]=\"['/posts',post._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{post.title}}</i></strong></a> \n                <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\n              </li>\n            </ul>\n          </div>\n          <div *ngIf=\"mode=='newcategory'\">\n            <ul class=\"userList\">\n              <li *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\n                <a [routerLink]=\"['/categories',category._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{category.category}}</i></strong></a> \n                <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\n              </li>            \n            </ul>\n          </div>\n          <div *ngIf=\"mode=='highestview'\">\n            <ul class=\"userList\">\n              <li *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\n                <a [routerLink]=\"['/posts',highestView._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{highestView.title}}</i></strong> <i style=\"font-size:13px\"> Views: <Strong>{{highestView.views}} </Strong></i></a> \n                <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\n              </li>            \n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"main-topic\">\n      <main-topic *ngFor=\"let topic of maintopics\" [topic]=\"topic\"></main-topic>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1443,9 +1536,9 @@ var HomeComponent = (function () {
         this.postsService = postsService;
         this.p = 1;
         this.itemsPerPage = 5;
-        this.mode = "posts";
         this.categories = [];
         this.posts = [];
+        this.mode = 'newpost';
         this.highestViewsPost = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -1475,6 +1568,7 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent.prototype.getFilterValue = function (value) {
+        console.log(value);
         this.itemsPerPage = value;
     };
     return HomeComponent;
@@ -1501,7 +1595,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".header{\r\n    width: 100%;\r\n    background-color: #433D3D;\r\n    color: gray;\r\n    padding: 10px;\r\n    font-size: 2rem;\r\n    box-shadow: 0 0 2px white;\r\n}\r\n.text-left{\r\n    text-align: left;\r\n}\r\n.userList li{\r\n    border-bottom: 1px solid gray;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    width: 90%;\r\n    margin: 10px auto;\r\n}", ""]);
 
 // exports
 
@@ -1514,7 +1608,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/home/main-topic/main-topic.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n  <h1 class=\"display-3\">{{topic.topic}}</h1>\n  <ul class=\"list-group\" *ngFor=\"let category of categories\">\n    <li class=\"list-group-item\">\n      <a class=\"btn btn-primary btn-lg\" [routerLink]=\"['/categories',category._id]\" >{{category.category}}</a>\n      <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col s12\">\n    <div class=\"header\">{{topic.topic}}</div>            \n    <ul class=\"userList\">\n        <li *ngFor=\"let category of categories\" class=\"text-left\">\n          <a style=\"font-size:20px;\" [routerLink]=\"['/categories',category._id]\"><strong class=\"pink-text\" ><i>{{category.category}}</i></strong></a> \n          <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\n        </li>            \n      </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1574,7 +1668,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".user_created_category{\r\n    background-color: gray;\r\n    padding: 5px;\r\n    color: white;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 5px black;\r\n}\r\n.user_created_category p{\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.user_created_category a, span{\r\n    color: black; \r\n    font-weight: 700;\r\n    font-size: 20px;\r\n}", ""]);
+exports.push([module.i, ".user_created_category{\r\n    font-size:13px;\r\n}", ""]);
 
 // exports
 
@@ -1587,7 +1681,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"user_created_category\">\n  <p>Name: <a [routerLink]=\"['/user/info',user_info._id]\">{{user_info.name}}</a></p>\n  <p >Created Date: <span>{{user_info.created_date}}</span></p>\n</div>"
+module.exports = "<div class=\"user_created_category\">\n  Name: <a [routerLink]=\"['/user/info',user_info._id]\">{{user_info.name}}</a> \n  Created Date: <span>{{user_info.created_date}}</span>\n</div>"
 
 /***/ }),
 
@@ -1677,7 +1771,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<form id=\"loginform\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit(form)\">\n    <h3 class=\"text-center\">Login Form</h3>\n    <div class=\"form-group\">\n      <label for=\"exampleInputEmail1\">Username</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"username\" placeholder=\"Enter email\">\n      <div class=\"alert alert-danger\" *ngIf=\"username.errors && username.touched\">\n        <div *ngIf=\"username.errors.required\">Username is Required.</div>\n        <div *ngIf=\"username.errors.CannotContainSpace\">Username Cannot Contain Space.</div>       \n      </div>      \n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Password</label>\n      <input type=\"password\"  class=\"form-control\" formControlName=\"password\" placeholder=\"Password\">\n      <div class=\"alert alert-danger\" *ngIf=\"password.errors && password.touched\">\n          <div *ngIf=\"password.errors.required\">Password is required.</div>\n      </div>\n    </div>\n    <button [disabled]=\"form.invalid\" type=\"submit\" class=\"btn btn-primary btn-block mt-4\" >Login</button>\n</form> "
+module.exports = "\n<form id=\"loginform\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit(form)\" style=\"margin-top:80px\"> \n    <h3 class=\"text-center\">Login Form</h3>\n    <div class=\"form-group\">\n      <label for=\"exampleInputEmail1\">Username</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"username\" placeholder=\"Enter username\">\n      <div class=\"alert alert-danger\" *ngIf=\"username.errors && username.touched\">\n        <div *ngIf=\"username.errors.required\">Username is Required.</div>\n        <div *ngIf=\"username.errors.CannotContainSpace\">Username Cannot Contain Space.</div>       \n      </div>      \n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Password</label>\n      <input type=\"password\"  class=\"form-control\" formControlName=\"password\" placeholder=\"Password\">\n      <div class=\"alert alert-danger\" *ngIf=\"password.errors && password.touched\">\n          <div *ngIf=\"password.errors.required\">Password is required.</div>\n      </div>\n    </div>\n    <button [disabled]=\"form.invalid\" type=\"submit\" class=\"btn btn-primary btn-block mt-4\" >Login</button>\n</form> "
 
 /***/ }),
 
@@ -1787,7 +1881,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header{\r\n    width: 100%;\r\n    background-color: rgb(66, 134, 244);\r\n    padding: 16px;\r\n    margin-bottom: 10px;\r\n    font-size: 20px;\r\n    color: white;\r\n    border-radius: 10px;\r\n}\r\n.filter{\r\n    float: right;\r\n}\r\n\r\n.filter select{\r\n    border-radius: 5px;   \r\n}\r\n\r\n.posts{\r\n    margin-bottom: 50px;\r\n}\r\n", ""]);
+exports.push([module.i, ".header{\r\n    width: 100%;\r\n    background-color: rgb(66, 134, 244);\r\n    padding: 16px;\r\n    margin-bottom: 10px;\r\n    font-size: 20px;\r\n    color: white;\r\n    border-radius: 10px;\r\n}\r\n.filter{\r\n    float: right;\r\n    color: black;\r\n    font-size: 20px;\r\n}\r\n\r\n.filter select{\r\n    border-radius: 5px;   \r\n}\r\n\r\n.posts{\r\n    margin-bottom: 50px;\r\n}\r\n.category{\r\n    border-bottom: 1px solid gray;\r\n    padding: 10px;\r\n    font-size: 40px;\r\n    color: white;\r\n    display: inline-block;\r\n}\r\n.noticed{\r\n    background-color: #3D3D3D;\r\n    padding: 15px;\r\n    text-align: center;\r\n    border-radius: 10px;\r\n    font-size: 16px;\r\n    box-shadow: 0 0 20px #F1F1F1;\r\n}\r\n\r\n.listPost li{\r\n    width: 90%;\r\n    border: 1px solid gray;\r\n    padding: 12px;\r\n    margin: 10px auto 0;\r\n    border-radius: 10px;\r\n    background-color: white;\r\n    color: black;\r\n}\r\n.listPost li a{\r\n    font-size: 1.25rem;\r\n    color: black;\r\n}", ""]);
 
 // exports
 
@@ -1800,7 +1894,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/posts/posts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn btn-primary\">Create Post</a></p>\n<div *ngIf=\"posts.length==0\">Have no posts yet</div>\n<div *ngIf=\"posts.length!=0\">\n    <div class=\"header\">\n        News!\n        <span class=\"filter\">\n          <select #selected (change)=\"getFilterValue(selected.value)\">\n            <option>5</option>\n            <option>10</option>\n            <option>15</option>\n          </select>\n        </span>\n      </div>\n    <pagination-controls class=\"text-center mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <div *ngIf=\"posts.length!=0\" class=\"posts\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n          <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n          <button *ngIf=\"userService.isAdmin()\" class=\"btn btn-sm btn-danger\" style=\"float:right;cursor:pointer\" (click)=\"deletePost(post)\">delete</button>\n        </li>\n      </ul>\n    </div>\n</div>\n\n\n"
+module.exports = "<!-- <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn btn-primary\">Create Post</a></p>\n<div *ngIf=\"posts.length==0\">Have no posts yet</div>\n<div *ngIf=\"posts.length!=0\">\n    <div class=\"header\">\n        News!\n        <span class=\"filter\">\n          <select #selected (change)=\"getFilterValue(selected.value)\">\n            <option>5</option>\n            <option>10</option>\n            <option>15</option>\n          </select>\n        </span>\n      </div>\n    <pagination-controls class=\"text-center mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <div *ngIf=\"posts.length!=0\" class=\"posts\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n          <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n          <button *ngIf=\"userService.isAdmin()\" class=\"btn btn-sm btn-danger\" style=\"float:right;cursor:pointer\" (click)=\"deletePost(post)\">delete</button>\n        </li>\n      </ul>\n    </div>\n</div> -->\n\n<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s3\">\n        <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn\">Create Post</a></p>            \n    </div>\n    <div class=\"col s4 offset-s5\">\n        <div class=\"noticed\">Only user admin can delete this post!</div>\n    </div>\n  </div>\n  <div *ngIf=\"posts.length==0\">Have no posts yet</div>\n  <div *ngIf=\"posts.length!=0\">\n    <div class=\"row\">\n      <div class=\"col s12\" style=\"margin-top:20px;\">\n        <div class=\"category\">\n          {{category.category}}\n        </div>\n        <span class=\"filter\">\n            <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\n              <option value=\"5\">5</option>\n              <option value=\"10\">10</option>\n              <option value=\"15\">15</option>\n            </select>\n          </span>\n      </div>\n    </div>\n    <div class=\"control\">\n      <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n    </div>\n    <div class=\"posts\">\n      <div class=\"row\">\n        <div class=\"col s12\">\n          <ul class=\"listPost\">\n            <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n              <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n              <button *ngIf=\"userService.isAdmin()\" class=\"btn red darken-1\" style=\"float:right;cursor:pointer; position:relative; top:-5px;\" (click)=\"deletePost(post)\">delete</button>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -1809,14 +1903,15 @@ module.exports = "<p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/cre
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1832,24 +1927,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var PostsComponent = (function () {
-    function PostsComponent(route, postsService, flashMessage, userService, router) {
+    function PostsComponent(route, postsService, flashMessage, userService, router, categoryService) {
         this.route = route;
         this.postsService = postsService;
         this.flashMessage = flashMessage;
         this.userService = userService;
         this.router = router;
+        this.categoryService = categoryService;
         this.categoryId = "agsgdagsagagdsa";
         this.posts = [];
         this.p = 1;
         this.itemsPerPage = 5;
+        this.category = '';
     }
     PostsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.paramMap
-            .switchMap(function (params) { return _this.categoryId = params.get('category_id'); })
-            .subscribe(function (data) { }, function (err) { return console.log(err); });
-        this.postsService.getAllPostsSpecificCategory(this.categoryId).subscribe(function (data) {
+            .switchMap(function (params) {
+            _this.categoryId = params.get('category_id');
+            return _this.postsService.getAllPostsSpecificCategory(_this.categoryId);
+        })
+            .subscribe(function (data) {
             if (data.success) {
                 _this.posts = data.posts;
             }
@@ -1857,6 +1957,9 @@ var PostsComponent = (function () {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 return false;
             }
+        }, function (err) { return console.log(err); });
+        this.categoryService.getContentCategory(this.categoryId).subscribe(function (data) {
+            _this.category = data.category;
         });
     };
     PostsComponent.prototype.getFilterValue = function (value) {
@@ -1877,15 +1980,15 @@ var PostsComponent = (function () {
     return PostsComponent;
 }());
 PostsComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
         selector: 'app-posts',
         template: __webpack_require__("../../../../../src/app/components/pages/posts/posts.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/posts/posts.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_posts_service__["a" /* PostsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_posts_service__["a" /* PostsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_posts_service__["a" /* PostsService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__services_categories_service__["a" /* CategoriesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_categories_service__["a" /* CategoriesService */]) === "function" && _f || Object])
 ], PostsComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=posts.component.js.map
 
 /***/ }),
@@ -1911,7 +2014,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<form id=\"registerform\" [formGroup]=\"registerForm\" (ngSubmit)=\"onRegister(registerForm)\">\n    <h3 class=\"text-center\">Register Form</h3>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Name</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"name\"  placeholder=\"Your Name...\">\n      <div class=\"alert alert-danger\" *ngIf=\"name.errors && name.touched\">\n        <div *ngIf=\"name.errors.required\">Name is Required.</div>\n      </div>\n\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Address</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"address\"  placeholder=\"Your Address...\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Username</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"username\"  placeholder=\"Username...\">\n      <div class=\"alert alert-danger\" *ngIf=\"username.errors && username.touched\">\n        <div *ngIf=\"username.errors.required\">Username is Required.</div>\n        <div *ngIf=\"username.errors.CannotContainSpace\">Username cannot contain space.</div>\n        <div *ngIf=\"username.errors.usernameTaken\">Username existed.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\"> \n      <label for=\"exampleInputEmail1\">Email address</label>\n      <input type=\"email\" class=\"form-control\" formControlName=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n      <div class=\"alert alert-danger\" *ngIf=\"email.errors && email.touched\">\n        <div *ngIf=\"email.errors.required\">Email is Required.</div>\n        <div *ngIf=\"email.errors.CannotContainSpace\">Email cannot contain space.</div>\n        <div *ngIf=\"email.errors.emailTaken\">Username existed.</div>\n        <div *ngIf=\"email.errors.incorrectMailFormat\">Incorrect Email Format.</div>\n      </div>\n      <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Password</label>\n      <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\">\n      <div class=\"alert alert-danger\" *ngIf=\"password.errors && password.touched\">\n        <div *ngIf=\"password.errors.required\">Password is Required.</div>\n      </div>\n    </div>\n    <button [disabled]=\"registerForm.invalid || enableR\" type=\"submit\" class=\"btn btn-primary btn-block mt-4\" >Register</button>\n</form>"
+module.exports = "\n<form id=\"registerform\" [formGroup]=\"registerForm\" (ngSubmit)=\"onRegister(registerForm)\" style=\"margin-top:80px\">\n    <h3 class=\"text-center\">Register Form</h3>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Name</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"name\"  placeholder=\"Your Name...\">\n      <div class=\"alert alert-danger\" *ngIf=\"name.errors && name.touched\">\n        <div *ngIf=\"name.errors.required\">Name is Required.</div>\n      </div>\n\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Address</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"address\"  placeholder=\"Your Address...\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Username</label>\n      <input type=\"text\" class=\"form-control\" formControlName=\"username\"  placeholder=\"Username...\">\n      <div class=\"alert alert-danger\" *ngIf=\"username.errors && username.touched\">\n        <div *ngIf=\"username.errors.required\">Username is Required.</div>\n        <div *ngIf=\"username.errors.CannotContainSpace\">Username cannot contain space.</div>\n        <div *ngIf=\"username.errors.usernameTaken\">Username existed.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\"> \n      <label for=\"exampleInputEmail1\">Email address</label>\n      <input type=\"email\" class=\"form-control\" formControlName=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n      <div class=\"alert alert-danger\" *ngIf=\"email.errors && email.touched\">\n        <div *ngIf=\"email.errors.required\">Email is Required.</div>\n        <div *ngIf=\"email.errors.CannotContainSpace\">Email cannot contain space.</div>\n        <div *ngIf=\"email.errors.emailTaken\">Email existed.</div>\n        <div *ngIf=\"email.errors.incorrectMailFormat\">Incorrect Email Format.</div>\n      </div>\n      <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"exampleInputPassword1\">Password</label>\n      <input type=\"password\" class=\"form-control\" formControlName=\"password\" placeholder=\"Password\">\n      <div class=\"alert alert-danger\" *ngIf=\"password.errors && password.touched\">\n        <div *ngIf=\"password.errors.required\">Password is Required.</div>\n      </div>\n    </div>\n    <button [disabled]=\"registerForm.invalid || enableR\" type=\"submit\" class=\"btn btn-primary btn-block mt-4\" >Register</button>\n</form>"
 
 /***/ }),
 
@@ -2035,7 +2138,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\r\n    min-height: 75rem; /* Can be removed; just added for demo purposes */\r\n  }\r\n  \r\n  .navbar {\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .jumbotron {\r\n    padding-top: 6rem;\r\n    padding-bottom: 6rem;\r\n    margin-bottom: 0;\r\n    background-color: #fff;\r\n  }\r\n  \r\n  .jumbotron p:last-child {\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .jumbotron-heading {\r\n    font-weight: 300;\r\n  }\r\n  \r\n  .jumbotron .container {\r\n    max-width: 40rem;\r\n  }\r\n  \r\n  .album {\r\n    min-height: 50rem; /* Can be removed; just added for demo purposes */\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n    background-color: #f7f7f7;\r\n  }\r\n  \r\n  .card {\r\n    float: left;\r\n    width: 33.333%;\r\n    padding: .75rem;\r\n    margin-bottom: 2rem;\r\n    border: 0;\r\n  }\r\n  \r\n  .card > img {\r\n    margin-bottom: .75rem;\r\n  }\r\n  \r\n  .card-text {\r\n    font-size: 85%;\r\n  }\r\n  \r\n  footer {\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n  }\r\n  \r\n  footer p {\r\n    margin-bottom: .25rem;\r\n  }", ""]);
+exports.push([module.i, "body {\r\n    min-height: 75rem; /* Can be removed; just added for demo purposes */\r\n}\r\n  \r\n.navbar {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron {\r\n  padding-top: 6rem;\r\n  padding-bottom: 6rem;\r\n  margin-bottom: 0;\r\n  background-color: #fff;\r\n}\r\n\r\n.jumbotron p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron-heading {\r\n  font-weight: 300;\r\n}\r\n\r\n.jumbotron .container {\r\n  max-width: 40rem;\r\n}\r\n\r\n.album {\r\n  min-height: 50rem; /* Can be removed; just added for demo purposes */\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n  background-color: #f7f7f7;\r\n}\r\n\r\n.card {\r\n  width:100%;\r\n}\r\n\r\n\r\n.card > img {\r\n  margin-bottom: .75rem;\r\n}\r\n\r\n.card-text {\r\n  font-size: 85%;\r\n}\r\n\r\nfooter {\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n}\r\n\r\nfooter p {\r\n  margin-bottom: .25rem;\r\n}\r\n\r\n.card-panel{\r\n  border-radius: 10px;\r\n  box-shadow: 0 0 10px white;\r\n}\r\n.card[_ngcontent-c4] {\r\n  width: 100%;\r\n}", ""]);
 
 // exports
 
@@ -2048,7 +2151,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/shop.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n  <section class=\"jumbotron text-center\">\n    <div class=\"container\">\n      <h1 class=\"jumbotron-heading\">ZeroToZ Shopping</h1>\n      <p class=\"lead text-muted\">I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\n      <p>\n        <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\n        <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\n      </p>\n    </div>\n  </section>\n\n  <div class=\"album text-muted\">\n    <div class=\"container\">\n\n      <div class=\"row\">\n        <div class=\"card\">\n          <img src=\"assets/images/pro1.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro2.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro3.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro4.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro5.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro6.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n\n        <div class=\"card\">\n          <img src=\"assets/images/pro7.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro8.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n        <div class=\"card\">\n          <img src=\"assets/images/pro9.png\" alt=\"product\">\n          <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        </div>\n      </div>\n\n    </div>\n  </div>\n"
+module.exports = "\n<div class=\"container center\" style=\"margin-top:80px;\">\n  <div class=\"card-panel teal lighten-2\">\n    <h2>ZeroToZ Shopping</h2>\n    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\n    <p>\n      <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\n      <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\n    </p>\n  </div>\n</div>\n\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col s4\" *ngFor=\"let product of products; let i=index\">\n      <div class=\"card\">\n        <div class=\"card-image\">\n          <img src=\"{{product.src}}\" alt=\"images product\">\n          <span class=\"card-title\">{{i+1}} {{product.name}}</span>\n        </div>\n        <div class=\"card-action\">\n          <a *ngIf=\"carts.length==0\" class=\"btn\" style=\"display:block\" (click)=\"addCart(product)\">Add to cart</a>\n          <div *ngIf=\"carts.length!=0\">\n            <div class=\"row\">\n              <div class=\"col s3\">\n                  <a class=\"btn\" style=\"float:left\" (click)=\"takeValue(product)\">-</a>\n              </div>\n              <div class=\"col s6 center\">\n                  <a>1 in cart</a>\n              </div>\n              <div class=\"col s3\">\n                  <a class=\"btn\" style=\"float:left\" (click)=\"takeValue(product)\">+</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2070,8 +2173,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ShopComponent = (function () {
     function ShopComponent() {
+        this.products = [];
+        this.carts = [];
     }
     ShopComponent.prototype.ngOnInit = function () {
+        this.products = [
+            { 'name': 'product1', src: 'assets/images/pro1.png' },
+            { 'name': 'product2', src: 'assets/images/pro2.png' },
+            { 'name': 'product3', src: 'assets/images/pro3.png' },
+            { 'name': 'product4', src: 'assets/images/pro4.png' },
+            { 'name': 'product5', src: 'assets/images/pro5.png' },
+            { 'name': 'product6', src: 'assets/images/pro6.png' },
+            { 'name': 'product7', src: 'assets/images/pro7.png' },
+            { 'name': 'product8', src: 'assets/images/pro8.png' },
+            { 'name': 'product9', src: 'assets/images/pro9.png' },
+        ];
+    };
+    ShopComponent.prototype.addCart = function (product) {
+        console.log(product);
+        this.carts.push(product);
+        console.log(this.carts);
     };
     return ShopComponent;
 }());
@@ -2109,7 +2230,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/users/user-info/user-info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user_info\">\n    <h2 class=\"page-header\">{{user_info.name}}</h2>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\">Username: {{user_info.username}}</li>\n      <li class=\"list-group-item\">email: {{user_info.email}}</li>\n    </ul>\n  </div>"
+module.exports = "<div class=\"container\" style=\"margin-top:80px;\">\n    <div class=\"row\">\n      <div class=\"col s6\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <img src=\"https://lorempixel.com/400/200/\">\n  \n            <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n          </div>\n          <div class=\"card-action black\" style=\"font-size:20px;\">\n            <p>{{user_info.name}}</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col s4 offset-s2\">\n        <div *ngIf=\"user_info\">\n          <h2 class=\"page-header\">{{user_info.name}}</h2>\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\">Username: {{user_info.username}}</li>\n            <li class=\"list-group-item\">Email: {{user_info.email}}</li>\n            <li class=\"list-group-item\">Post: More</li>\n            <li class=\"list-group-item\">Comments: More</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  \n  <!-- <div *ngIf=\"user\">\n    <h2 class=\"page-header\">{{user.name}}</h2>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\">Username: {{user.username}}</li>\n      <li class=\"list-group-item\">email: {{user.email}}</li>\n    </ul>\n  </div> -->"
 
 /***/ }),
 
@@ -2266,7 +2387,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/users/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">email: {{user.email}}</li>\n  </ul>\n</div>"
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s6\">\n      <div class=\"card\">\n        <div class=\"card-image\">\n          <img src=\"https://lorempixel.com/400/200/\">\n\n          <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\n        </div>\n        <div class=\"card-action black\" style=\"font-size:20px;\">\n          <p>{{user.name}}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col s4 offset-s2\">\n      <div *ngIf=\"user\">\n        <h2 class=\"page-header\">{{user.name}}</h2>\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\">Username: {{user.username}}</li>\n          <li class=\"list-group-item\">Email: {{user.email}}</li>\n          <li class=\"list-group-item\">Post: More</li>\n          <li class=\"list-group-item\">Comments: More</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- <div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">email: {{user.email}}</li>\n  </ul>\n</div> -->"
 
 /***/ }),
 
@@ -2497,6 +2618,8 @@ var CategoriesService = (function () {
     }
     CategoriesService.prototype.createCategory = function (newCategory) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.post('http://localhost:3000/api/create/category', newCategory, { headers: headers })
             .map(function (res) { return res.json(); });
@@ -2518,6 +2641,10 @@ var CategoriesService = (function () {
         headers.append('Content-type', 'application/json');
         return this.http.get('http://localhost:3000/api/categories/specific/' + category_id, { headers: headers })
             .map(function (res) { return res.json(); });
+    };
+    CategoriesService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
     };
     return CategoriesService;
 }());
@@ -2558,6 +2685,8 @@ var CommentsService = (function () {
     }
     CommentsService.prototype.createComment = function (newComment) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.post('http://localhost:3000/api/create/comment', newComment, { headers: headers })
             .map(function (res) { return res.json(); });
@@ -2631,6 +2760,18 @@ var MainTopicService = (function () {
         return this.http.get('http://localhost:3000/api/maintopics/all', { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    MainTopicService.prototype.createMaintopic = function (newMaintopic) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.post('http://localhost:3000/api/create/maintopic', newMaintopic, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    MainTopicService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
+    };
     return MainTopicService;
 }());
 MainTopicService = __decorate([
@@ -2670,6 +2811,8 @@ var PostsService = (function () {
     }
     PostsService.prototype.createPost = function (newPost) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
         return this.http.post('http://localhost:3000/api/create/post', newPost, { headers: headers })
             .map(function (res) { return res.json(); });
@@ -2901,6 +3044,14 @@ var UserService = (function () {
                 return false;
             }
         }
+    };
+    UserService.prototype.updateUserInfo = function (user_id, newRoles) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('http://localhost:3000/api/users/infos/update/' + user_id, newRoles, { headers: headers })
+            .map(function (res) { return res.json(); });
     };
     UserService.prototype.isLoggedIn = function () {
         var jwtHelper = new __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["JwtHelper"]();

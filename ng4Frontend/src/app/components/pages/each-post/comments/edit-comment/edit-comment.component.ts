@@ -1,6 +1,6 @@
 
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-
+declare var $ :any;
 @Component({
   selector: 'edit-comment',
   templateUrl: './edit-comment.component.html',
@@ -15,6 +15,7 @@ export class EditCommentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.indexCommentEdit);
     this.newbody=this.editComment['body'];
   }
   updateComment(){

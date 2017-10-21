@@ -24,7 +24,7 @@ import { ProfileComponent } from './components/users/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { UserOnlineComponent } from './components/user-online/user-online.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { CategoryComponent } from './components/pages/admin/category/category.component';
+import { CategoryComponent } from './components/pages/admin/dashboard/category.component';
 import { MainTopicComponent } from './components/pages/home/main-topic/main-topic.component';
 import { UserCreatedCategoryComponent } from './components/pages/home/main-topic/user-created-category/user-created-category.component';
 import { UserInfoComponent } from './components/pages/users/user-info/user-info.component';
@@ -50,7 +50,7 @@ const Routes=[
     path:'profile',component: ProfileComponent, canActivate: [UserGuard]
   },
   {
-    path:'create/category' , component: CategoryComponent, canActivate:[AdminGuard]
+    path:'create/admin' , component: CategoryComponent, canActivate:[AdminGuard]
   },
   {
     path:'create/post/:category_id' , component: PostComponent , canActivate: [UserGuard]
