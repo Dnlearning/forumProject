@@ -173,51 +173,53 @@ var _a, _b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_image_service__ = __webpack_require__("../../../../../src/app/services/upload-image.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__ = __webpack_require__("../../../../../src/app/guards/user-created-post.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__ = __webpack_require__("../../../../../src/app/guards/admin.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__ = __webpack_require__("../../../../../src/app/components/pages/posts/posts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_shared_service__ = __webpack_require__("../../../../../src/app/services/shared.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__guards_user_guard__ = __webpack_require__("../../../../../src/app/guards/user.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_navbar_top_navbar_top_component__ = __webpack_require__("../../../../../src/app/components/navbar-top/navbar-top.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__ = __webpack_require__("../../../../../src/app/components/pages/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__ = __webpack_require__("../../../../../src/app/components/pages/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__ = __webpack_require__("../../../../../src/app/components/pages/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_user_online_user_online_component__ = __webpack_require__("../../../../../src/app/components/user-online/user-online.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ngx_pagination__ = __webpack_require__("../../../../ngx-pagination/dist/ngx-pagination.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_main_topic_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/main-topic.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_user_created_category_user_created_category_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__ = __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/post/post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__ = __webpack_require__("../../../../ng2-ckeditor/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/edit-post/edit-post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__ = __webpack_require__("../../../../../src/app/components/not-found/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_pages_shop_product_product_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/product/product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_check_out_paypal_service__ = __webpack_require__("../../../../../src/app/services/check-out-paypal.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_upload_image_service__ = __webpack_require__("../../../../../src/app/services/upload-image.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__guards_user_created_post_guard__ = __webpack_require__("../../../../../src/app/guards/user-created-post.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__guards_admin_guard__ = __webpack_require__("../../../../../src/app/guards/admin.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_pages_posts_posts_component__ = __webpack_require__("../../../../../src/app/components/pages/posts/posts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_shared_service__ = __webpack_require__("../../../../../src/app/services/shared.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__guards_user_guard__ = __webpack_require__("../../../../../src/app/guards/user.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_navbar_top_navbar_top_component__ = __webpack_require__("../../../../../src/app/components/navbar-top/navbar-top.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pages_home_home_component__ = __webpack_require__("../../../../../src/app/components/pages/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_pages_register_register_component__ = __webpack_require__("../../../../../src/app/components/pages/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_pages_login_login_component__ = __webpack_require__("../../../../../src/app/components/pages/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_users_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_user_online_user_online_component__ = __webpack_require__("../../../../../src/app/components/user-online/user-online.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_ngx_pagination__ = __webpack_require__("../../../../ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_pages_admin_dashboard_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_main_topic_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/main-topic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_pages_home_main_topic_user_created_category_user_created_category_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_pages_users_user_info_user_info_component__ = __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_pages_admin_post_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/post/post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_ckeditor__ = __webpack_require__("../../../../ng2-ckeditor/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_ckeditor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33_ng2_ckeditor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_each_post_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_admin_edit_post_edit_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/edit-post/edit-post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_not_found_not_found_component__ = __webpack_require__("../../../../../src/app/components/not-found/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_product_product_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/product/product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_pages_shop_check_out_check_out_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_pages_shop_success_checkout_success_checkout_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_pages_posts_user_created_post_user_created_post_component__ = __webpack_require__("../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -267,46 +269,48 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var Routes = [
     {
-        path: '', component: __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__["a" /* HomeComponent */]
+        path: '', component: __WEBPACK_IMPORTED_MODULE_18__components_pages_home_home_component__["a" /* HomeComponent */]
     },
     {
-        path: 'register', component: __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__["a" /* RegisterComponent */]
+        path: 'register', component: __WEBPACK_IMPORTED_MODULE_19__components_pages_register_register_component__["a" /* RegisterComponent */]
     },
     {
-        path: 'login', component: __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__["a" /* LoginComponent */]
+        path: 'login', component: __WEBPACK_IMPORTED_MODULE_20__components_pages_login_login_component__["a" /* LoginComponent */]
     },
     {
-        path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
+        path: 'profile', component: __WEBPACK_IMPORTED_MODULE_24__components_users_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: 'create/admin', component: __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__["a" /* AdminGuard */]]
+        path: 'create/admin', component: __WEBPACK_IMPORTED_MODULE_28__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__guards_admin_guard__["a" /* AdminGuard */]]
     },
     {
-        path: 'create/post/:category_id', component: __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__["a" /* PostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
+        path: 'create/post/:category_id', component: __WEBPACK_IMPORTED_MODULE_32__components_pages_admin_post_post_component__["a" /* PostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: 'update/post/:post_id', component: __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */]]
+        path: 'update/post/:post_id', component: __WEBPACK_IMPORTED_MODULE_35__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */]]
     },
     {
-        path: 'categories/:category_id', component: __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__["a" /* PostsComponent */]
+        path: 'categories/:category_id', component: __WEBPACK_IMPORTED_MODULE_7__components_pages_posts_posts_component__["a" /* PostsComponent */]
     },
     {
-        path: 'user/info/:user_id', component: __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */]
+        path: 'user/info/:user_id', component: __WEBPACK_IMPORTED_MODULE_31__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */]
     },
     {
-        path: 'posts/:post_id', component: __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__["a" /* EachPostComponent */]
+        path: 'posts/:post_id', component: __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_each_post_component__["a" /* EachPostComponent */]
     },
     {
-        path: 'shop', component: __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__["a" /* ShopComponent */]
+        path: 'shop', component: __WEBPACK_IMPORTED_MODULE_37__components_pages_shop_shop_component__["a" /* ShopComponent */]
     }, {
-        path: 'product/checkout', component: __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
+        path: 'product/checkout', component: __WEBPACK_IMPORTED_MODULE_41__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
     }, {
-        path: 'checkout/success', component: __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
+        path: 'checkout/success', component: __WEBPACK_IMPORTED_MODULE_43__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: "**", component: __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__["a" /* NotFoundComponent */]
+        path: "**", component: __WEBPACK_IMPORTED_MODULE_39__components_not_found_not_found_component__["a" /* NotFoundComponent */]
     },
 ];
 var AppModule = (function () {
@@ -315,45 +319,46 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_13__angular_core__["NgModule"])({
+    Object(__WEBPACK_IMPORTED_MODULE_14__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_navbar_top_navbar_top_component__["a" /* NavbarTopComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_chat_chat_component__["a" /* ChatComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_user_online_user_online_component__["a" /* UserOnlineComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_main_topic_component__["a" /* MainTopicComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__["a" /* PostsComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_user_created_category_user_created_category_component__["a" /* UserCreatedCategoryComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__["a" /* PostComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__["a" /* EachPostComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__["a" /* ShopComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */],
-            __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__["a" /* NotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_39__components_pages_shop_product_product_component__["a" /* ProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */],
-            __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */]
+            __WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_navbar_top_navbar_top_component__["a" /* NavbarTopComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_pages_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_pages_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_pages_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_users_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_chat_chat_component__["a" /* ChatComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_user_online_user_online_component__["a" /* UserOnlineComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_main_topic_component__["a" /* MainTopicComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_pages_posts_posts_component__["a" /* PostsComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_pages_home_main_topic_user_created_category_user_created_category_component__["a" /* UserCreatedCategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_pages_admin_post_post_component__["a" /* PostComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_each_post_component__["a" /* EachPostComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_pages_shop_shop_component__["a" /* ShopComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_not_found_not_found_component__["a" /* NotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_product_product_component__["a" /* ProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */],
+            __WEBPACK_IMPORTED_MODULE_43__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_44__components_pages_posts_user_created_post_user_created_post_component__["a" /* UserCreatedPostComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_41__angular_common__["CommonModule"],
-            __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_21__angular_router__["c" /* RouterModule */].forRoot(Routes),
-            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["ReactiveFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_14__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__["FlashMessagesModule"],
-            __WEBPACK_IMPORTED_MODULE_26_ngx_pagination__["a" /* NgxPaginationModule */],
-            __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__["CKEditorModule"],
+            __WEBPACK_IMPORTED_MODULE_42__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_22__angular_router__["c" /* RouterModule */].forRoot(Routes),
+            __WEBPACK_IMPORTED_MODULE_21__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_21__angular_forms__["ReactiveFormsModule"],
+            __WEBPACK_IMPORTED_MODULE_15__angular_http__["HttpModule"],
+            __WEBPACK_IMPORTED_MODULE_23_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_27_ngx_pagination__["a" /* NgxPaginationModule */],
+            __WEBPACK_IMPORTED_MODULE_33_ng2_ckeditor__["CKEditorModule"],
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_0__services_check_out_stripe_service__["a" /* CheckOutStripeService */], __WEBPACK_IMPORTED_MODULE_1__services_upload_image_service__["a" /* UploadImageService */], __WEBPACK_IMPORTED_MODULE_2__services_comments_service__["a" /* CommentsService */], __WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */], __WEBPACK_IMPORTED_MODULE_11__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */], __WEBPACK_IMPORTED_MODULE_9__services_shared_service__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_8__services_categories_service__["a" /* CategoriesService */], __WEBPACK_IMPORTED_MODULE_7__services_main_topic_service__["a" /* MainTopicService */], __WEBPACK_IMPORTED_MODULE_5__services_posts_service__["a" /* PostsService */], __WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__["a" /* AdminGuard */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_0__services_check_out_paypal_service__["a" /* CheckOutPaypalService */], __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__["a" /* CheckOutStripeService */], __WEBPACK_IMPORTED_MODULE_2__services_upload_image_service__["a" /* UploadImageService */], __WEBPACK_IMPORTED_MODULE_3__services_comments_service__["a" /* CommentsService */], __WEBPACK_IMPORTED_MODULE_4__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */], __WEBPACK_IMPORTED_MODULE_12__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */], __WEBPACK_IMPORTED_MODULE_10__services_shared_service__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_9__services_categories_service__["a" /* CategoriesService */], __WEBPACK_IMPORTED_MODULE_8__services_main_topic_service__["a" /* MainTopicService */], __WEBPACK_IMPORTED_MODULE_6__services_posts_service__["a" /* PostsService */], __WEBPACK_IMPORTED_MODULE_5__guards_admin_guard__["a" /* AdminGuard */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -1451,7 +1456,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/each-post/each-post.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"nav-wrapper center\">\r\n    <div class=\"col s12\">\r\n      <a routerLink='/' class=\"breadcrumb\">Forum</a>\r\n      <a [routerLink]=\"['/categories',post.category_id]\" class=\"breadcrumb\">{{categoryName}}</a>\r\n      <a routerLink='/' class=\"breadcrumb\">{{post.title}}</a>\r\n    </div>\r\n  </div>\r\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn teal darken-3\" (click)=\"editPost(post._id)\" >Edit</button>\r\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn red darken-1\" (click)=\"deletePost(post._id)\">Delete</button>\r\n  <h2 class=\"page-header\">{{post.title}}</h2>\r\n  <div id=\"body-post\">\r\n    \r\n  </div>\r\n  <div class=\"time-created\">\r\n    <p><strong><i><u>Time Created:</u></i> </strong>{{post.created_date}}</p>\r\n    <p><strong><i><u>Author:</u></i> </strong>{{author}}</p>\r\n  </div>\r\n</div>\r\n\r\n<comments></comments>"
+module.exports = "\r\n\r\n<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"nav-wrapper center\">\r\n    <div class=\"col s12\">\r\n      <a routerLink='/' class=\"breadcrumb\">Forum</a>\r\n      <a [routerLink]=\"['/categories',post.category_id]\" class=\"breadcrumb\">{{categoryName}}</a>\r\n      <a routerLink='/' class=\"breadcrumb\">{{post.title}}</a>\r\n    </div>\r\n  </div>\r\n  <button *ngIf=\"userService.isUserCreatedPost(post['author_id'])\" type=\"button\" class=\"btn teal darken-3\" (click)=\"editPost(post._id)\" >Edit</button>\r\n  <button *ngIf=\"userService.isAdmin()\" type=\"button\" class=\"btn red darken-1\" (click)=\"deletePost(post._id)\">Delete</button>\r\n  <h2 class=\"page-header\">{{post.title}}</h2>\r\n  <div id=\"body-post\">\r\n    \r\n  </div>\r\n  <div class=\"time-created\">\r\n    <p><strong><i><u>Time Created:</u></i> </strong>{{post.created_date}}</p>\r\n    <p><strong><i><u>Author:</u></i> </strong> <span class=\"chip pink lighten-2 center\">{{author}}</span></p>\r\n  </div>\r\n</div>\r\n<comments></comments>"
 
 /***/ }),
 
@@ -2008,7 +2013,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/posts/posts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn btn-primary\">Create Post</a></p>\n<div *ngIf=\"posts.length==0\">Have no posts yet</div>\n<div *ngIf=\"posts.length!=0\">\n    <div class=\"header\">\n        News!\n        <span class=\"filter\">\n          <select #selected (change)=\"getFilterValue(selected.value)\">\n            <option>5</option>\n            <option>10</option>\n            <option>15</option>\n          </select>\n        </span>\n      </div>\n    <pagination-controls class=\"text-center mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <div *ngIf=\"posts.length!=0\" class=\"posts\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n          <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n          <button *ngIf=\"userService.isAdmin()\" class=\"btn btn-sm btn-danger\" style=\"float:right;cursor:pointer\" (click)=\"deletePost(post)\">delete</button>\n        </li>\n      </ul>\n    </div>\n</div> -->\n\n\n<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s3\">\n        <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn\">Create Post</a></p>            \n    </div>\n    <div class=\"col s4 offset-s5\">\n        <div class=\"noticed\">Only user admin can delete this post!</div>\n    </div>\n  </div>\n  <div *ngIf=\"posts.length==0\">Have no posts yet</div>\n  <div *ngIf=\"posts.length!=0\">\n    <div class=\"row\">\n      <div class=\"col s12\" style=\"margin-top:20px;\">\n        <div class=\"category\">\n          {{category.category}}\n        </div>\n        <span class=\"filter\">\n            <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\n              <option value=\"5\">5</option>\n              <option value=\"10\">10</option>\n              <option value=\"15\">15</option>\n            </select>\n          </span>\n      </div>\n    </div>\n    <div class=\"control\">\n      <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n    </div>\n    <div class=\"posts\">\n      <div class=\"row\">\n        <div class=\"col s12\">\n          <ul class=\"listPost\">\n            <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n              <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n              <button *ngIf=\"userService.isAdmin()\" class=\"btn red darken-1\" style=\"float:right;cursor:pointer; position:relative; top:-5px;\" (click)=\"deletePost(post)\">delete</button>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n"
+module.exports = "<!-- <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn btn-primary\">Create Post</a></p>\n<div *ngIf=\"posts.length==0\">Have no posts yet</div>\n<div *ngIf=\"posts.length!=0\">\n    <div class=\"header\">\n        News!\n        <span class=\"filter\">\n          <select #selected (change)=\"getFilterValue(selected.value)\">\n            <option>5</option>\n            <option>10</option>\n            <option>15</option>\n          </select>\n        </span>\n      </div>\n    <pagination-controls class=\"text-center mt-4 mb-4\" (pageChange)=\"p = $event\"></pagination-controls>\n    <div *ngIf=\"posts.length!=0\" class=\"posts\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n          <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n          <button *ngIf=\"userService.isAdmin()\" class=\"btn btn-sm btn-danger\" style=\"float:right;cursor:pointer\" (click)=\"deletePost(post)\">delete</button>\n        </li>\n      </ul>\n    </div>\n</div> -->\n\n\n<div class=\"container\" style=\"margin-top:80px\">\n  <div class=\"row\">\n    <div class=\"col s3\">\n        <p *ngIf=\"userService.isLoggedIn()\"><a [routerLink]=\"['/create/post',categoryId]\" class=\"btn\">Create Post</a></p>            \n    </div>\n    <div class=\"col s4 offset-s5\">\n        <div class=\"noticed\">Only user admin can delete this post!</div>\n    </div>\n  </div>\n  <div *ngIf=\"posts.length==0\">Have no posts yet</div>\n  <div *ngIf=\"posts.length!=0\">\n    <div class=\"row\">\n      <div class=\"col s12\" style=\"margin-top:20px;\">\n        <div class=\"category\">\n          {{category.category}}\n        </div>\n        <span class=\"filter\">\n            <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\n              <option value=\"5\">5</option>\n              <option value=\"10\">10</option>\n              <option value=\"15\">15</option>\n            </select>\n          </span>\n      </div>\n    </div>\n    <div class=\"control\">\n      <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n    </div>\n    <div class=\"posts\">\n      <div class=\"row\">\n        <div class=\"col s12\">\n          <ul class=\"listPost\">\n            <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\">\n              <a [routerLink]=\"['/posts',post._id]\">{{post.title}}</a>\n              <button style=\"float:right\" *ngIf=\"userService.isAdmin()\" class=\"btn red darken-1\" style=\"float:right;cursor:pointer; position:relative; top:-5px;\" (click)=\"deletePost(post)\">delete</button>              \n              <user-created-post style=\"float:right; margin-right:30px;\" [post]=\"post\"></user-created-post>\n              \n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -2054,7 +2059,7 @@ var PostsComponent = (function () {
         this.posts = [];
         this.p = 1;
         this.itemsPerPage = 5;
-        this.category = '';
+        this.category = {};
     }
     PostsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2074,6 +2079,7 @@ var PostsComponent = (function () {
         }, function (err) { return console.log(err); });
         this.categorySubscription = this.categoryService.getContentCategory(this.categoryId).subscribe(function (data) {
             _this.category = data.category;
+            console.log(_this.category);
         });
     };
     PostsComponent.prototype.ngOnDestroy = function () {
@@ -2107,6 +2113,99 @@ PostsComponent = __decorate([
 
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=posts.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".user_created_category{\r\n    font-size:13px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<span class=\"user_created_category\">\n  Name: <a [routerLink]=\"['/user/info',user_info._id]\">{{user_info.name}}</a> \n  Created Date: <span>{{user_info.created_date}}</span>\n</span>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserCreatedPostComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserCreatedPostComponent = (function () {
+    function UserCreatedPostComponent(userService, flashMessage) {
+        this.userService = userService;
+        this.flashMessage = flashMessage;
+        this.user_info = [];
+    }
+    UserCreatedPostComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userInfoSubscription = this.userService.getUserInfor(this.post.author_id).subscribe(function (data) {
+            if (data.success) {
+                _this.user_info = data.user_info;
+                _this.user_info['created_date'] = _this.convertDateTime(_this.user_info['created_date']);
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                return false;
+            }
+        });
+    };
+    UserCreatedPostComponent.prototype.ngOnDestroy = function () {
+        this.userInfoSubscription.unsubscribe();
+    };
+    UserCreatedPostComponent.prototype.convertDateTime = function (datetime) {
+        var timeDisplay = new Date(datetime);
+        var time = timeDisplay.getFullYear() + '-' + (timeDisplay.getMonth() + 1) + '-' + timeDisplay.getDate();
+        return time;
+    };
+    return UserCreatedPostComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])('post'),
+    __metadata("design:type", Object)
+], UserCreatedPostComponent.prototype, "post", void 0);
+UserCreatedPostComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'user-created-post',
+        template: __webpack_require__("../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/posts/user-created-post/user-created-post.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_user_service__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+], UserCreatedPostComponent);
+
+var _a, _b;
+//# sourceMappingURL=user-created-post.component.js.map
 
 /***/ }),
 
@@ -2273,7 +2372,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/check-out/check-out.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <table>\n    <thead>\n      <tr>\n          <th>Item Name</th>\n          <th>price</th>\n          <th>Item Quantity</th>\n          <th>TotalPrice</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let cart of carts\">\n        <td>{{cart.name}}</td>\n        <td>{{cart.price | currency : 'USD':true}}</td>\n        <td>{{cart.quantity}}</td>\n        <td>{{cart.quantity * cart.price | currency :'USD':true}}</td>\n      </tr>\n      <tr>\n        <td>tax</td>\n        <td></td>\n        <td></td>\n        <td>0%</td>\n      </tr>\n      <tr style=\"border-top:1px solid white;\">\n        <td>Bill</td>\n        <td></td>\n        <td></td>\n        <td>{{totalPrice| currency : 'USD':true}}</td>\n      </tr>\n    </tbody>\n\n  </table>\n    <button class=\"btn\" [disabled]=\"paypalDisable\" >Paypal</button>\n    <button class=\"btn\" [disabled]=\"stripeDisable\" (click)=\"openCheckout($event)\">Stripe</button>\n</div>\n  "
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <table>\n    <thead>\n      <tr>\n          <th>Item Name</th>\n          <th>price</th>\n          <th>Item Quantity</th>\n          <th>TotalPrice</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let cart of carts\">\n        <td>{{cart.name}}</td>\n        <td>{{cart.price | currency : 'USD':true}}</td>\n        <td>{{cart.quantity}}</td>\n        <td>{{cart.quantity * cart.price | currency :'USD':true}}</td>\n      </tr>\n      <tr>\n        <td>tax</td>\n        <td></td>\n        <td></td>\n        <td>0%</td>\n      </tr>\n      <tr style=\"border-top:1px solid white;\">\n        <td>Bill</td>\n        <td></td>\n        <td></td>\n        <td>{{totalPrice| currency : 'USD':true}}</td>\n      </tr>\n    </tbody>\n\n  </table>\n    <button class=\"btn\" [disabled]=\"paypalDisable\" (click)=\"paypalCheckout()\" >Paypal</button>\n    <button class=\"btn\" [disabled]=\"stripeDisable\" (click)=\"openCheckout($event)\">Stripe</button>\n</div>\n  "
 
 /***/ }),
 
@@ -2282,11 +2381,12 @@ module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <table>
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckOutComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_check_out_paypal_service__ = __webpack_require__("../../../../../src/app/services/check-out-paypal.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2300,10 +2400,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CheckOutComponent = (function () {
-    function CheckOutComponent(router, checkOutService, flashMsg) {
+    function CheckOutComponent(router, checkOutStripeService, checkOutPaypalService, flashMsg) {
         this.router = router;
-        this.checkOutService = checkOutService;
+        this.checkOutStripeService = checkOutStripeService;
+        this.checkOutPaypalService = checkOutPaypalService;
         this.flashMsg = flashMsg;
         this.carts = [];
         this.totalPrice = 0;
@@ -2322,7 +2424,7 @@ var CheckOutComponent = (function () {
         });
         this.userCheckout = JSON.parse(localStorage.getItem('Zero_user'));
         if (this.userCheckout) {
-            this.checkOutService.getPublishKey().subscribe(function (data) {
+            this.getPublishableKey = this.checkOutStripeService.getPublishKey().subscribe(function (data) {
                 _this.publishableKey = data.publishKey;
                 _this.handler = StripeCheckout.configure({
                     key: _this.publishableKey,
@@ -2335,7 +2437,7 @@ var CheckOutComponent = (function () {
                             desc: _this.desc,
                             amount: _this.totalPrice * 100
                         };
-                        _this.checkOutService.checkoutStripe(bill)
+                        _this.checkoutStripe = _this.checkOutStripeService.checkoutStripe(bill)
                             .subscribe(function (data) {
                             console.log(data);
                             if (data.success) {
@@ -2352,6 +2454,14 @@ var CheckOutComponent = (function () {
             });
         }
     };
+    CheckOutComponent.prototype.ngOnDestroy = function () {
+        if (this.getPublishableKey) {
+            this.getPublishableKey.unsubscribe();
+        }
+        if (this.checkoutStripe) {
+            this.checkoutStripe.unsubscribe();
+        }
+    };
     CheckOutComponent.prototype.openCheckout = function (e) {
         this.handler.open({
             name: 'Pay Product',
@@ -2363,24 +2473,41 @@ var CheckOutComponent = (function () {
     CheckOutComponent.prototype.onPopstate = function () {
         this.handler.close();
     };
+    CheckOutComponent.prototype.paypalCheckout = function () {
+        var _this = this;
+        var bill = {
+            user: this.userCheckout,
+            products: this.carts
+        };
+        this.checkOutPaypalService.checkoutPaypal(bill)
+            .subscribe(function (data) {
+            if (data.success) {
+                window.location.href = data.link;
+            }
+            else {
+                _this.flashMsg.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                return false;
+            }
+        });
+    };
     return CheckOutComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["HostListener"])('window:popstate'),
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["HostListener"])('window:popstate'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], CheckOutComponent.prototype, "onPopstate", null);
 CheckOutComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
         selector: 'app-check-out',
         template: __webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__["a" /* CheckOutStripeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__["a" /* CheckOutStripeService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_check_out_stripe_service__["a" /* CheckOutStripeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_check_out_stripe_service__["a" /* CheckOutStripeService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_check_out_paypal_service__["a" /* CheckOutPaypalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_check_out_paypal_service__["a" /* CheckOutPaypalService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], CheckOutComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=check-out.component.js.map
 
 /***/ }),
@@ -2505,7 +2632,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/shop.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n  <div class=\"card-panel teal lighten-2\">\r\n    <h2>ZeroToZ Shopping</h2>\r\n    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\r\n    <p>\r\n      <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\r\n      <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\r\n    </p>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"row\">\r\n    <div class=\"col s4\" *ngFor=\"let product of products; let i=index\">\r\n        <product class=\"product\" (cartChanged)=\"cartChanged($event)\" [product]=\"product\"></product>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"cart center\" [class.amber-text]=\"carts.length!=0\">\r\n    <p *ngIf=\"carts.length!=0\">Click here to checkout</p>\r\n    <i class=\"material-icons\" (click)=\"checkout()\">add_shopping_cart </i><span>{{totalQuantity}}</span>\r\n</div>\r\n\r\n\r\n "
+module.exports = "\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n  <div class=\"card-panel teal lighten-2\">\r\n    <h2>ZeroToZ Shopping</h2>\r\n    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\r\n    <p>\r\n      <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\r\n      <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\r\n    </p>\r\n  </div>\r\n  <div class=\"row\" style=\"margin:80px 0 150px 0;\">\r\n    <div class=\"col s4\" *ngFor=\"let product of products; let i=index\">\r\n        <product class=\"product\" (cartChanged)=\"cartChanged($event)\" [product]=\"product\"></product>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"cart center\" [class.amber-text]=\"carts.length!=0\">\r\n    <p *ngIf=\"carts.length!=0\">Click here to checkout</p>\r\n    <i class=\"material-icons\" (click)=\"checkout()\">add_shopping_cart </i><span>{{totalQuantity}}</span>\r\n</div>\r\n\r\n\r\n "
 
 /***/ }),
 
@@ -3188,6 +3315,55 @@ CategoriesService = __decorate([
 
 var _a;
 //# sourceMappingURL=categories.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/check-out-paypal.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckOutPaypalService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CheckOutPaypalService = (function () {
+    function CheckOutPaypalService(http) {
+        this.http = http;
+    }
+    CheckOutPaypalService.prototype.checkoutPaypal = function (bill) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.post('http://localhost:3000/api/checkout/paypal', bill, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CheckOutPaypalService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
+    };
+    return CheckOutPaypalService;
+}());
+CheckOutPaypalService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], CheckOutPaypalService);
+
+var _a;
+//# sourceMappingURL=check-out-paypal.service.js.map
 
 /***/ }),
 

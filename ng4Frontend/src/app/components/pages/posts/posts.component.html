@@ -57,7 +57,9 @@
           <ul class="listPost">
             <li *ngFor="let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}">
               <a [routerLink]="['/posts',post._id]">{{post.title}}</a>
-              <button *ngIf="userService.isAdmin()" class="btn red darken-1" style="float:right;cursor:pointer; position:relative; top:-5px;" (click)="deletePost(post)">delete</button>
+              <button style="float:right" *ngIf="userService.isAdmin()" class="btn red darken-1" style="float:right;cursor:pointer; position:relative; top:-5px;" (click)="deletePost(post)">delete</button>              
+              <user-created-post style="float:right; margin-right:30px;" [post]="post"></user-created-post>
+              
             </li>
           </ul>
         </div>

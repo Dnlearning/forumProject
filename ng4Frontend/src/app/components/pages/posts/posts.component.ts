@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   posts=[];
   p:number=1;
   itemsPerPage:number=5;
-  category:string='';
+  category:Object={};
   categorySubscription:Subscription;
   constructor(
     private route:ActivatedRoute,
@@ -46,6 +46,7 @@ export class PostsComponent implements OnInit, OnDestroy {
 
     this.categorySubscription=this.categoryService.getContentCategory(this.categoryId).subscribe(data=>{
       this.category=data.category;
+      console.log(this.category);
     })
   }
   ngOnDestroy(){

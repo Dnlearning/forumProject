@@ -1,3 +1,4 @@
+import { CheckOutPaypalService } from './services/check-out-paypal.service';
 import { CheckOutStripeService } from './services/check-out-stripe.service';
 import { UploadImageService } from './services/upload-image.service';
 import { CommentsService } from './services/comments.service';
@@ -41,6 +42,7 @@ import { ProductComponent } from './components/pages/shop/product/product.compon
 import { CheckOutComponent } from './components/pages/shop/check-out/check-out.component';
 import { CommonModule } from '@angular/common';
 import { SuccessCheckoutComponent } from './components/pages/shop/success-checkout/success-checkout.component';
+import { UserCreatedPostComponent } from './components/pages/posts/user-created-post/user-created-post.component';
 
 
 const Routes=[
@@ -112,7 +114,8 @@ const Routes=[
     NotFoundComponent,
     ProductComponent,
     CheckOutComponent,
-    SuccessCheckoutComponent
+    SuccessCheckoutComponent,
+    UserCreatedPostComponent
   ],
   imports: [
     CommonModule,
@@ -126,7 +129,7 @@ const Routes=[
     CKEditorModule,
     
   ],
-  providers: [CheckOutStripeService,UploadImageService,CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
+  providers: [CheckOutPaypalService,CheckOutStripeService,UploadImageService,CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

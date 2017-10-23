@@ -8,7 +8,13 @@ const config=require('./config/database');
 const socket=require('socket.io');
 const http=require('http');
 const multer=require('multer');
+const paypal=require('paypal-rest-sdk');
 
+paypal.configure({
+    'mode': 'sandbox', //sandbox or live 
+    'client_id': 'AR5c2fCj2ZZ28t5B-oSI0DhMX8QUvRTQNL_U8zZDp87CX1WBmfCIk7Mps-yQGNrU9Vj-qZpJgcVpDesv',
+    'client_secret': 'EBYTWGTyXPY-_ISfVKVqzbO0A9s5Qe0bPG5I1desVXqXz1BA7_yogWu1IpA3aiYABnjN9WDcimBuorWB'
+});
 
 //connect to database
 mongoose.connect(config.database);

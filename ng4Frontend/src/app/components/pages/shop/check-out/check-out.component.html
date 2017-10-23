@@ -30,7 +30,7 @@
     </tbody>
 
   </table>
-    <button class="btn" [disabled]="paypalDisable" >Paypal</button>
+    <button class="btn" [disabled]="paypalDisable" (click)="paypalCheckout()" >Paypal</button>
     <button class="btn" [disabled]="stripeDisable" (click)="openCheckout($event)">Stripe</button>
 </div>
   

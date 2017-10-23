@@ -1,15 +1,17 @@
-import { FlashMessagesService } from 'angular2-flash-messages';
+import { CheckOutPaypalService } from './../../../../services/check-out-paypal.service';
+import { Subscription } from 'rxjs/Subscription';
+import { FlashMessagesService, FlashMessagesModule } from 'angular2-flash-messages';
 import { CheckOutStripeService } from './../../../../services/check-out-stripe.service';
 import { Router } from '@angular/router';
 import { Cart } from './../cart';
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 declare var StripeCheckout:any;
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.css']
 })
-export class CheckOutComponent implements OnInit {
+export class CheckOutComponent implements OnInit,OnDestroy {
   carts:Cart[]=[];
   totalPrice:number=0;
   handler:any;
@@ -18,9 +20,12 @@ export class CheckOutComponent implements OnInit {
   paypalDisable:boolean=false;
   userCheckout;
   publishableKey:string='';
+  getPublishableKey:Subscription;
+  checkoutStripe:Subscription;
   constructor(
     private router:Router,
-    private checkOutService:CheckOutStripeService,
+    private checkOutStripeService:CheckOutStripeService,
+    private checkOutPaypalService:CheckOutPaypalService,
     private flashMsg:FlashMessagesService
   ) { }
   
@@ -36,7 +41,7 @@ export class CheckOutComponent implements OnInit {
     this.userCheckout=JSON.parse(localStorage.getItem('Zero_user'));
 
     if(this.userCheckout){
-      this.checkOutService.getPublishKey().subscribe(data=>{
+      this.getPublishableKey=this.checkOutStripeService.getPublishKey().subscribe(data=>{
         this.publishableKey=data.publishKey;
         this.handler = StripeCheckout.configure({
           key: this.publishableKey,
@@ -49,7 +54,7 @@ export class CheckOutComponent implements OnInit {
               desc:this.desc,
               amount:this.totalPrice*100
             }
-            this.checkOutService.checkoutStripe(bill)
+            this.checkoutStripe=this.checkOutStripeService.checkoutStripe(bill)
             .subscribe(data=>{
               console.log(data);
               if(data.success){
@@ -66,6 +71,16 @@ export class CheckOutComponent implements OnInit {
     }
   }
 
+  
+  ngOnDestroy(){
+    if(this.getPublishableKey){
+      this.getPublishableKey.unsubscribe();
+    }
+    if(this.checkoutStripe){
+      this.checkoutStripe.unsubscribe();
+    }
+    
+  }
 
   openCheckout(e){
     this.handler.open({
@@ -80,6 +95,23 @@ export class CheckOutComponent implements OnInit {
     onPopstate(){
       this.handler.close();
     }
+
+  paypalCheckout(){
+    let bill={
+      user:this.userCheckout,
+      products:this.carts
+    }
+    this.checkOutPaypalService.checkoutPaypal(bill)
+      .subscribe(data=>{
+        if(data.success){
+          window.location.href=data.link;
+        }else{
+          this.flashMsg.show(data.msg,{cssClass:'alert-danger',timeout:3000});
+          return false;
+        }
+      })
+  }
+
 
 
 }
