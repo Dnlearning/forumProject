@@ -9,6 +9,7 @@ const socket=require('socket.io');
 const http=require('http');
 const multer=require('multer');
 
+
 //connect to database
 mongoose.connect(config.database);
 
@@ -34,6 +35,8 @@ const categories=require('./routes/categories');
 const posts=require('./routes/posts');
 const comments=require('./routes/comments');
 const upload=require('./routes/upload');
+const checkout=require('./routes/checkout');
+
 const port=process.env.PORT||3000;
 
 
@@ -64,6 +67,7 @@ app.use('/api/categories',categories);
 app.use('/api/posts',posts);
 app.use('/api/comments',comments);
 app.use('/api/upload',upload);
+app.use('/api/checkout',checkout);
 
 app.get('/',(req,res)=>{
     res.send('invalid endpoint');

@@ -10,32 +10,18 @@
   </div>
 </div>
 
-
-<div class="container">
+<div class="container" style="margin-top:80px">
   <div class="row">
     <div class="col s4" *ngFor="let product of products; let i=index">
-      <div class="card">
-        <div class="card-image">
-          <img src="{{product.src}}" alt="images product">
-          <span class="card-title">{{i+1}} {{product.name}}</span>
-        </div>
-        <div class="card-action">
-          <a *ngIf="carts.length==0" class="btn" style="display:block" (click)="addCart(product)">Add to cart</a>
-          <div *ngIf="carts.length!=0">
-            <div class="row">
-              <div class="col s3">
-                  <a class="btn" style="float:left" (click)="takeValue(product)">-</a>
-              </div>
-              <div class="col s6 center">
-                  <a>1 in cart</a>
-              </div>
-              <div class="col s3">
-                  <a class="btn" style="float:left" (click)="takeValue(product)">+</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <product class="product" (cartChanged)="cartChanged($event)" [product]="product"></product>
     </div>
   </div>
 </div>
+
+<div class="cart center" [class.amber-text]="carts.length!=0">
+    <p *ngIf="carts.length!=0">Click here to checkout</p>
+    <i class="material-icons" (click)="checkout()">add_shopping_cart </i><span>{{totalQuantity}}</span>
+</div>
+
+
+ 

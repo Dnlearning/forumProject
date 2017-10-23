@@ -6,7 +6,7 @@
 .card{
     width:170px;
 }
-.card-body{ 
+.card-content{ 
     height: 350px;
     overflow: scroll;
 }
@@ -20,4 +20,7 @@
 
 .hide{
     display: none;
+}
+.user ul{
+    color: black;
 }

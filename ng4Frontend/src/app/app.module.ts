@@ -1,3 +1,4 @@
+import { CheckOutStripeService } from './services/check-out-stripe.service';
 import { UploadImageService } from './services/upload-image.service';
 import { CommentsService } from './services/comments.service';
 import { UserCreatedPostGuard } from './guards/user-created-post.guard';
@@ -36,6 +37,10 @@ import { CommentsComponent } from './components/pages/each-post/comments/comment
 import { ShopComponent } from './components/pages/shop/shop.component';
 import { EditCommentComponent } from './components/pages/each-post/comments/edit-comment/edit-comment.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductComponent } from './components/pages/shop/product/product.component';
+import { CheckOutComponent } from './components/pages/shop/check-out/check-out.component';
+import { CommonModule } from '@angular/common';
+import { SuccessCheckoutComponent } from './components/pages/shop/success-checkout/success-checkout.component';
 
 
 const Routes=[
@@ -71,6 +76,10 @@ const Routes=[
   },
   {
     path:'shop',component: ShopComponent
+  },{
+    path:'product/checkout', component :CheckOutComponent, canActivate: [UserGuard]
+  },{
+    path:'checkout/success',component:SuccessCheckoutComponent,canActivate: [UserGuard]
   },
   {
     path:"**", component:NotFoundComponent
@@ -100,9 +109,13 @@ const Routes=[
     CommentsComponent,
     ShopComponent,
     EditCommentComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductComponent,
+    CheckOutComponent,
+    SuccessCheckoutComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     RouterModule.forRoot(Routes),
     FormsModule,
@@ -113,7 +126,7 @@ const Routes=[
     CKEditorModule,
     
   ],
-  providers: [UploadImageService,CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
+  providers: [CheckOutStripeService,UploadImageService,CommentsService,UserCreatedPostGuard,UserService,UserGuard,SharedService,CategoriesService,MainTopicService,PostsService,AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

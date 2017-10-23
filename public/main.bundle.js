@@ -173,46 +173,51 @@ var _a, _b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_upload_image_service__ = __webpack_require__("../../../../../src/app/services/upload-image.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__guards_user_created_post_guard__ = __webpack_require__("../../../../../src/app/guards/user-created-post.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__guards_admin_guard__ = __webpack_require__("../../../../../src/app/guards/admin.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pages_posts_posts_component__ = __webpack_require__("../../../../../src/app/components/pages/posts/posts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_shared_service__ = __webpack_require__("../../../../../src/app/services/shared.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__guards_user_guard__ = __webpack_require__("../../../../../src/app/guards/user.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_navbar_top_navbar_top_component__ = __webpack_require__("../../../../../src/app/components/navbar-top/navbar-top.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_pages_home_home_component__ = __webpack_require__("../../../../../src/app/components/pages/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pages_register_register_component__ = __webpack_require__("../../../../../src/app/components/pages/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pages_login_login_component__ = __webpack_require__("../../../../../src/app/components/pages/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_users_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_user_online_user_online_component__ = __webpack_require__("../../../../../src/app/components/user-online/user-online.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ngx_pagination__ = __webpack_require__("../../../../ngx-pagination/dist/ngx-pagination.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_pages_home_main_topic_main_topic_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/main-topic.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_user_created_category_user_created_category_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_pages_users_user_info_user_info_component__ = __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_pages_admin_post_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/post/post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_ckeditor__ = __webpack_require__("../../../../ng2-ckeditor/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31_ng2_ckeditor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31_ng2_ckeditor__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_pages_each_post_each_post_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_pages_admin_edit_post_edit_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/edit-post/edit-post.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__ = __webpack_require__("../../../../../src/app/components/not-found/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_image_service__ = __webpack_require__("../../../../../src/app/services/upload-image.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_comments_service__ = __webpack_require__("../../../../../src/app/services/comments.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__ = __webpack_require__("../../../../../src/app/guards/user-created-post.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__ = __webpack_require__("../../../../../src/app/guards/admin.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_posts_service__ = __webpack_require__("../../../../../src/app/services/posts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__ = __webpack_require__("../../../../../src/app/components/pages/posts/posts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_main_topic_service__ = __webpack_require__("../../../../../src/app/services/main-topic.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_categories_service__ = __webpack_require__("../../../../../src/app/services/categories.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_shared_service__ = __webpack_require__("../../../../../src/app/services/shared.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__guards_user_guard__ = __webpack_require__("../../../../../src/app/guards/user.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_navbar_top_navbar_top_component__ = __webpack_require__("../../../../../src/app/components/navbar-top/navbar-top.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__ = __webpack_require__("../../../../../src/app/components/pages/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__ = __webpack_require__("../../../../../src/app/components/pages/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__ = __webpack_require__("../../../../../src/app/components/pages/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/users/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_user_online_user_online_component__ = __webpack_require__("../../../../../src/app/components/user-online/user-online.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ngx_pagination__ = __webpack_require__("../../../../ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/dashboard/category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_main_topic_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/main-topic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_user_created_category_user_created_category_component__ = __webpack_require__("../../../../../src/app/components/pages/home/main-topic/user-created-category/user-created-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__ = __webpack_require__("../../../../../src/app/components/pages/users/user-info/user-info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/post/post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__ = __webpack_require__("../../../../ng2-ckeditor/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/each-post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__ = __webpack_require__("../../../../../src/app/components/pages/admin/edit-post/edit-post.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pages_each_post_comments_comments_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/comments.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_pages_each_post_comments_edit_comment_edit_comment_component__ = __webpack_require__("../../../../../src/app/components/pages/each-post/comments/edit-comment/edit-comment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__ = __webpack_require__("../../../../../src/app/components/not-found/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_pages_shop_product_product_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/product/product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__ = __webpack_require__("../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -257,42 +262,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
 var Routes = [
     {
-        path: '', component: __WEBPACK_IMPORTED_MODULE_16__components_pages_home_home_component__["a" /* HomeComponent */]
+        path: '', component: __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__["a" /* HomeComponent */]
     },
     {
-        path: 'register', component: __WEBPACK_IMPORTED_MODULE_17__components_pages_register_register_component__["a" /* RegisterComponent */]
+        path: 'register', component: __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__["a" /* RegisterComponent */]
     },
     {
-        path: 'login', component: __WEBPACK_IMPORTED_MODULE_18__components_pages_login_login_component__["a" /* LoginComponent */]
+        path: 'login', component: __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__["a" /* LoginComponent */]
     },
     {
-        path: 'profile', component: __WEBPACK_IMPORTED_MODULE_22__components_users_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_9__guards_user_guard__["a" /* UserGuard */]]
+        path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: 'create/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_3__guards_admin_guard__["a" /* AdminGuard */]]
+        path: 'create/admin', component: __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__["a" /* AdminGuard */]]
     },
     {
-        path: 'create/post/:category_id', component: __WEBPACK_IMPORTED_MODULE_30__components_pages_admin_post_post_component__["a" /* PostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_9__guards_user_guard__["a" /* UserGuard */]]
+        path: 'create/post/:category_id', component: __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__["a" /* PostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: 'update/post/:post_id', component: __WEBPACK_IMPORTED_MODULE_33__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_2__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */]]
+        path: 'update/post/:post_id', component: __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */]]
     },
     {
-        path: 'categories/:category_id', component: __WEBPACK_IMPORTED_MODULE_5__components_pages_posts_posts_component__["a" /* PostsComponent */]
+        path: 'categories/:category_id', component: __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__["a" /* PostsComponent */]
     },
     {
-        path: 'user/info/:user_id', component: __WEBPACK_IMPORTED_MODULE_29__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */]
+        path: 'user/info/:user_id', component: __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */]
     },
     {
-        path: 'posts/:post_id', component: __WEBPACK_IMPORTED_MODULE_32__components_pages_each_post_each_post_component__["a" /* EachPostComponent */]
+        path: 'posts/:post_id', component: __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__["a" /* EachPostComponent */]
     },
     {
-        path: 'shop', component: __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */]
+        path: 'shop', component: __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__["a" /* ShopComponent */]
+    }, {
+        path: 'product/checkout', component: __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
+    }, {
+        path: 'checkout/success', component: __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */]]
     },
     {
-        path: "**", component: __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__["a" /* NotFoundComponent */]
+        path: "**", component: __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__["a" /* NotFoundComponent */]
     },
 ];
 var AppModule = (function () {
@@ -301,41 +315,45 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_12__angular_core__["NgModule"])({
+    Object(__WEBPACK_IMPORTED_MODULE_13__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_navbar_top_navbar_top_component__["a" /* NavbarTopComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_pages_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_pages_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_pages_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_users_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_chat_chat_component__["a" /* ChatComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_user_online_user_online_component__["a" /* UserOnlineComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_pages_home_main_topic_main_topic_component__["a" /* MainTopicComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_pages_posts_posts_component__["a" /* PostsComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_user_created_category_user_created_category_component__["a" /* UserCreatedCategoryComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_pages_admin_post_post_component__["a" /* PostComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_pages_each_post_each_post_component__["a" /* EachPostComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_pages_shop_shop_component__["a" /* ShopComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_not_found_not_found_component__["a" /* NotFoundComponent */]
+            __WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_navbar_top_navbar_top_component__["a" /* NavbarTopComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_pages_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_pages_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_pages_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_users_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_chat_chat_component__["a" /* ChatComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_user_online_user_online_component__["a" /* UserOnlineComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_pages_admin_dashboard_category_component__["a" /* CategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_pages_home_main_topic_main_topic_component__["a" /* MainTopicComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_pages_posts_posts_component__["a" /* PostsComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_pages_home_main_topic_user_created_category_user_created_category_component__["a" /* UserCreatedCategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_pages_users_user_info_user_info_component__["a" /* UserInfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_pages_admin_post_post_component__["a" /* PostComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_pages_each_post_each_post_component__["a" /* EachPostComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_pages_admin_edit_post_edit_post_component__["a" /* EditPostComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_pages_each_post_comments_comments_component__["a" /* CommentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_pages_shop_shop_component__["a" /* ShopComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_pages_each_post_comments_edit_comment_edit_comment_component__["a" /* EditCommentComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_not_found_not_found_component__["a" /* NotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_pages_shop_product_product_component__["a" /* ProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__components_pages_shop_check_out_check_out_component__["a" /* CheckOutComponent */],
+            __WEBPACK_IMPORTED_MODULE_42__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_20__angular_router__["c" /* RouterModule */].forRoot(Routes),
-            __WEBPACK_IMPORTED_MODULE_19__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_19__angular_forms__["ReactiveFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_13__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_21_angular2_flash_messages__["FlashMessagesModule"],
-            __WEBPACK_IMPORTED_MODULE_25_ngx_pagination__["a" /* NgxPaginationModule */],
-            __WEBPACK_IMPORTED_MODULE_31_ng2_ckeditor__["CKEditorModule"],
+            __WEBPACK_IMPORTED_MODULE_41__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_12__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_21__angular_router__["c" /* RouterModule */].forRoot(Routes),
+            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_20__angular_forms__["ReactiveFormsModule"],
+            __WEBPACK_IMPORTED_MODULE_14__angular_http__["HttpModule"],
+            __WEBPACK_IMPORTED_MODULE_22_angular2_flash_messages__["FlashMessagesModule"],
+            __WEBPACK_IMPORTED_MODULE_26_ngx_pagination__["a" /* NgxPaginationModule */],
+            __WEBPACK_IMPORTED_MODULE_32_ng2_ckeditor__["CKEditorModule"],
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_0__services_upload_image_service__["a" /* UploadImageService */], __WEBPACK_IMPORTED_MODULE_1__services_comments_service__["a" /* CommentsService */], __WEBPACK_IMPORTED_MODULE_2__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */], __WEBPACK_IMPORTED_MODULE_10__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_9__guards_user_guard__["a" /* UserGuard */], __WEBPACK_IMPORTED_MODULE_8__services_shared_service__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_7__services_categories_service__["a" /* CategoriesService */], __WEBPACK_IMPORTED_MODULE_6__services_main_topic_service__["a" /* MainTopicService */], __WEBPACK_IMPORTED_MODULE_4__services_posts_service__["a" /* PostsService */], __WEBPACK_IMPORTED_MODULE_3__guards_admin_guard__["a" /* AdminGuard */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_0__services_check_out_stripe_service__["a" /* CheckOutStripeService */], __WEBPACK_IMPORTED_MODULE_1__services_upload_image_service__["a" /* UploadImageService */], __WEBPACK_IMPORTED_MODULE_2__services_comments_service__["a" /* CommentsService */], __WEBPACK_IMPORTED_MODULE_3__guards_user_created_post_guard__["a" /* UserCreatedPostGuard */], __WEBPACK_IMPORTED_MODULE_11__services_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_10__guards_user_guard__["a" /* UserGuard */], __WEBPACK_IMPORTED_MODULE_9__services_shared_service__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_8__services_categories_service__["a" /* CategoriesService */], __WEBPACK_IMPORTED_MODULE_7__services_main_topic_service__["a" /* MainTopicService */], __WEBPACK_IMPORTED_MODULE_5__services_posts_service__["a" /* PostsService */], __WEBPACK_IMPORTED_MODULE_4__guards_admin_guard__["a" /* AdminGuard */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -432,7 +450,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#chat-box{\r\n    overflow-y: hidden;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n.card{\r\n    width:300px;\r\n    overflow: hidden;\r\n}\r\n.card-body{\r\n    height: 200px; \r\n    overflow-y: auto;\r\n}\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.right{\r\n    text-align: right;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}\r\n\r\n.message{\r\n    float: left;\r\n    padding: 6px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid gray;\r\n    box-shadow: 1px 1px black;\r\n    border-radius: 5px;\r\n}\r\n.right{\r\n    float: right;\r\n    text-align: left;\r\n}\r\n.left{\r\n    float: left;\r\n    text-align: left;\r\n}\r\n.clearBoth{\r\n    clear: both;\r\n}\r\n.user{\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n}\r\n.userLeft{\r\n    float: left;\r\n    color: red;\r\n    margin-bottom: 10px;\r\n}\r\n.card{\r\n    margin: 0;\r\n}", ""]);
+exports.push([module.i, "#chat-box{\r\n    overflow-y: hidden;\r\n    position: fixed;\r\n    bottom: 0;\r\n}\r\n.card{\r\n    width:300px;\r\n    overflow: hidden;\r\n}\r\n.card-content{\r\n    height: 200px; \r\n    overflow-y: auto;\r\n}\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.right{\r\n    text-align: right;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}\r\n\r\n.message{\r\n    float: left;\r\n    padding: 6px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid gray;\r\n    box-shadow: 1px 1px black;\r\n    border-radius: 5px;\r\n    color: black;\r\n}\r\n.right{\r\n    float: right;\r\n    text-align: left;\r\n}\r\n.left{\r\n    float: left;\r\n    text-align: left;\r\n}\r\n.clearBoth{\r\n    clear: both;\r\n}\r\n.user{\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n}\r\n.userLeft{\r\n    float: left;\r\n    color: red;\r\n    margin-bottom: 10px;\r\n}\r\n.card{\r\n    margin: 0;\r\n}\r\n.card-action{\r\n    padding: 0;\r\n}\r\n.card-action input{\r\n    margin: 0;\r\n    color: black;\r\n    padding: 10px;\r\n}\r\n\r\n::-webkit-input-placeholder { /* WebKit, Blink, Edge */\r\n    color:    gray;\r\n}\r\n:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\r\n   color:    gray;\r\n   opacity:  1;\r\n}\r\n::-moz-placeholder { /* Mozilla Firefox 19+ */\r\n   color:    gray;\r\n   opacity:  1;\r\n}\r\n:-ms-input-placeholder { /* Internet Explorer 10-11 */\r\n   color:    gray;\r\n}\r\n::-ms-input-placeholder { /* Microsoft Edge */\r\n   color:    gray;\r\n}", ""]);
 
 // exports
 
@@ -445,7 +463,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/chat/chat.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"chat-box\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" (click)=\"showTapChat()\"><h6>Forum <span *ngIf=\"newMessage && hide\" class=\"badge badge-warning\">news</span></h6></div>\r\n    <div class=\"chat\" [class.hide]=\"hide\">\r\n      <div class=\"card-body\">\r\n        <div id=\"message-forum\">\r\n          <div class=\"chat-content\" *ngIf=\"messages\">\r\n            <div *ngFor=\"let message of messages\">\r\n              <div *ngIf=\"message.type=='msg'\" class=\"message\" [class.right]=\"message.username==username\">\r\n                  <span class=\"badge user\" [ngClass]=\"{'badge-primary':message.username!=username,'badge-secondary':message.username==username}\">{{message.username}} : </span> {{message.msg}}\r\n              </div>\r\n              <div *ngIf=\"message.type=='info'\" class=\"userLeft\">\r\n                  <span class=\"badge badge-warning user\">{{message.username}} : </span> {{message.msg}}\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"card-footer\">\r\n          <div class=\"input-group\" >\r\n            <div class=\"input-group-addon\">Type</div>\r\n            <input   type=\"text\" [(ngModel)]=\"msg\" name=\"msg\" class=\"form-control\" (keyup.enter)=\"sendMsg()\" placeholder=\"Type Message...\">\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div id=\"chat-box\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" (click)=\"showTapChat()\"><h6>Forum <span *ngIf=\"newMessage && hide\" class=\"badge new lime accent-2 red-text\"></span></h6></div>\r\n    <div class=\"chat\" [class.hide]=\"hide\">\r\n      <div class=\"card-content\">\r\n        <div id=\"message-forum\">\r\n          <div class=\"chat-content\" *ngIf=\"messages\">\r\n            <div *ngFor=\"let message of messages\">\r\n              <div *ngIf=\"message.type=='msg'\" class=\"message\" [class.right]=\"message.username==username\">\r\n                  <span class=\"chip user\" [ngClass]=\"{'grey darken-1':message.username!=username,'teal lighten-1':message.username==username}\">{{message.username}} : </span> {{message.msg}}\r\n              </div>\r\n              <div *ngIf=\"message.type=='info'\" class=\"userLeft\">\r\n                  <span class=\"chip yellow darken-4\">{{message.username}} : </span> {{message.msg}}\r\n              </div>\r\n              <div class=\"clearfix\"></div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"card-action\">\r\n          <div class=\"input-group\" >\r\n            <input   type=\"text\" [(ngModel)]=\"msg\" name=\"msg\" class=\"form-control\" (keyup.enter)=\"sendMsg()\" placeholder=\"Type Message...\">\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2234,6 +2252,238 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/pages/shop/check-out/check-out.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/check-out/check-out.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\n  <table>\n    <thead>\n      <tr>\n          <th>Item Name</th>\n          <th>price</th>\n          <th>Item Quantity</th>\n          <th>TotalPrice</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let cart of carts\">\n        <td>{{cart.name}}</td>\n        <td>{{cart.price | currency : 'USD':true}}</td>\n        <td>{{cart.quantity}}</td>\n        <td>{{cart.quantity * cart.price | currency :'USD':true}}</td>\n      </tr>\n      <tr>\n        <td>tax</td>\n        <td></td>\n        <td></td>\n        <td>0%</td>\n      </tr>\n      <tr style=\"border-top:1px solid white;\">\n        <td>Bill</td>\n        <td></td>\n        <td></td>\n        <td>{{totalPrice| currency : 'USD':true}}</td>\n      </tr>\n    </tbody>\n\n  </table>\n    <button class=\"btn\" [disabled]=\"paypalDisable\" >Paypal</button>\n    <button class=\"btn\" [disabled]=\"stripeDisable\" (click)=\"openCheckout($event)\">Stripe</button>\n</div>\n  "
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/check-out/check-out.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckOutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__ = __webpack_require__("../../../../../src/app/services/check-out-stripe.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CheckOutComponent = (function () {
+    function CheckOutComponent(router, checkOutService, flashMsg) {
+        this.router = router;
+        this.checkOutService = checkOutService;
+        this.flashMsg = flashMsg;
+        this.carts = [];
+        this.totalPrice = 0;
+        this.desc = '';
+        this.stripeDisable = false;
+        this.paypalDisable = false;
+        this.publishableKey = '';
+    }
+    CheckOutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.carts = JSON.parse(localStorage.getItem('Zero_carts'));
+        this.totalPrice = 0;
+        this.carts.map(function (cart) {
+            _this.totalPrice += cart.quantity * cart.price;
+            _this.desc += cart.quantity + ' ' + cart.name + ' ';
+        });
+        this.userCheckout = JSON.parse(localStorage.getItem('Zero_user'));
+        if (this.userCheckout) {
+            this.checkOutService.getPublishKey().subscribe(function (data) {
+                _this.publishableKey = data.publishKey;
+                _this.handler = StripeCheckout.configure({
+                    key: _this.publishableKey,
+                    image: 'assets/images/logoZeroToZ_black.png',
+                    locale: 'auto',
+                    token: function (token) {
+                        var bill = {
+                            token: token,
+                            user: _this.userCheckout,
+                            desc: _this.desc,
+                            amount: _this.totalPrice * 100
+                        };
+                        _this.checkOutService.checkoutStripe(bill)
+                            .subscribe(function (data) {
+                            console.log(data);
+                            if (data.success) {
+                                localStorage.setItem('yourBill', JSON.stringify(data.bill));
+                                localStorage.removeItem('Zero_carts');
+                                _this.router.navigate(['/checkout/success']);
+                            }
+                            else {
+                                _this.flashMsg.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                            }
+                        });
+                    }
+                });
+            });
+        }
+    };
+    CheckOutComponent.prototype.openCheckout = function (e) {
+        this.handler.open({
+            name: 'Pay Product',
+            description: this.desc,
+            amount: this.totalPrice * 100
+        });
+        e.stopPropagation();
+    };
+    CheckOutComponent.prototype.onPopstate = function () {
+        this.handler.close();
+    };
+    return CheckOutComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["HostListener"])('window:popstate'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], CheckOutComponent.prototype, "onPopstate", null);
+CheckOutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+        selector: 'app-check-out',
+        template: __webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/shop/check-out/check-out.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__["a" /* CheckOutStripeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_check_out_stripe_service__["a" /* CheckOutStripeService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+], CheckOutComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=check-out.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/product/product.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".addTocart, .control{\r\n    width:100%\r\n}\r\n/* .card{\r\n    margin: 20px;\r\n} */", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/product/product.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card\">\n  <div class=\"card-image\">\n    <img src=\"{{product.src}}\" alt=\"images product\">\n    <span class=\"card-title\">{{product.name}}</span>\n  </div>\n  <div class=\"card-action\">\n    <a *ngIf=\"cart.quantity==0\" class=\"btn addTocart\"  (click)=\"addCart(product)\">Add to cart</a>\n    <div class=\"control\" *ngIf=\"cart.quantity!=0\">\n        <a class=\"btn grey darken-1\" style=\"float:left\" (click)=\"decrease(product)\">-</a>\n        <a style=\"margin-left:20% \">{{cart.quantity}} in cart</a>\n        <a class=\"btn green accent-3\" style=\"float:right\" (click)=\"increase(product)\">+</a>\n        <div style=\"clear:both\"></div>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/product/product.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProductComponent = (function () {
+    function ProductComponent() {
+        this.cartchange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.carts = [];
+    }
+    ProductComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cart = {
+            name: this.product.name,
+            price: 1,
+            quantity: 0
+        };
+        if (JSON.parse(localStorage.getItem('Zero_carts'))) {
+            this.carts = JSON.parse(localStorage.getItem('Zero_carts'));
+            if (this.carts.length != 0) {
+                this.carts.map(function (cart) {
+                    if (_this.cart.name == cart.name) {
+                        _this.cart.quantity = cart.quantity;
+                    }
+                });
+            }
+        }
+    };
+    ProductComponent.prototype.addCart = function () {
+        this.cart.quantity = 1;
+        this.cartchange.emit({ type: 'add', cart: this.cart });
+    };
+    ProductComponent.prototype.decrease = function () {
+        this.cart.quantity -= 1;
+        this.cartchange.emit({ type: 'decrease', cart: this.cart });
+    };
+    ProductComponent.prototype.increase = function () {
+        this.cart.quantity += 1;
+        this.cartchange.emit({ type: 'increase', cart: this.cart });
+    };
+    return ProductComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('product'),
+    __metadata("design:type", Object)
+], ProductComponent.prototype, "product", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])('cartChanged'),
+    __metadata("design:type", Object)
+], ProductComponent.prototype, "cartchange", void 0);
+ProductComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'product',
+        template: __webpack_require__("../../../../../src/app/components/pages/shop/product/product.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/shop/product/product.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProductComponent);
+
+//# sourceMappingURL=product.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/pages/shop/shop.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2242,7 +2492,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\r\n    min-height: 75rem; /* Can be removed; just added for demo purposes */\r\n}\r\n  \r\n.navbar {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron {\r\n  padding-top: 6rem;\r\n  padding-bottom: 6rem;\r\n  margin-bottom: 0;\r\n  background-color: #fff;\r\n}\r\n\r\n.jumbotron p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron-heading {\r\n  font-weight: 300;\r\n}\r\n\r\n.jumbotron .container {\r\n  max-width: 40rem;\r\n}\r\n\r\n.album {\r\n  min-height: 50rem; /* Can be removed; just added for demo purposes */\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n  background-color: #f7f7f7;\r\n}\r\n\r\n.card {\r\n  width:100%;\r\n}\r\n\r\n\r\n.card > img {\r\n  margin-bottom: .75rem;\r\n}\r\n\r\n.card-text {\r\n  font-size: 85%;\r\n}\r\n\r\nfooter {\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n}\r\n\r\nfooter p {\r\n  margin-bottom: .25rem;\r\n}\r\n\r\n.card-panel{\r\n  border-radius: 10px;\r\n  box-shadow: 0 0 10px white;\r\n}\r\n.card[_ngcontent-c4] {\r\n  width: 100%;\r\n}", ""]);
+exports.push([module.i, "body {\r\n    min-height: 75rem; /* Can be removed; just added for demo purposes */\r\n}\r\n  \r\n.navbar {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron {\r\n  padding-top: 6rem;\r\n  padding-bottom: 6rem;\r\n  margin-bottom: 0;\r\n  background-color: #fff;\r\n}\r\n\r\n.jumbotron p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.jumbotron-heading {\r\n  font-weight: 300;\r\n}\r\n\r\n.jumbotron .container {\r\n  max-width: 40rem;\r\n}\r\n\r\n.album {\r\n  min-height: 50rem; /* Can be removed; just added for demo purposes */\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n  background-color: #f7f7f7;\r\n}\r\n\r\n.card {\r\n  width:100%;\r\n}\r\n\r\n\r\n.card > img {\r\n  margin-bottom: .75rem;\r\n}\r\n\r\n.card-text {\r\n  font-size: 85%;\r\n}\r\n\r\nfooter {\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n}\r\n\r\nfooter p {\r\n  margin-bottom: .25rem;\r\n}\r\n\r\n.card-panel{\r\n  border-radius: 10px;\r\n  box-shadow: 0 0 10px white;\r\n}\r\n.card[_ngcontent-c4] {\r\n  width: 100%;\r\n}\r\n\r\n.cart{\r\n  position: fixed;\r\n  bottom:50%;\r\n  right: 5%;\r\n  color: white;\r\n  cursor: pointer;\r\n}", ""]);
 
 // exports
 
@@ -2255,7 +2505,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/shop.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n  <div class=\"card-panel teal lighten-2\">\r\n    <h2>ZeroToZ Shopping</h2>\r\n    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\r\n    <p>\r\n      <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\r\n      <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\r\n    </p>\r\n  </div>\r\n</div>\r\n\r\n\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col s4\" *ngFor=\"let product of products; let i=index\">\r\n      <div class=\"card\">\r\n        <div class=\"card-image\">\r\n          <img src=\"{{product.src}}\" alt=\"images product\">\r\n          <span class=\"card-title\">{{i+1}} {{product.name}}</span>\r\n        </div>\r\n        <div class=\"card-action\">\r\n          <a *ngIf=\"carts.length==0\" class=\"btn\" style=\"display:block\" (click)=\"addCart(product)\">Add to cart</a>\r\n          <div *ngIf=\"carts.length!=0\">\r\n            <div class=\"row\">\r\n              <div class=\"col s3\">\r\n                  <a class=\"btn\" style=\"float:left\" (click)=\"takeValue(product)\">-</a>\r\n              </div>\r\n              <div class=\"col s6 center\">\r\n                  <a>1 in cart</a>\r\n              </div>\r\n              <div class=\"col s3\">\r\n                  <a class=\"btn\" style=\"float:left\" (click)=\"takeValue(product)\">+</a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n  <div class=\"card-panel teal lighten-2\">\r\n    <h2>ZeroToZ Shopping</h2>\r\n    <p>I create this page to test my skill in shopping cart and checkout with stripe! Function: localStorage, Bill, Checkout, passing data with angular 4!</p>\r\n    <p>\r\n      <a routerLink='/' class=\"btn btn-primary\">About Me!</a>\r\n      <a routerLink='/' class=\"btn btn-secondary\">Back Home</a>\r\n    </p>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"row\">\r\n    <div class=\"col s4\" *ngFor=\"let product of products; let i=index\">\r\n        <product class=\"product\" (cartChanged)=\"cartChanged($event)\" [product]=\"product\"></product>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"cart center\" [class.amber-text]=\"carts.length!=0\">\r\n    <p *ngIf=\"carts.length!=0\">Click here to checkout</p>\r\n    <i class=\"material-icons\" (click)=\"checkout()\">add_shopping_cart </i><span>{{totalQuantity}}</span>\r\n</div>\r\n\r\n\r\n "
 
 /***/ }),
 
@@ -2264,7 +2514,10 @@ module.exports = "\r\n<div class=\"container center\" style=\"margin-top:80px;\"
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2275,41 +2528,154 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ShopComponent = (function () {
-    function ShopComponent() {
+    function ShopComponent(router, flashMsg) {
+        this.router = router;
+        this.flashMsg = flashMsg;
         this.products = [];
         this.carts = [];
+        this.totalQuantity = 0;
+        var snapshot = router.routerState.snapshot;
+        this.returnUrl = snapshot.url;
     }
     ShopComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.products = [
             { 'name': 'product1', src: 'assets/images/pro1.png' },
             { 'name': 'product2', src: 'assets/images/pro2.png' },
-            { 'name': 'product3', src: 'assets/images/pro3.png' },
-            { 'name': 'product4', src: 'assets/images/pro4.png' },
-            { 'name': 'product5', src: 'assets/images/pro5.png' },
-            { 'name': 'product6', src: 'assets/images/pro6.png' },
-            { 'name': 'product7', src: 'assets/images/pro7.png' },
-            { 'name': 'product8', src: 'assets/images/pro8.png' },
-            { 'name': 'product9', src: 'assets/images/pro9.png' },
+            { 'name': 'product3', src: 'assets/images/pro3.png' }
         ];
+        if (JSON.parse(localStorage.getItem('Zero_carts'))) {
+            this.carts = JSON.parse(localStorage.getItem('Zero_carts'));
+            this.carts.map(function (cart) {
+                _this.totalQuantity += cart.quantity;
+            });
+        }
     };
-    ShopComponent.prototype.addCart = function (product) {
-        console.log(product);
-        this.carts.push(product);
+    ShopComponent.prototype.cartChanged = function (event) {
+        var _this = this;
+        var cartsName = this.carts.map(function (cart) { return cart.name; });
+        switch (event.type) {
+            case 'add':
+                this.carts.push(event.cart);
+                break;
+            case 'increase':
+                var indexInc = cartsName.indexOf(event.cart.name);
+                this.carts[indexInc] = event.cart;
+                break;
+            case 'decrease':
+                var indexDec = cartsName.indexOf(event.cart.name);
+                this.carts[indexDec] = event.cart;
+                if (this.carts[indexDec].quantity == 0) {
+                    this.carts.splice(indexDec, 1);
+                }
+                break;
+        }
+        this.totalQuantity = 0;
+        this.carts.map(function (cart) {
+            _this.totalQuantity += cart.quantity;
+        });
         console.log(this.carts);
+        localStorage.setItem('Zero_carts', JSON.stringify(this.carts));
+    };
+    ShopComponent.prototype.checkout = function () {
+        if (this.totalQuantity == 0)
+            return false;
+        if (!JSON.parse(localStorage.getItem('Zero_user'))) {
+            this.flashMsg.show('Pls login to check out', { cssClass: 'alert-danger', timeout: 3000 });
+            this.router.navigate(['/login'], { queryParams: { returnUrl: '/product/checkout' } });
+            return false;
+        }
+        this.router.navigate(['/product/checkout']);
     };
     return ShopComponent;
 }());
 ShopComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
         selector: 'shop',
         template: __webpack_require__("../../../../../src/app/components/pages/shop/shop.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/pages/shop/shop.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], ShopComponent);
 
+var _a, _b;
 //# sourceMappingURL=shop.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container center\" style=\"margin-top:80px;\">\n  <div class=\"card-panel teal lighten-2 \">\n    <h2>Thank you for purchase our product!</h2>\n    <p>\n      <a class=\"btn  blue darken-1\" (click)='redirect(\"\")' >Back Home</a>\n      <a class=\"btn pink accent-2\" (click)='redirect(\"shop\")'>Shopping</a>\n    </p>\n  </div>\n  <div *ngIf=\"bill\">\n    <h3>Your Bill</h3>\n    <table>\n        <thead>\n          <tr>\n              <th>User_id Checkout</th>\n              <th>Description</th>\n              <th>Email Buying</th>\n              <th>Amout</th>\n              <th>method</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td>{{bill.user_buyer_id}}</td>\n            <td>{{bill.desc}}</td>\n            <td>{{bill.email_checkout}}</td>\n            <td>{{bill.amount/100 |currency:'USD':true}}</td>\n            <td>{{bill.method}}</td>\n          </tr>\n        </tbody>\n      </table>\n  </div>\n  \n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SuccessCheckoutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SuccessCheckoutComponent = (function () {
+    function SuccessCheckoutComponent(router) {
+        this.router = router;
+    }
+    SuccessCheckoutComponent.prototype.ngOnInit = function () {
+        if (JSON.parse(localStorage.getItem('yourBill'))) {
+            this.bill = JSON.parse(localStorage.getItem('yourBill'));
+        }
+        console.log(this.bill);
+    };
+    SuccessCheckoutComponent.prototype.redirect = function (returnUrl) {
+        localStorage.removeItem('yourBill');
+        this.router.navigate(['/' + returnUrl]);
+    };
+    return SuccessCheckoutComponent;
+}());
+SuccessCheckoutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-success-checkout',
+        template: __webpack_require__("../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/pages/shop/success-checkout/success-checkout.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _a || Object])
+], SuccessCheckoutComponent);
+
+var _a;
+//# sourceMappingURL=success-checkout.component.js.map
 
 /***/ }),
 
@@ -2429,7 +2795,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#user-online{\r\n    position: fixed;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n.card{\r\n    width:170px;\r\n}\r\n.card-body{ \r\n    height: 350px;\r\n    overflow: scroll;\r\n}\r\n\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}", ""]);
+exports.push([module.i, "#user-online{\r\n    position: fixed;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n.card{\r\n    width:170px;\r\n}\r\n.card-content{ \r\n    height: 350px;\r\n    overflow: scroll;\r\n}\r\n\r\n.card-header{\r\n    cursor: pointer;\r\n    background-color: #0069D9;\r\n    color: white;\r\n    padding: 10px;\r\n}\r\n\r\n.hide{\r\n    display: none;\r\n}\r\n.user ul{\r\n    color: black;\r\n}", ""]);
 
 // exports
 
@@ -2442,7 +2808,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-online/user-online.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"user-online\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" (click)=\"showTapChat()\"><h6>User Online</h6></div>\r\n      <div class=\"card-body\" [class.hide]=\"hide\">\r\n        <div id=\"user-online\">\r\n          <ul class=\"list-group\">\r\n              <li class=\"list-group-item\" style=\"cursor:pointer\" *ngFor=\"let user of usersOnline \">{{user}} <span class=\"badge badge-primary\">Online</span></li>            \r\n          </ul>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>"
+module.exports = "<div id=\"user-online\">\r\n  <div class=\"card\">\r\n    <div class=\"card-header\" (click)=\"showTapChat()\"><h6>User Online</h6></div>\r\n      <div class=\"card-content\" [class.hide]=\"hide\">\r\n        <div class=\"user\">\r\n          <ul class=\"list-group\">\r\n              <li class=\"\" style=\"cursor:pointer\" *ngFor=\"let user of usersOnline \">\r\n                <span class=\"chip blue accent-3\"> {{user}} </span> Online\r\n              </li>            \r\n          </ul>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2822,6 +3188,63 @@ CategoriesService = __decorate([
 
 var _a;
 //# sourceMappingURL=categories.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/check-out-stripe.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckOutStripeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CheckOutStripeService = (function () {
+    function CheckOutStripeService(http) {
+        this.http = http;
+    }
+    CheckOutStripeService.prototype.checkoutStripe = function (bill) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.post('http://localhost:3000/api/checkout/stripe', bill, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CheckOutStripeService.prototype.getPublishKey = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.userToken);
+        headers.append('Content-type', 'application/json');
+        return this.http.get('http://localhost:3000/api/checkout/stripe', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CheckOutStripeService.prototype.loadToken = function () {
+        var token = localStorage.getItem('Zero_token');
+        this.userToken = token;
+    };
+    return CheckOutStripeService;
+}());
+CheckOutStripeService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], CheckOutStripeService);
+
+var _a;
+//# sourceMappingURL=check-out-stripe.service.js.map
 
 /***/ }),
 

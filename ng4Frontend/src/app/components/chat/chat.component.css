@@ -7,7 +7,7 @@
     width:300px;
     overflow: hidden;
 }
-.card-body{
+.card-content{
     height: 200px; 
     overflow-y: auto;
 }
@@ -33,6 +33,7 @@
     border: 1px solid gray;
     box-shadow: 1px 1px black;
     border-radius: 5px;
+    color: black;
 }
 .right{
     float: right;
@@ -56,4 +57,30 @@
 }
 .card{
     margin: 0;
+}
+.card-action{
+    padding: 0;
+}
+.card-action input{
+    margin: 0;
+    color: black;
+    padding: 10px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    gray;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    gray;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    gray;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    gray;
 }

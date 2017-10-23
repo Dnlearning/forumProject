@@ -1,0 +1,34 @@
+<div class="container center" style="margin-top:80px;">
+  <div class="card-panel teal lighten-2 ">
+    <h2>Thank you for purchase our product!</h2>
+    <p>
+      <a class="btn  blue darken-1" (click)='redirect("")' >Back Home</a>
+      <a class="btn pink accent-2" (click)='redirect("shop")'>Shopping</a>
+    </p>
+  </div>
+  <div *ngIf="bill">
+    <h3>Your Bill</h3>
+    <table>
+        <thead>
+          <tr>
+              <th>User_id Checkout</th>
+              <th>Description</th>
+              <th>Email Buying</th>
+              <th>Amout</th>
+              <th>method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{bill.user_buyer_id}}</td>
+            <td>{{bill.desc}}</td>
+            <td>{{bill.email_checkout}}</td>
+            <td>{{bill.amount/100 |currency:'USD':true}}</td>
+            <td>{{bill.method}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  
+</div>
+

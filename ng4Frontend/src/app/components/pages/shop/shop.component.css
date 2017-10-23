@@ -61,3 +61,11 @@ footer p {
 .card[_ngcontent-c4] {
   width: 100%;
 }
+
+.cart{
+  position: fixed;
+  bottom:50%;
+  right: 5%;
+  color: white;
+  cursor: pointer;
+}
