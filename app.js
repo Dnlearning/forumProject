@@ -47,9 +47,6 @@ const checkout=require('./routes/checkout');
 
 const port=process.env.PORT||3000;
 
-
-//set views
-
 //set static folder
 
 app.use(express.static(path.join(__dirname,'public')));
