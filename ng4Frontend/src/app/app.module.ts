@@ -20,7 +20,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'; 
+import { RouterModule, ParamMap } from '@angular/router'; 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProfileComponent } from './components/users/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
@@ -82,6 +82,9 @@ const Routes=[
     path:'product/checkout', component :CheckOutComponent, canActivate: [UserGuard]
   },{
     path:'checkout/success',component:SuccessCheckoutComponent,canActivate: [UserGuard]
+  },
+  {
+    path:'api/checkout/success' ,component:SuccessCheckoutComponent,canActivate: [UserGuard]
   },
   {
     path:"**", component:NotFoundComponent

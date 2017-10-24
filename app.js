@@ -9,11 +9,13 @@ const socket=require('socket.io');
 const http=require('http');
 const multer=require('multer');
 const paypal=require('paypal-rest-sdk');
+const paypalkeys=require('./config/key.paypal');
+
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live 
-    'client_id': 'AR5c2fCj2ZZ28t5B-oSI0DhMX8QUvRTQNL_U8zZDp87CX1WBmfCIk7Mps-yQGNrU9Vj-qZpJgcVpDesv',
-    'client_secret': 'EBYTWGTyXPY-_ISfVKVqzbO0A9s5Qe0bPG5I1desVXqXz1BA7_yogWu1IpA3aiYABnjN9WDcimBuorWB'
+    'client_id': paypalkeys.client_id,
+    'client_secret': paypalkeys.client_secret
 });
 
 //connect to database
@@ -45,6 +47,8 @@ const checkout=require('./routes/checkout');
 
 const port=process.env.PORT||3000;
 
+
+//set views
 
 //set static folder
 

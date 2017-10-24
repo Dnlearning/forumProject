@@ -22,6 +22,7 @@ export class CheckOutComponent implements OnInit,OnDestroy {
   publishableKey:string='';
   getPublishableKey:Subscription;
   checkoutStripe:Subscription;
+  token_triggered = false;
   constructor(
     private router:Router,
     private checkOutStripeService:CheckOutStripeService,
@@ -47,7 +48,15 @@ export class CheckOutComponent implements OnInit,OnDestroy {
           key: this.publishableKey,
           image: 'assets/images/logoZeroToZ_black.png',
           locale: 'auto',
+          closed: ()=> {
+            if (!this.token_triggered) {
+                this.stripeDisable=false;
+            } else {
+                // payment completion behavior goes here
+            }
+          },
           token: (token) => {
+            this.token_triggered = true;
             let bill={
               token:token,
               user:this.userCheckout,
@@ -56,7 +65,6 @@ export class CheckOutComponent implements OnInit,OnDestroy {
             }
             this.checkoutStripe=this.checkOutStripeService.checkoutStripe(bill)
             .subscribe(data=>{
-              console.log(data);
               if(data.success){
                 localStorage.setItem('yourBill',JSON.stringify(data.bill));
                 localStorage.removeItem('Zero_carts');
@@ -83,6 +91,7 @@ export class CheckOutComponent implements OnInit,OnDestroy {
   }
 
   openCheckout(e){
+    this.stripeDisable=true;
     this.handler.open({
       name: 'Pay Product',
       description: this.desc,
@@ -97,6 +106,8 @@ export class CheckOutComponent implements OnInit,OnDestroy {
     }
 
   paypalCheckout(){
+    this.paypalDisable=true;
+    this.stripeDisable=true;
     let bill={
       user:this.userCheckout,
       products:this.carts

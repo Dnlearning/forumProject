@@ -310,6 +310,9 @@ var Routes = [
         path: 'checkout/success', component: __WEBPACK_IMPORTED_MODULE_43__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
     },
     {
+        path: 'api/checkout/success', component: __WEBPACK_IMPORTED_MODULE_43__components_pages_shop_success_checkout_success_checkout_component__["a" /* SuccessCheckoutComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__guards_user_guard__["a" /* UserGuard */]]
+    },
+    {
         path: "**", component: __WEBPACK_IMPORTED_MODULE_39__components_not_found_not_found_component__["a" /* NotFoundComponent */]
     },
 ];
@@ -2413,6 +2416,7 @@ var CheckOutComponent = (function () {
         this.stripeDisable = false;
         this.paypalDisable = false;
         this.publishableKey = '';
+        this.token_triggered = false;
     }
     CheckOutComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2430,7 +2434,16 @@ var CheckOutComponent = (function () {
                     key: _this.publishableKey,
                     image: 'assets/images/logoZeroToZ_black.png',
                     locale: 'auto',
+                    closed: function () {
+                        if (!_this.token_triggered) {
+                            _this.stripeDisable = false;
+                        }
+                        else {
+                            // payment completion behavior goes here
+                        }
+                    },
                     token: function (token) {
+                        _this.token_triggered = true;
                         var bill = {
                             token: token,
                             user: _this.userCheckout,
@@ -2439,7 +2452,6 @@ var CheckOutComponent = (function () {
                         };
                         _this.checkoutStripe = _this.checkOutStripeService.checkoutStripe(bill)
                             .subscribe(function (data) {
-                            console.log(data);
                             if (data.success) {
                                 localStorage.setItem('yourBill', JSON.stringify(data.bill));
                                 localStorage.removeItem('Zero_carts');
@@ -2463,6 +2475,7 @@ var CheckOutComponent = (function () {
         }
     };
     CheckOutComponent.prototype.openCheckout = function (e) {
+        this.stripeDisable = true;
         this.handler.open({
             name: 'Pay Product',
             description: this.desc,
@@ -2475,6 +2488,8 @@ var CheckOutComponent = (function () {
     };
     CheckOutComponent.prototype.paypalCheckout = function () {
         var _this = this;
+        this.paypalDisable = true;
+        this.stripeDisable = true;
         var bill = {
             user: this.userCheckout,
             products: this.carts
@@ -3014,7 +3029,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/users/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"row\">\r\n    <div class=\"col s6\">\r\n      <div class=\"card\">\r\n        <div class=\"card-image\">\r\n          <img src=\"https://lorempixel.com/400/200/\">\r\n\r\n          <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\r\n        </div>\r\n        <div class=\"card-action black\" style=\"font-size:20px;\">\r\n          <p>{{user.name}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col s5 offset-s1\">\r\n      <div *ngIf=\"user\">\r\n        <h2 class=\"page-header\">{{user.name}}</h2>\r\n        <ul class=\"list-group\">\r\n          <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n          <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n          <li class=\"list-group-item\">Post: {{howmanyPosts}}</li>\r\n          <li class=\"list-group-item\">Comments: {{howmanyComments}}</li>\r\n        </ul>\r\n        <form enctype=\"multipart/form-data\">\r\n          <div class=\"file-field input-field\">\r\n            <div class=\"btn grey darken-2\">\r\n              <span>Upload</span>\r\n              <input type=\"file\" (change)=\"onChange($event)\" >\r\n            </div>\r\n            <div class=\"file-path-wrapper\">\r\n              <input class=\"file-path validate\" type=\"text\" placeholder=\"Upload your profile Image\">\r\n            </div>\r\n          </div>\r\n          <button class=\"btn\" (click)=\"upload()\">Submit</button>\r\n        </form>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- <div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">email: {{user.email}}</li>\r\n  </ul>\r\n</div> -->"
+module.exports = "<div class=\"container\" style=\"margin-top:80px\">\r\n  <div class=\"row\">\r\n    <div class=\"col s6\">\r\n      <div class=\"card\">\r\n        <div class=\"card-image\">\r\n          <img src=\"https://lorempixel.com/400/200/\">\r\n\r\n          <a class=\"btn-floating halfway-fab waves-effect waves-light red\"><i class=\"material-icons\">add</i></a>\r\n        </div>\r\n        <div class=\"card-action black\" style=\"font-size:20px;\">\r\n          <p>{{user.name}}</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col s5 offset-s1\">\r\n      <div *ngIf=\"user\">\r\n        <h2 class=\"page-header\">{{user.name}}</h2>\r\n        <ul class=\"list-group\">\r\n          <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n          <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n          <li class=\"list-group-item\">Post: {{howmanyPosts}}</li>\r\n          <li class=\"list-group-item\">Comments: {{howmanyComments}}</li>\r\n        </ul>\r\n        <!-- <form enctype=\"multipart/form-data\">\r\n          <div class=\"file-field input-field\">\r\n            <div class=\"btn grey darken-2\">\r\n              <span>Upload</span>\r\n              <input type=\"file\" (change)=\"onChange($event)\" >\r\n            </div>\r\n            <div class=\"file-path-wrapper\">\r\n              <input class=\"file-path validate\" type=\"text\" placeholder=\"Upload your profile Image\">\r\n            </div>\r\n          </div>\r\n          <button class=\"btn\" (click)=\"upload()\">Submit</button>\r\n        </form> -->\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- <div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">email: {{user.email}}</li>\r\n  </ul>\r\n</div> -->"
 
 /***/ }),
 
