@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     private sharedService:SharedService
   ){
 
-    this.socket=io('http://localhost:3000/');
+    this.socket=io();
     this.socket.on('socket_id',(data)=>{
       this.socket_id=data.socket_id;
       if(this.status){
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
 
     this.socket.on("showOnlineUser",(users)=>{
-      console.log(users.userOnline);
+      // console.log(users.userOnline);
 
       this.usersInChat=JSON.parse(users.userOnline).map((onlineU)=>{
         return onlineU.username;
@@ -61,19 +61,19 @@ export class AppComponent implements OnInit {
     })
     this.socket.on('forumSendMessage',(data)=>{
       this.messages.push(data);
-      console.log(this.messages);
+      // console.log(this.messages);
       this.newMessage=true;
     });
 
     this.socket.on('userLeft',(data)=>{
       let username=data.map(user=>{return user.username});
       this.messages.push({type:'info',username:username, msg:' disconnected!'});
-      console.log(this.messages);
+      // console.log(this.messages);
     })
     
     this.socket.on('userIn',(data)=>{
       this.messages.push({type:'info',username:data.username, msg:' connected!'});
-      console.log(this.messages);
+      // console.log(this.messages);
     });
   }
   messageCome(data){
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
   
   takeUsersOnline(data){
    this.usersInChat=this.usersInChat;
-   console.log(this.usersInChat);
+  //  console.log(this.usersInChat);
   }
 
   seen(seen){
@@ -98,12 +98,12 @@ export class AppComponent implements OnInit {
         this.username=username;
         if(this.socket_id){
           this.socket.emit("addUserToChat",{username:this.username,socket_id:this.socket_id});
-          console.log("false");
+          // console.log("false");
         }
       }else{
         if(this.socket_id){
           this.socket.emit('removeUser',{username:this.username, socket_id: this.socket_id});
-          console.log("false");
+          // console.log("false");
         }
       }
     });

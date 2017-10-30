@@ -64,7 +64,6 @@ export class HomeComponent implements OnInit,OnDestroy {
   }
 
   getFilterValue(value){
-    console.log(value);
     this.itemsPerPage=value;
   }
 

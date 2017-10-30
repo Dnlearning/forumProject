@@ -12,8 +12,6 @@ export class UserOnlineComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('users online');
-    console.log(this.usersOnline);
   }
 
   showTapChat(){

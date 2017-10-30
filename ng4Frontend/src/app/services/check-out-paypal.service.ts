@@ -15,7 +15,7 @@ export class CheckOutPaypalService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:3000/api/checkout/paypal',bill,{headers:headers})
+    return this.http.post('api/checkout/paypal',bill,{headers:headers})
       .map(res=>res.json());
   }
 

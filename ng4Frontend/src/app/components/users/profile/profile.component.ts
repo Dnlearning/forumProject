@@ -30,7 +30,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
     let user_id=JSON.parse(localStorage.getItem('Zero_user')).id;
-    console.log(user_id);
     this.profileSubscription=
     Observable.combineLatest([
       this.userService.getProfile(),
@@ -52,7 +51,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
   }
   onChange(event){
     this.file=event.srcElement.files;
-    console.log(this.file[0]);
   }
   
 }

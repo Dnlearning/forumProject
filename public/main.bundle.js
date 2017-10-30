@@ -79,7 +79,7 @@ var AppComponent = (function () {
         this.messages = [];
         this.status = false;
         this.newMessage = false;
-        this.socket = __WEBPACK_IMPORTED_MODULE_3_socket_io_client__('http://localhost:3000/');
+        this.socket = __WEBPACK_IMPORTED_MODULE_3_socket_io_client__();
         this.socket.on('socket_id', function (data) {
             _this.socket_id = data.socket_id;
             if (_this.status) {
@@ -87,7 +87,7 @@ var AppComponent = (function () {
             }
         });
         this.socket.on("showOnlineUser", function (users) {
-            console.log(users.userOnline);
+            // console.log(users.userOnline);
             _this.usersInChat = JSON.parse(users.userOnline).map(function (onlineU) {
                 return onlineU.username;
             });
@@ -106,17 +106,17 @@ var AppComponent = (function () {
         });
         this.socket.on('forumSendMessage', function (data) {
             _this.messages.push(data);
-            console.log(_this.messages);
+            // console.log(this.messages);
             _this.newMessage = true;
         });
         this.socket.on('userLeft', function (data) {
             var username = data.map(function (user) { return user.username; });
             _this.messages.push({ type: 'info', username: username, msg: ' disconnected!' });
-            console.log(_this.messages);
+            // console.log(this.messages);
         });
         this.socket.on('userIn', function (data) {
             _this.messages.push({ type: 'info', username: data.username, msg: ' connected!' });
-            console.log(_this.messages);
+            // console.log(this.messages);
         });
     }
     AppComponent.prototype.messageCome = function (data) {
@@ -124,7 +124,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.takeUsersOnline = function (data) {
         this.usersInChat = this.usersInChat;
-        console.log(this.usersInChat);
+        //  console.log(this.usersInChat);
     };
     AppComponent.prototype.seen = function (seen) {
         this.newMessage = seen;
@@ -141,13 +141,13 @@ var AppComponent = (function () {
                 _this.username = username;
                 if (_this.socket_id) {
                     _this.socket.emit("addUserToChat", { username: _this.username, socket_id: _this.socket_id });
-                    console.log("false");
+                    // console.log("false");
                 }
             }
             else {
                 if (_this.socket_id) {
                     _this.socket.emit('removeUser', { username: _this.username, socket_id: _this.socket_id });
-                    console.log("false");
+                    // console.log("false");
                 }
             }
         });
@@ -504,7 +504,6 @@ var ChatComponent = (function () {
     }
     ChatComponent.prototype.ngOnInit = function () {
         document.getElementById('chat-box').style.right = this.marginRight + "px";
-        console.log(this.messages);
     };
     ChatComponent.prototype.sendMsg = function () {
         this.sendMessage.emit(this.msg);
@@ -576,7 +575,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar-top/navbar-top.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <div class=\"nav-wrapper\">\r\n    <a routerLink=\"/\" class=\"brand-logo\"><img src=\"assets/images/logoZeroToZ.png\" class=\"logo\"  alt=\"\"></a>\r\n      <ul id=\"nav-mobile\" class=\"right\">\r\n        <li  class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/shop\">Shop</a></li>    \r\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item \" routerLinkActive='active'><a routerLink=\"/profile\">{{username}}</a></li>\r\n        <li *ngIf=\"userService.isAdmin()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/create/admin\">DashBoard</a></li>\r\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a (click)=\"onLogoutClick()\">Logout</a></li>\r\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/login\">Login</a></li>\r\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/register\"s>Register</a></li>\r\n      </ul>\r\n  </div>\r\n</nav>"
+module.exports = "<nav>\r\n  <div class=\"nav-wrapper\">\r\n    <a routerLink=\"/\" class=\"brand-logo\"><img src=\"assets/images/dnguyenlogo.png\" class=\"logo\"  alt=\"\"></a>\r\n      <ul id=\"nav-mobile\" class=\"right\">\r\n        <li  class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/shop\">Shop</a></li>    \r\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item \" routerLinkActive='active'><a routerLink=\"/profile\">{{username}}</a></li>\r\n        <li *ngIf=\"userService.isAdmin()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/create/admin\">DashBoard</a></li>\r\n        <li *ngIf=\"userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a (click)=\"onLogoutClick()\">Logout</a></li>\r\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/login\">Login</a></li>\r\n        <li *ngIf=\"!userService.isLoggedIn()\" class=\"nav-item\" routerLinkActive='active'><a routerLink=\"/register\"s>Register</a></li>\r\n      </ul>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -629,7 +628,6 @@ var NavbarTopComponent = (function () {
                 .subscribe(function (data) {
                 _this.username = data[0];
                 _this.status = Boolean(data[1]);
-                console.log(data);
             });
         // this.sharedService.currentUsername.subscribe(username=>this.username=username);
         // this.sharedService.currentStatusLogin.subscribe(status=>this.status=status);
@@ -645,6 +643,7 @@ var NavbarTopComponent = (function () {
         this.route.navigate(['/login']);
         this.flashMsg.show('You are logged out', { cssClass: 'alert-success', timeout: 3000 });
         this.sharedService.loginStatus(false);
+        localStorage.removeItem('Zero_carts');
         return false;
     };
     return NavbarTopComponent;
@@ -732,7 +731,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}\r\n.dashboard{\r\n    width:100%;\r\n    height: 100%;\r\n    position: fixed;\r\n}\r\n.sideMenu{\r\n    height: 100%;\r\n    background-color: #433D3D; \r\n}\r\n.sideMenu .control{\r\n    font-size: 25px;\r\n    padding-left: 10px;\r\n}\r\n.control p a{\r\n    color:gray;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.active{\r\n    color: white !important;\r\n}\r\n.filter{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\n.card-action{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\nselect{\r\n    color: black;\r\n}\r\nlabel{\r\n    font-size: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n.form-group{\r\n    padding:10px 0;\r\n}", ""]);
+exports.push([module.i, ".category{\r\n    height: 80vh;\r\n}\r\n.col-md-6{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 100%;\r\n    height: 80vh;\r\n    background-color: rgb(61, 68, 81);\r\n    border-right: 1px solid gray;  \r\n    color: white;\r\n    text-align: center;\r\n}\r\n.content h1{\r\n    width: 80%;\r\n    margin: 0 auto;\r\n}\r\n.content h5{\r\n    width: 70%;\r\n    font-size: 15px;\r\n    margin: 15px auto 0;\r\n}\r\n.content a{\r\n    margin-top: 15px;\r\n}\r\n.form{\r\n    text-align: left;\r\n    border: 1px solid gray;\r\n    border-radius: 5px;\r\n    padding: 20px;\r\n    box-shadow: 0 0 5px  gray;\r\n}\r\n.select{\r\n    padding: 0.4rem 0.75rem;\r\n    border-radius: 0.25rem;\r\n    width:100%;\r\n}\r\n.dashboard{\r\n    width:100%;\r\n    height: 100%;\r\n    position: fixed;\r\n}\r\n.sideMenu{\r\n    height: 100%;\r\n    background-color: #433D3D; \r\n}\r\n.sideMenu .control{\r\n    font-size: 20px;\r\n    padding-left: 10px;\r\n}\r\n.control p a{\r\n    color:gray;\r\n    cursor: pointer;\r\n    padding: 10px;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.active{\r\n    color: white !important;\r\n}\r\n.filter{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\n.card-action{\r\n    color: black;\r\n    font-size: 1.25rem;\r\n}\r\nselect{\r\n    color: black;\r\n}\r\nlabel{\r\n    font-size: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n.form-group{\r\n    padding:10px 0;\r\n}", ""]);
 
 // exports
 
@@ -1308,7 +1307,6 @@ var CommentsComponent = (function () {
         };
         this.comments[data.index] = data.content;
         this.commentService.updateComment(comment_id, newComment).subscribe(function (data) {
-            console.log(data);
         });
         this.showEdit = false;
     };
@@ -1590,7 +1588,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container news\" *ngIf=\"allUsers\">\r\n  <div class=\"\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <div class=\"header\">\r\n          New users\r\n        </div>\r\n        <div class=\"users\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\" *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\">{{user.username}}</a></li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-10\">\r\n        <div class=\"header\">\r\n          News\r\n          <span class=\"filter\">\r\n            <select #selected (change)=\"getFilterValue(selected.value)\">\r\n              <option>5</option>\r\n              <option>10</option>\r\n              <option>15</option>\r\n            </select>\r\n          </span>\r\n        </div>\r\n        <div class=\"newpost mt-1\">\r\n          <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\r\n            <button class=\"btn btn-primary\" (click)=\"mode='posts'\">New Post</button>\r\n            <button class=\"btn btn-secondary\" (click)=\"mode='category'\">New Category</button>\r\n            <button class=\"btn btn-success\" (click)=\"mode='views'\">Highest Views Post</button>\r\n          </div>\r\n            <div *ngIf=\"mode=='posts'\">\r\n              <ul class=\"list-group\">\r\n                <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                  <a [routerLink]=\"['/posts',post._id]\">{{i+1}}. {{post.title}}</a>\r\n                  <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\r\n                </li>\r\n                \r\n              </ul>\r\n            </div>\r\n            <div *ngIf=\"mode=='category'\">\r\n              <ul class=\"list-group\">\r\n                  <li class=\"list-group-item\" *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                      <a [routerLink]=\"['/categories',category._id]\">{{i+1}}. {{category.category}}</a>\r\n                      <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\r\n                    </li>\r\n              </ul>\r\n            </div>\r\n            <div *ngIf=\"mode=='views'\">\r\n              <ul class=\"list-group\">\r\n                  <li class=\"list-group-item\" *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                    <div class=\"post\" style=\"float:left\">\r\n                        <a [routerLink]=\"['/posts',highestView._id]\">{{i+1}}. {{highestView.title}}</a>\r\n                        <p>Views: {{highestView.views}}</p>\r\n                    </div>  \r\n                    <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\r\n                    </li>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n    <div class=\"card-panel welcome\">\r\n      <h2>Welcome to My Forum Page!</h2>\r\n      <h5>Member can see more information!</h5>\r\n    </div>    \r\n\r\n    <div class=\"userInfo\" *ngIf=\"userService.isLoggedIn()\">\r\n      <div class=\"row\">\r\n        <div class=\"col s4\">\r\n          <div class=\"header\">New User</div>            \r\n          <ul class=\"userList\">\r\n            <li *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\"><strong class=\"pink-text\" ><i>{{user.username}}</i></strong></a> <i style=\"float:right\">{{user.created_date}}</i></li>\r\n          </ul>\r\n        </div>\r\n        <div class=\"col s8\">\r\n          <div class=\"header\">\r\n            Play Some Filter News!\r\n            \r\n           <span class=\"filter\">\r\n             <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\r\n               <option value=\"5\">5</option>\r\n               <option value=\"10\">10</option>\r\n               <option value=\"15\">15</option>\r\n             </select>\r\n           </span>\r\n            \r\n          </div>\r\n          <ul class=\"tabs tabs-fixed-width\">\r\n            <li class=\"tab\"><a (click)=\"mode='newpost'\" [class.active]=\"mode=='newpost'\" >New Post</a></li>\r\n            <li class=\"tab\"><a (click)=\"mode='newcategory'\" [class.active]=\"mode=='newcategory'\">New Category</a></li>\r\n            <li class=\"tab\"><a (click)=\"mode='highestview'\" [class.active]=\"mode=='highestview'\">Highest Views</a></li>\r\n          </ul>\r\n          <div *ngIf=\"mode=='newpost'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/posts',post._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{post.title}}</i></strong></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n          <div *ngIf=\"mode=='newcategory'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/categories',category._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{category.category}}</i></strong></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\r\n              </li>            \r\n            </ul>\r\n          </div>\r\n          <div *ngIf=\"mode=='highestview'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/posts',highestView._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{highestView.title}}</i></strong> <i style=\"font-size:13px\"> Views: <Strong>{{highestView.views}} </Strong></i></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\r\n              </li>            \r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"main-topic\">\r\n      <main-topic *ngFor=\"let topic of maintopics\" [topic]=\"topic\"></main-topic>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<!-- <div class=\"container news\" *ngIf=\"allUsers\">\r\n  <div class=\"\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-2\">\r\n        <div class=\"header\">\r\n          New users\r\n        </div>\r\n        <div class=\"users\">\r\n          <ul class=\"list-group\">\r\n            <li class=\"list-group-item\" *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\">{{user.username}}</a></li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-10\">\r\n        <div class=\"header\">\r\n          News\r\n          <span class=\"filter\">\r\n            <select #selected (change)=\"getFilterValue(selected.value)\">\r\n              <option>5</option>\r\n              <option>10</option>\r\n              <option>15</option>\r\n            </select>\r\n          </span>\r\n        </div>\r\n        <div class=\"newpost mt-1\">\r\n          <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\r\n            <button class=\"btn btn-primary\" (click)=\"mode='posts'\">New Post</button>\r\n            <button class=\"btn btn-secondary\" (click)=\"mode='category'\">New Category</button>\r\n            <button class=\"btn btn-success\" (click)=\"mode='views'\">Highest Views Post</button>\r\n          </div>\r\n            <div *ngIf=\"mode=='posts'\">\r\n              <ul class=\"list-group\">\r\n                <li class=\"list-group-item\" *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                  <a [routerLink]=\"['/posts',post._id]\">{{i+1}}. {{post.title}}</a>\r\n                  <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\r\n                </li>\r\n                \r\n              </ul>\r\n            </div>\r\n            <div *ngIf=\"mode=='category'\">\r\n              <ul class=\"list-group\">\r\n                  <li class=\"list-group-item\" *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                      <a [routerLink]=\"['/categories',category._id]\">{{i+1}}. {{category.category}}</a>\r\n                      <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\r\n                    </li>\r\n              </ul>\r\n            </div>\r\n            <div *ngIf=\"mode=='views'\">\r\n              <ul class=\"list-group\">\r\n                  <li class=\"list-group-item\" *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\">\r\n                    <div class=\"post\" style=\"float:left\">\r\n                        <a [routerLink]=\"['/posts',highestView._id]\">{{i+1}}. {{highestView.title}}</a>\r\n                        <p>Views: {{highestView.views}}</p>\r\n                    </div>  \r\n                    <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\r\n                    </li>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"container center\" style=\"margin-top:80px;\">\r\n    <div class=\"card-panel welcome\">\r\n      <h2>Welcome to My Forum Page!</h2>\r\n      <h5>Member can see more information! Give me Your Info, Then i will set admin permission to You!</h5>\r\n    </div>    \r\n\r\n    <div class=\"userInfo\" *ngIf=\"userService.isLoggedIn()\">\r\n      <div class=\"row\">\r\n        <div class=\"col s4\">\r\n          <div class=\"header\">New User</div>            \r\n          <ul class=\"userList\">\r\n            <li *ngFor=\"let user of allUsers | paginate : {itemsPerPage: itemsPerPage, currentPage: p}\"><a [routerLink]=\"['/user/info',user._id]\"><strong class=\"pink-text\" ><i>{{user.username}}</i></strong></a> <i style=\"float:right\">{{user.created_date}}</i></li>\r\n          </ul>\r\n        </div>\r\n        <div class=\"col s8\">\r\n          <div class=\"header\">\r\n            Play Some Filter News!\r\n            \r\n           <span class=\"filter\">\r\n             <select class=\"browser-default\" #selected (change)=\"getFilterValue(selected.value)\">\r\n               <option value=\"5\">5</option>\r\n               <option value=\"10\">10</option>\r\n               <option value=\"15\">15</option>\r\n             </select>\r\n           </span>\r\n            \r\n          </div>\r\n          <ul class=\"tabs tabs-fixed-width\">\r\n            <li class=\"tab\"><a (click)=\"mode='newpost'\" [class.active]=\"mode=='newpost'\" >New Post</a></li>\r\n            <li class=\"tab\"><a (click)=\"mode='newcategory'\" [class.active]=\"mode=='newcategory'\">New Category</a></li>\r\n            <li class=\"tab\"><a (click)=\"mode='highestview'\" [class.active]=\"mode=='highestview'\">Highest Views</a></li>\r\n          </ul>\r\n          <div *ngIf=\"mode=='newpost'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let post of posts | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/posts',post._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{post.title}}</i></strong></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"post.author_id\"></user-created-category>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n          <div *ngIf=\"mode=='newcategory'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let category of categories | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/categories',category._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{category.category}}</i></strong></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"category.create_user\"></user-created-category>\r\n              </li>            \r\n            </ul>\r\n          </div>\r\n          <div *ngIf=\"mode=='highestview'\">\r\n            <ul class=\"userList\">\r\n              <li *ngFor=\"let highestView of highestViewsPost | paginate : {itemsPerPage: itemsPerPage, currentPage: p}; let i =index\" class=\"text-left\">\r\n                <a [routerLink]=\"['/posts',highestView._id]\"><strong class=\"pink-text\" ><i>{{i+1}}. {{highestView.title}}</i></strong> <i style=\"font-size:13px\"> Views: <Strong>{{highestView.views}} </Strong></i></a> \r\n                <user-created-category style=\"float:right\" [createUser]=\"highestView.author_id\"></user-created-category>\r\n              </li>            \r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"main-topic\">\r\n      <main-topic *ngFor=\"let topic of maintopics\" [topic]=\"topic\"></main-topic>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1669,7 +1667,6 @@ var HomeComponent = (function () {
         }
     };
     HomeComponent.prototype.getFilterValue = function (value) {
-        console.log(value);
         this.itemsPerPage = value;
     };
     return HomeComponent;
@@ -2082,7 +2079,6 @@ var PostsComponent = (function () {
         }, function (err) { return console.log(err); });
         this.categorySubscription = this.categoryService.getContentCategory(this.categoryId).subscribe(function (data) {
             _this.category = data.category;
-            console.log(_this.category);
         });
     };
     PostsComponent.prototype.ngOnDestroy = function () {
@@ -2548,7 +2544,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/pages/shop/product/product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\n  <div class=\"card-image\">\n    <img src=\"{{product.src}}\" alt=\"images product\">\n    <span class=\"card-title\">{{product.name}}</span>\n  </div>\n  <div class=\"card-action\">\n    <a *ngIf=\"cart.quantity==0\" class=\"btn addTocart\"  (click)=\"addCart(product)\">Add to cart</a>\n    <div class=\"control\" *ngIf=\"cart.quantity!=0\">\n        <a class=\"btn grey darken-1\" style=\"float:left\" (click)=\"decrease(product)\">-</a>\n        <a style=\"margin-left:20% \">{{cart.quantity}} in cart</a>\n        <a class=\"btn green accent-3\" style=\"float:right\" (click)=\"increase(product)\">+</a>\n        <div style=\"clear:both\"></div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"card\">\n  <div class=\"card-image\">\n    <img src=\"{{product.src}}\" alt=\"images product\">\n    <span class=\"card-title\">{{product.name}}</span>\n  </div>\n  <div class=\"card-action\">\n    <a *ngIf=\"cart.quantity==0\" class=\"btn addTocart\"  (click)=\"addCart(product)\">Add to cart</a>\n    <div class=\"control\" *ngIf=\"cart.quantity!=0\">\n        <a class=\"btn grey darken-1\" style=\"float:left\" (click)=\"decrease(product)\">-</a>\n        <a style=\"margin-left:6% \">{{cart.quantity}} in cart</a>\n        <a class=\"btn green accent-3\" style=\"float:right\" (click)=\"increase(product)\">+</a>\n        <div style=\"clear:both\"></div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -2699,6 +2695,7 @@ var ShopComponent = (function () {
     ShopComponent.prototype.cartChanged = function (event) {
         var _this = this;
         var cartsName = this.carts.map(function (cart) { return cart.name; });
+        localStorage.removeItem('yourBill');
         switch (event.type) {
             case 'add':
                 this.carts.push(event.cart);
@@ -2719,7 +2716,6 @@ var ShopComponent = (function () {
         this.carts.map(function (cart) {
             _this.totalQuantity += cart.quantity;
         });
-        console.log(this.carts);
         localStorage.setItem('Zero_carts', JSON.stringify(this.carts));
     };
     ShopComponent.prototype.checkout = function () {
@@ -2796,10 +2792,10 @@ var SuccessCheckoutComponent = (function () {
         this.router = router;
     }
     SuccessCheckoutComponent.prototype.ngOnInit = function () {
+        localStorage.removeItem('Zero_carts');
         if (JSON.parse(localStorage.getItem('yourBill'))) {
             this.bill = JSON.parse(localStorage.getItem('yourBill'));
         }
-        console.log(this.bill);
     };
     SuccessCheckoutComponent.prototype.redirect = function (returnUrl) {
         localStorage.removeItem('yourBill');
@@ -2899,7 +2895,6 @@ var UserInfoComponent = (function () {
         })
             .subscribe(function (data) {
             _this.user_info = data.user_info;
-            console.log(_this.user_info);
             _this.infoSubscription = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineLatest([
                 _this.postsService.getPostsUserCreated(_this.user_id),
                 _this.commentsService.getCommentsUserCreated(_this.user_id)
@@ -2976,8 +2971,6 @@ var UserOnlineComponent = (function () {
         this.renderUserOnline = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     UserOnlineComponent.prototype.ngOnInit = function () {
-        console.log('users online');
-        console.log(this.usersOnline);
     };
     UserOnlineComponent.prototype.showTapChat = function () {
         this.hide = (this.hide) ? false : true;
@@ -3079,7 +3072,6 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
         var user_id = JSON.parse(localStorage.getItem('Zero_user')).id;
-        console.log(user_id);
         this.profileSubscription =
             __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].combineLatest([
                 this.userService.getProfile(),
@@ -3099,7 +3091,6 @@ var ProfileComponent = (function () {
     };
     ProfileComponent.prototype.onChange = function (event) {
         this.file = event.srcElement.files;
-        console.log(this.file[0]);
     };
     return ProfileComponent;
 }());
@@ -3296,25 +3287,25 @@ var CategoriesService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/create/category', newCategory, { headers: headers })
+        return this.http.post('api/create/category', newCategory, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CategoriesService.prototype.getAllCategories = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/categories/all', { headers: headers })
+        return this.http.get('api/categories/all', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CategoriesService.prototype.getAllCategoryWithSpecificTopicId = function (topic_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/categories/' + topic_id, { headers: headers })
+        return this.http.get('api/categories/' + topic_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CategoriesService.prototype.getContentCategory = function (category_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/categories/specific/' + category_id, { headers: headers })
+        return this.http.get('api/categories/specific/' + category_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CategoriesService.prototype.loadToken = function () {
@@ -3363,7 +3354,7 @@ var CheckOutPaypalService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/checkout/paypal', bill, { headers: headers })
+        return this.http.post('api/checkout/paypal', bill, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CheckOutPaypalService.prototype.loadToken = function () {
@@ -3412,7 +3403,7 @@ var CheckOutStripeService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/checkout/stripe', bill, { headers: headers })
+        return this.http.post('api/checkout/stripe', bill, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CheckOutStripeService.prototype.getPublishKey = function () {
@@ -3420,7 +3411,7 @@ var CheckOutStripeService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/checkout/stripe', { headers: headers })
+        return this.http.get('api/checkout/stripe', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CheckOutStripeService.prototype.loadToken = function () {
@@ -3469,13 +3460,13 @@ var CommentsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/create/comment', newComment, { headers: headers })
+        return this.http.post('api/create/comment', newComment, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CommentsService.prototype.getAllCommentsWithSpecificPostId = function (post_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/comments/specific/' + post_id, { headers: headers })
+        return this.http.get('api/comments/specific/' + post_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CommentsService.prototype.deleteComment = function (id) {
@@ -3483,7 +3474,7 @@ var CommentsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.delete('http://localhost:3000/api/comments/delete/' + id, { headers: headers })
+        return this.http.delete('api/comments/delete/' + id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CommentsService.prototype.updateComment = function (id, newComment) {
@@ -3491,13 +3482,13 @@ var CommentsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.put('http://localhost:3000/api/comments/update/' + id, newComment, { headers: headers })
+        return this.http.put('api/comments/update/' + id, newComment, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CommentsService.prototype.getCommentsUserCreated = function (user_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/comments/howmany/' + user_id, { headers: headers })
+        return this.http.get('api/comments/howmany/' + user_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CommentsService.prototype.loadToken = function () {
@@ -3544,7 +3535,7 @@ var MainTopicService = (function () {
     MainTopicService.prototype.getAllMainTopic = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/maintopics/all', { headers: headers })
+        return this.http.get('api/maintopics/all', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     MainTopicService.prototype.createMaintopic = function (newMaintopic) {
@@ -3552,7 +3543,7 @@ var MainTopicService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/create/maintopic', newMaintopic, { headers: headers })
+        return this.http.post('api/create/maintopic', newMaintopic, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     MainTopicService.prototype.loadToken = function () {
@@ -3601,31 +3592,31 @@ var PostsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/api/create/post', newPost, { headers: headers })
+        return this.http.post('api/create/post', newPost, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getAllPostsSpecificCategory = function (category_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/posts/' + category_id, { headers: headers })
+        return this.http.get('api/posts/' + category_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getPostContent = function (post_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/posts/specific/' + post_id, { headers: headers })
+        return this.http.get('api/posts/specific/' + post_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getAllPosts = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/posts/for/all', { headers: headers })
+        return this.http.get('api/posts/for/all', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getHighestViews = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/posts/highest/views', { headers: headers })
+        return this.http.get('api/posts/highest/views', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.deletePost = function (id) {
@@ -3633,7 +3624,7 @@ var PostsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.delete('http://localhost:3000/api/posts/delete/' + id, { headers: headers })
+        return this.http.delete('api/posts/delete/' + id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.updatePost = function (id, newPost) {
@@ -3641,13 +3632,13 @@ var PostsService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-type', 'application/json');
-        return this.http.put('http://localhost:3000/api/posts/update/' + id, newPost, { headers: headers })
+        return this.http.put('api/posts/update/' + id, newPost, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getPostsUserCreated = function (user_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.get('http://localhost:3000/api/posts/howmany/' + user_id, { headers: headers })
+        return this.http.get('api/posts/howmany/' + user_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.loadToken = function () {
@@ -3787,23 +3778,23 @@ var UserService = (function () {
         this.http = http;
     }
     UserService.prototype.checkUsernameExist = function (username) {
-        return this.http.get('http://localhost:3000/api/users/' + username)
+        return this.http.get('api/users/' + username)
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.checkEmailExist = function (email) {
-        return this.http.get('http://localhost:3000/api/users/' + email)
+        return this.http.get('api/users/' + email)
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.registerUser = function (newUser) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/api/users/register', newUser, { headers: headers })
+        return this.http.post('api/users/register', newUser, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/api/users/authenticate', user, { headers: headers })
+        return this.http.post('api/users/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.getProfile = function () {
@@ -3811,7 +3802,7 @@ var UserService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/api/users/profile', { headers: headers })
+        return this.http.get('api/users/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.getAllUser = function (username) {
@@ -3819,7 +3810,7 @@ var UserService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/api/users/all/' + username, { headers: headers })
+        return this.http.get('api/users/all/' + username, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.storeUserDate = function (token, user) {
@@ -3831,7 +3822,7 @@ var UserService = (function () {
     UserService.prototype.getUserInfor = function (user_id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/api/users/infos/' + user_id, { headers: headers })
+        return this.http.get('api/users/infos/' + user_id, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.loadToken = function () {
@@ -3884,7 +3875,7 @@ var UserService = (function () {
         this.loadToken();
         headers.append('Authorization', this.userToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.put('http://localhost:3000/api/users/infos/update/' + user_id, newRoles, { headers: headers })
+        return this.http.put('api/users/infos/update/' + user_id, newRoles, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.isLoggedIn = function () {

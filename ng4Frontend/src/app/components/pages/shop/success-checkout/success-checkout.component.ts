@@ -13,10 +13,10 @@ export class SuccessCheckoutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    localStorage.removeItem('Zero_carts');
     if(JSON.parse(localStorage.getItem('yourBill'))){
       this.bill=JSON.parse(localStorage.getItem('yourBill'));
     }
-    console.log(this.bill);
   }
   redirect(returnUrl){
     localStorage.removeItem('yourBill');

@@ -16,7 +16,7 @@ export class CheckOutStripeService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:3000/api/checkout/stripe',bill,{headers:headers})
+    return this.http.post('api/checkout/stripe',bill,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -25,7 +25,7 @@ export class CheckOutStripeService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-type','application/json');
-    return this.http.get('http://localhost:3000/api/checkout/stripe',{headers:headers})
+    return this.http.get('api/checkout/stripe',{headers:headers})
       .map(res=>res.json());
   }
 

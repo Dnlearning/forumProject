@@ -33,7 +33,6 @@ export class NavbarTopComponent implements OnInit,OnDestroy {
     .subscribe(data=>{
       this.username=data[0];
       this.status=Boolean(data[1]);
-      console.log(data);
     })
     // this.sharedService.currentUsername.subscribe(username=>this.username=username);
     // this.sharedService.currentStatusLogin.subscribe(status=>this.status=status);
@@ -52,6 +51,7 @@ export class NavbarTopComponent implements OnInit,OnDestroy {
     this.route.navigate(['/login']);
     this.flashMsg.show('You are logged out',{cssClass:'alert-success',timeout:3000});
     this.sharedService.loginStatus(false);
+    localStorage.removeItem('Zero_carts');
     return false;
   }
 }

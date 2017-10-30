@@ -36,8 +36,8 @@ router.post('/paypal',passport.authenticate('jwt',{session:false}),(req,res,next
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/api/checkout/success",
-            "cancel_url": "http://localhost:3000/api/checkout/cancel"
+            "return_url": "https://dnguyenlearning.herokuapp.com/api/checkout/success",
+            "cancel_url": "https://dnguyenlearning.herokuapp.com/api/checkout/cancel"
         },
         "transactions": [{
             "item_list": {

@@ -19,7 +19,6 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     document.getElementById('chat-box').style.right=this.marginRight+ "px";
-    console.log(this.messages);
   }
 
   sendMsg(){

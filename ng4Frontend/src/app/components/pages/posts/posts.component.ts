@@ -46,7 +46,6 @@ export class PostsComponent implements OnInit, OnDestroy {
 
     this.categorySubscription=this.categoryService.getContentCategory(this.categoryId).subscribe(data=>{
       this.category=data.category;
-      console.log(this.category);
     })
   }
   ngOnDestroy(){

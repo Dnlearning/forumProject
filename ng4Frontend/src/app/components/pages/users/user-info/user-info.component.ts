@@ -33,7 +33,6 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     })
     .subscribe(data => {
       this.user_info=data.user_info;
-      console.log(this.user_info);
       this.infoSubscription=Observable.combineLatest([
         this.postsService.getPostsUserCreated(this.user_id),
         this.commentsService.getCommentsUserCreated(this.user_id)

@@ -12,7 +12,7 @@ export class MainTopicService {
   getAllMainTopic(){
     let headers=new Headers();
     headers.append('Content-type','application/json');
-    return this.http.get('http://localhost:3000/api/maintopics/all',{headers:headers})
+    return this.http.get('api/maintopics/all',{headers:headers})
       .map(res=>res.json());
   }
 
@@ -21,7 +21,7 @@ export class MainTopicService {
     this.loadToken();
     headers.append('Authorization',this.userToken);
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:3000/api/create/maintopic',newMaintopic,{headers:headers})
+    return this.http.post('api/create/maintopic',newMaintopic,{headers:headers})
       .map(res=>res.json());
   }
   

@@ -78,7 +78,6 @@ export class CommentsComponent implements OnInit {
     }
     this.comments[data.index]=data.content;
     this.commentService.updateComment(comment_id,newComment).subscribe(data=>{
-      console.log(data);
     });
     this.showEdit=false;
   }

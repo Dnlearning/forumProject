@@ -39,6 +39,8 @@ export class ShopComponent implements OnInit {
   }
   cartChanged(event){
     let cartsName=this.carts.map(cart=>{return cart.name});
+
+    localStorage.removeItem('yourBill');
     switch(event.type){
       case 'add': this.carts.push(event.cart);break;
       case 'increase':
@@ -58,7 +60,6 @@ export class ShopComponent implements OnInit {
     this.carts.map(cart=>{
       this.totalQuantity+=cart.quantity;
     })
-    console.log(this.carts);
     localStorage.setItem('Zero_carts',JSON.stringify(this.carts));
   }
   checkout(){

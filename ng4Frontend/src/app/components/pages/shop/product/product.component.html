@@ -7,7 +7,7 @@
     <a *ngIf="cart.quantity==0" class="btn addTocart"  (click)="addCart(product)">Add to cart</a>
     <div class="control" *ngIf="cart.quantity!=0">
         <a class="btn grey darken-1" style="float:left" (click)="decrease(product)">-</a>
-        <a style="margin-left:20% ">{{cart.quantity}} in cart</a>
+        <a style="margin-left:6% ">{{cart.quantity}} in cart</a>
         <a class="btn green accent-3" style="float:right" (click)="increase(product)">+</a>
         <div style="clear:both"></div>
     </div>
